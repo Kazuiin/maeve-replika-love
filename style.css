@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'ProggyClean';
+    src: url(font/ProggyCleanNerdFont-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Gallant';
+    src: url(font/gallant12x22.ttf) format('truetype');
+}
+
+.shortcut {
+    position: relative;
+    height: 3.5em;
+    width: 3.5em;
+    background-color: grey;
+}
+
+.desktopWindow {
+    height: 22.5em;
+    width: 22.5em;
+    background-color: black;
+    opacity: 50%;
+}
+
+.dragWM {
+    position: absolute;
+    height: 2.25em;
+    width: 22.5em;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: 'Gallant';
+    outline: none;
+    top: 50%;
+    right: 50%;
+
+}
