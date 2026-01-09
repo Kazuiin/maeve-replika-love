@@ -19,6 +19,7 @@
 }
 
 .desktopWindow {
+    display: flex;
     position: absolute;
     height: 35rem;
     width: 50rem;
@@ -33,9 +34,11 @@
     left: calc(50% - (50rem * 0.5));
     outline-color: #ff9ae3;
     outline-width: #ff9ae3;
+    backdrop-filter: blur(5px);
 }
 
 .dragWM {
+    display: flex;
     height: 2.25rem;
     width: 50rem;
     color: black;
@@ -45,27 +48,35 @@
     left: 50%;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: ProggyClean, monospace;
     font-size: large;
+    -webkit-font-smoothing: none;
     outline-color: #ff9ae3;
     outline-width: #ff9ae3;
 }
 .closeWndw {
+    justify-content: center;
+    align-items: center;
     height: 2.25rem;
     width: 5rem;
     float: right;
     border-color: black;
     border-width: 2px;
     border-radius: 0px 4px 0px 0px;
-    text-align: center;
 }
 #taskbar {
+    display: flex;
     background-color: gray;
     height: 10%;
     width: 100%;
+    font-family: Gallant, monospace;
 }
 .line {
+    display: flex;
     background-color: #ff9ae3;
     width: 100%;
     height: 1px;
+    gap: 10px;
 }
