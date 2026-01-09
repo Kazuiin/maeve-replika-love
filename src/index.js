@@ -1,7 +1,18 @@
  
+ 
+// time tracker & setter
+let time = document.getElementById("localTime")
+let refreshInterval = 0
+    setInterval(() => {
+        let date = new Date();
+        time.innerHTML = date.toLocaleTimeString();
+        refreshInterval = 1000;
+        console.log(refreshInterval)
+    }, refreshInterval);
+//window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
-
+    // window dragging titlebar
     dragWM.forEach((dragWM) => {
         let startX = 0;
         let startY = 0;
@@ -10,7 +21,6 @@ const closeWndw = document.querySelectorAll(".closeWndw");
             startX = startX + e.movementX
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
-
             };
 
             dragWM.addEventListener("mousedown", () => {
@@ -25,7 +35,7 @@ const closeWndw = document.querySelectorAll(".closeWndw");
                 window.removeEventListener("mousemove", mousePos);
             });
     });
-
+    // window closer titlebar
     closeWndw.forEach((closeWndw) => {
          closeWndw.addEventListener("mousedown", () => {
                 

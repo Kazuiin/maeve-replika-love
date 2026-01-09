@@ -87,3 +87,9 @@
     height: 1px;
     gap: 2px;
 }
+
+#localTime {
+    font-family: proggyclean, monospace;
+    font-size: 32px;
+    user-select: none;
+}
