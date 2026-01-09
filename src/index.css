@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ProggyClean';
-    src: url(font/ProggyCleanNerdFont-Regular.ttf) format('truetype');
+    src: url(assets/font/ProggyCleanNerdFont-Regular.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Gallant';
-    src: url(font/gallant12x22.ttf) format('truetype');
+    src: url(assets/font/gallant12x22.ttf) format('truetype');
 }
 
 .shortcut {
