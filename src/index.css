@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ProggyClean';
-    src: url(assets/font/ProggyCleanNerdFont-Regular.ttf) format('truetype');
+    src: url(assets/fonts/ProggyCleanNerdFont-Regular.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Gallant';
-    src: url(assets/font/gallant12x22.ttf) format('truetype');
+    src: url(assets/fonts/gallant12x22.ttf) format('truetype');
 }
 
 .shortcut {
@@ -15,21 +15,28 @@
 }
 
 .desktopWindow {
+    position: absolute;
     height: 22.5em;
     width: 22.5em;
     background-color: black;
-    opacity: 50%;
+    color: white;
+    opacity: 85%;
+    right: 50%;
+    left: 50%;
 }
 
 .dragWM {
-    position: absolute;
     height: 2.25em;
     width: 22.5em;
-    transform: translate(-50%, -50%);
     color: black;
+    background-color: white;
     font-family: 'Gallant';
     outline: none;
     top: 50%;
     right: 50%;
 
+}
+.closeButton {
+    height: 2.25em;
+    width: 5em;
 }
