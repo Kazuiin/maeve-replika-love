@@ -1,5 +1,6 @@
  
 const dragWM = document.querySelectorAll(".dragWM");
+const closeWndw = document.querySelectorAll(".closeWndw");
 
     dragWM.forEach((dragWM) => {
         let startX = 0;
@@ -22,6 +23,12 @@ const dragWM = document.querySelectorAll(".dragWM");
 
             window.addEventListener("mouseup", () => {
                 window.removeEventListener("mousemove", mousePos);
+            });
+    });
+
+    closeWndw.forEach((closeWndw) => {
+         closeWndw.addEventListener("mousedown", () => {
+                
             });
     });
                 
