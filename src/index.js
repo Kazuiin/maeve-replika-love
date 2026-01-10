@@ -1,3 +1,7 @@
+console.log("              {零}")
+console.log("THIS SPACE INTENTIONALLY LEFT BLANK.")
+
+
 // time setter & refresher
 let time = document.getElementById("localTime")
 timeSet()
