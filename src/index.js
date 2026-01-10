@@ -38,11 +38,9 @@ const shortcut = document.querySelectorAll(".shortcut")
     });
     // window open shortcut
     shortcut.forEach((shortcut) => {
-        const wndw = shortcut.getAttribute("wndw")
+        const btnwndw = shortcut.getAttribute("wndw")
         shortcut.addEventListener("mousedown", () => {
-            desktopWndw.forEach((desktopWndw) => {
-                desktopWndw.style.display = "flex";
-            });
+            document.getElementById(btnwndw).style.display = "flex";
         });
     });
     // window close titlebar

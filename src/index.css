@@ -18,7 +18,7 @@ class tags
     background-color: orange;
 }
 
-.body {
+body {
     background-image: url("assets/images/LSTR.webp");
 }
 
@@ -34,35 +34,59 @@ class tags
     margin-right: auto;
     top: calc(50% - (35rem * 0.5));
     left: calc(50% - (50rem * 0.5));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
 .dragWM {
     display: flex;
-    height: 2.75rem;
-    width: 50rem;
+    height: 8%;
+    width: 100%;
     color: palevioletred;
     background-color: #2a2531;
+    -webkit-user-select: none;
     user-select: none;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: center;
     align-items: center;
     font-family: Gallant, monospace;
     font-size: 25px;
     -webkit-font-smoothing: none;
-    gap: 10px;
     border-bottom: 1px solid #8a5375;
-    padding-left: 10px;
-    padding-right: 5px;
 }
+
+.closeWndwContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 45px;
+    border-left: 1px solid #8a5375;
+}
+
 .closeWndw {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2.75rem;
-    width: 2.75rem;
-    border-left: 1px solid #8a5375;
+    height: 28px;
+    width: 28px;
+    border: 3px outset pink;
+    background-color: gainsboro;
+}
+
+.windowPG {
+    display: flex;
+    position: absolute;
+    transform: translate(50%, 50%);
+    width: 100%;
+    height: 92%;
+    bottom: 46%;
+    right: 50%;
+    background-color: p;
+}
+.windowPG h1 {
+    margin: 25px;
+    font-family: ProggyClean, monospace;
+    font-size: larger;
 }
 
 .lineContainer {
@@ -73,6 +97,8 @@ class tags
     justify-content: center;
     gap: 3px;
     vertical-align: top;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .line {
@@ -83,14 +109,12 @@ class tags
     gap: 2px;
 }
 
-.windowPG {
-    display: flex;
-}
-
 id tags
 
 #taskbar {
     display: flex;
+    align-items: flex-end;
+    flex-direction: column;
     background-color: #8a5375;
     height: 10%;
     width: 100%;
@@ -100,5 +124,6 @@ id tags
 #localTime {
     font-family: proggyclean, monospace;
     font-size: 32px;
-    user-select: none;
+    -webkit-user-select: none;
+    user-select: none;   
 }
