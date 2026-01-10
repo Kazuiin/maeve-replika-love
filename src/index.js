@@ -1,8 +1,6 @@
- 
- 
 // time tracker & setter
 let time = document.getElementById("localTime")
-let refreshInterval = 0
+let refreshInterval = 1000
     setInterval(() => {
         let date = new Date();
         time.innerHTML = date.toLocaleTimeString();
@@ -12,6 +10,8 @@ let refreshInterval = 0
 //window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
+const desktopWndw = document.querySelectorAll(".desktopWndw")
+const shortcut = document.querySelectorAll(".shortcut")
     // window dragging titlebar
     dragWM.forEach((dragWM) => {
         let startX = 0;
@@ -35,10 +35,22 @@ const closeWndw = document.querySelectorAll(".closeWndw");
                 window.removeEventListener("mousemove", mousePos);
             });
     });
-    // window closer titlebar
-    closeWndw.forEach((closeWndw) => {
+    // window open shortcut
+    shortcut.forEach((shortcut) => {
+        const wndw = shortcut.getAttribute("wndw")
+        shortcut.addEventListener("mousedown", () => {
+            desktopWndw.forEach((desktopWndw) => {
+                desktopWndw.style.display = "flex";
+            });
+        });
+    });
+    // window close titlebar
+    desktopWndw.forEach((desktopWndw) => {
+        const closeWndw = desktopWndw.querySelector(".closeWndw");
          closeWndw.addEventListener("mousedown", () => {
-                
+                desktopWndw.style.display = "none";
             });
     });
+
+
                 

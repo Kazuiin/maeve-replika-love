@@ -11,15 +11,25 @@
         <script defer src="index.js"></script>
 
         <body class="body">
+            <!-- shortcuts -->
+            <div class="shortcut" wndw="aboutShortcut">
+                <img src="assets/images/terminal-72-16.png"alt="">
+            </div>
+            <div class="shortcut" wndw="devicesShortcut">
+
+            </div>
+
+            <!-- windows -->
+
             <!-- about me window -->
-             <div class="desktopWindow" id="aboutMe"> 
+             <div class="desktopWndw" window="aboutMe" wndw="aboutShortcut"> 
                 <div class="dragWM">
                     <span class="lineContainer">
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
                     </span>
-                    <div>
+                    <div class="titlecontainer">
                         about me
                     </div>
                     <span class="lineContainer">
@@ -31,12 +41,33 @@
                          X
                     </div>
                 </div>
-            <!-- taskbar -->
             </div>
-                <div class="taskbar">
-                    <div id="localTime"></div>
+            <!-- devices window -->
+             <div class="desktopWndw" id="devices"> 
+                <div class="dragWM">
+                    <span class="lineContainer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </span>
+                    <div class="titlecontainer">
+                        my devices
+                    </div>
+                    <span class="lineContainer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </span>
+                    <div class="closeWndw">
+                         X
+                    </div>
                 </div>
-                </div>
+            </div>
+            <!-- taskbar -->
+            <div class="taskbar">
+                <div id="localTime"></div>
+            </div>
+            </div>
         </body>
     </head>
 </html>
