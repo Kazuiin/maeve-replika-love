@@ -1,12 +1,13 @@
-// time tracker & setter
+// time setter & refresher
 let time = document.getElementById("localTime")
-let refreshInterval = 1000
-    setInterval(() => {
+timeSet()
+    function timeSet() {
         let date = new Date();
         time.innerHTML = date.toLocaleTimeString();
-        refreshInterval = 1000;
-        console.log(refreshInterval)
-    }, refreshInterval);
+    }
+    setInterval(() => {
+        timeSet()
+    }, 1000);
 //window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
