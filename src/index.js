@@ -44,6 +44,10 @@ const shortcut = document.querySelectorAll(".shortcut")
     shortcut.forEach((shortcut) => {
         const btnwndw = shortcut.getAttribute("wndw")
         shortcut.addEventListener("mousedown", () => {
+            if (document.getElementById(btnwndw).style.display == "none") {
+                document.getElementById(btnwndw).style.top = "calc(50% - (36rem * 0.5))"
+                document.getElementById(btnwndw).style.left= "calc(50% - (64rem * 0.5))"
+            }
             document.getElementById(btnwndw).style.display = "flex";
         });
     });

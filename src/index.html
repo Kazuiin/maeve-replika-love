@@ -3,29 +3,35 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="theme-color" data-react-helmet="true" content="#43B581"  />
         <meta property="og:title" content="maeve.replika.love"/>
         <meta property="og:description" content="C://users/maeve/replika.love"/>
         <meta property="og:meta_image" content="https://maeve.replika.love/meta_image.png"/>
         <title>C://users/maeve/replika.love</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="icon" type="image/png" href="assets/images/LSTR.webp">
         <script defer src="index.js">
         </script>
 
         <body class="body">
             <!-- shortcuts -->
             <div class="shortcut" wndw="aboutMe">
+                <div class="shortcutBG"></div>
                 <img src=""alt="">
                 <p>about</p>
             </div>
             <div class="shortcut" wndw="devices">
+                <div class="shortcutBG"></div>
                 <img src=""alt="">
-                <p>devices</p>
+                 <p>devices</p>
             </div>
             <div class="shortcut" wndw="music">
+                <div class="shortcutBG"></div>
                 <img src=""alt="">
                 <p>music</p>
             </div>
             <div class="shortcut" wndw="games">
+                <div class="shortcutBG"></div>
                 <img src=""alt="">
                 <p>games</p>
             </div>
@@ -58,6 +64,18 @@
                             <p>hi! my names maeve, im an amateur gamedev and 3d artist from scotland</p>
                             <p>big fan of games, music and basically anything that could be considered retro (or even just old tbh...)</p>
                             <p>this is just a little site for me to mess around with, share stuff, and just have fun with really!</p>
+                            <div id="platforms">
+                                <a href="https://github.com/Kazuiin" id="github" class="platformBG">
+                                    <img src="assets/images/platforms/github.png" alt="" height="48">
+                                </a>
+                                <a href="https://bsky.app/profile/maeve.replika.love" id="platformBG">
+                                    <img src="assets/images/platforms/bluesky.png" alt="" height="48">
+                                </a>
+                                <a href="https://discord.com/users/310119375950708736" id="platformBG">
+                                    <img src="assets/images/platforms/discord.png" alt="" height="48">
+                                </a>
+                            </div>
+
                         </h1>
                         <img src="assets/images/LSTR.webp" alt="" id="avatar">
                     </div>
@@ -79,10 +97,8 @@
                         <div class="lineHorizontal"></div>
                         <div class="lineHorizontal"></div>
                     </span>
-                    <div class="closeWndwContainer">
-                        <div class="closeWndw">
-                         X
-                         </div>
+                    <div class="closeWndw">
+                    X
                     </div>
                     </div>
                     <div class="windowPG" id="devicesPG">
@@ -165,6 +181,14 @@
 
             <!-- taskbar -->
             <div id="taskbar">
+                <div id="iconContainer">
+                    <div id="startBtn">
+
+                    </div>
+                    <div id="taskbarShortcuts">
+
+                    </div>
+                </div>
                 <div id="clockContainer">  
                     <div id="localTime">
                         12:00:00
