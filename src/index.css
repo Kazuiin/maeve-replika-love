@@ -11,8 +11,12 @@
 body {
     margin: 0px;
     background-image: url("assets/images/LSTR.webp");
-    width: 100vw;
-    height: 100vh;
+    background-repeat: repeat;
+
+}
+
+strong {
+    font-size: 22px;
 }
 
 /*class tags*/
@@ -24,13 +28,16 @@ body {
     height: 100%;
     width: 100%;
     background-color: gainsboro;
-    transition: opacity 500ms;
+    transition: opacity 250ms;
     opacity: 8%;
 }
 
 .shortcutBG:hover {
-    color: #2a2531;
     opacity: 25%;
+}
+
+.shortcutBG:active {
+    opacity: 18%;
 }
 
 .shortcut {
@@ -40,8 +47,8 @@ body {
     gap: 1rem;
     height: 4.5rem;
     width: 4.5rem;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
     font-family: Gallant, monospace;
     justify-content: center;
     align-items: center;
@@ -96,6 +103,10 @@ body {
 }
 .closeWndw:hover {
     background-color: #bfbfbf;
+}
+
+.closeWndw:active {
+    background-color: #b4b4b4;
 }
 
 .windowPG {
@@ -203,4 +214,6 @@ body {
     gap: 1.5rem;
     bottom: 2rem;
     left: 2rem;
+    -webkit-user-select: none;
+    user-select: none;
 }

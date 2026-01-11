@@ -50,11 +50,12 @@ const shortcut = document.querySelectorAll(".shortcut")
             }
             document.getElementById(btnwndw).style.display = "flex";
         });
+        
     });
     // window close titlebar
     desktopWndw.forEach((desktopWndw) => {
         const closeWndw = desktopWndw.querySelector(".closeWndw");
-         closeWndw.addEventListener("mousedown", () => {
+         closeWndw.addEventListener("mouseup", () => {
                 desktopWndw.style.display = "none";
             });
     });
