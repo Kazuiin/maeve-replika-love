@@ -12,7 +12,7 @@ body {
     margin: 0px;
     background-image: url("assets/images/LSTR.webp");
     background-repeat: repeat;
-
+    overflow: hidden;
 }
 
 strong {

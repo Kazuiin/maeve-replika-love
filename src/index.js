@@ -1,6 +1,11 @@
 console.log("              {零}")
 console.log("THIS SPACE INTENTIONALLY LEFT BLANK.")
 
+function clamp(num, min, max) {
+        const lowLim = Math.max(num, min)
+        const result = Math.min(lowLim, max)
+        return result
+    };
 
 // time setter & refresher
 let time = document.getElementById("localTime")
@@ -22,10 +27,12 @@ const shortcut = document.querySelectorAll(".shortcut")
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
-            startY = startY + e.movementY
-            startX = startX + e.movementX
+            startY = clamp(startY + e.movementY, 0, 312)
+            startX = clamp(startX+e.movementX, 0, 886)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
+            console.log(startX, "x")
+            console.log(startY, "y")
             };
 
             dragWM.addEventListener("mousedown", () => {
