@@ -27,8 +27,8 @@ const shortcut = document.querySelectorAll(".shortcut")
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
-            startY = clamp(startY + e.movementY, 0, 312)
-            startX = clamp(startX+e.movementX, 0, 886)
+            startY = clamp(startY + e.movementY, 0, window.innerWidth - window.innerWidth * 0.7483)
+            startX = clamp(startX+e.movementX, 0, window.innerHeight - window.innerHeight * 0.066)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
             console.log(startX, "x")

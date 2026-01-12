@@ -127,7 +127,9 @@ strong {
 
 .windowPG #avatar {
     margin: 7px;
-    border: 7px outset #8a5375;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #8a5375 #5c374e #5c374e #8a5375;
 }
 
 .lineContainer {
@@ -150,6 +152,21 @@ strong {
     gap: 2px;
 }
 
+.albumCover {
+    width: 144px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #8a5375 #5c374e #5c374e #8a5375;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.albumCoverContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 /*id tags*/
 
 #taskbar {
@@ -164,28 +181,51 @@ strong {
     height: 5%;
     width: 99%;
     font-family: proggyclean, monospace;
-    border: 3px outset #2a2531;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #726485 #2a2531 #2a2531 #726485;
 }
 
 #clockContainer {
     display: flex;
     height: 100%;
     margin: 5px;
+    background-color: #8a5375;
+    transition: opacity 150ms;
 }
+
+#clockContainer:hover
+{
+    opacity: 55%;
+}
+
+#clockContainer:active {
+    background-color: #794967;
+    opacity: 100%;
+}
+
 
 #localTime {
     display: flex;
     font-family: proggyclean, monospace;
-    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
     -webkit-user-select: none;
     user-select: none;
-    border: 3px outset #2a2531 ;
-    justify-content: center;
-    align-items: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #726485 #2a2531 #2a2531 #726485;
 }
+
 
 #aboutMePG {
     background-color: black;
+}
+
+#avatar {
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #devicesPG {
@@ -196,10 +236,15 @@ strong {
 
 }
 #musicPG {
-    opacity: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 100%;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    background-color: #2a2531;
+    background-color: black;
 }
 #gamesPG {
     opacity: 85%;
