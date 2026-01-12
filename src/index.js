@@ -31,8 +31,6 @@ const shortcut = document.querySelectorAll(".shortcut")
             startX = clamp(startX+e.movementX, 0, window.innerHeight - window.innerHeight * 0.066)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
-            console.log(startX, "x")
-            console.log(startY, "y")
             };
 
             dragWM.addEventListener("mousedown", () => {
