@@ -22,13 +22,14 @@ const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
 const desktopWndw = document.querySelectorAll(".desktopWndw")
 const shortcut = document.querySelectorAll(".shortcut")
+const albumCover = document.querySelectorAll(".albumCover")
     // window dragging titlebar
     dragWM.forEach((dragWM) => {
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
-            startY = clamp(startY + e.movementY, 0, window.innerWidth - window.innerWidth * 0.7483)
-            startX = clamp(startX+e.movementX, 0, window.innerHeight - window.innerHeight * 0.066)
+            startY = clamp(startY + e.movementY, 0, window.innerWidth)
+            startX = clamp(startX+e.movementX, 0, window.innerHeight)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
             };
