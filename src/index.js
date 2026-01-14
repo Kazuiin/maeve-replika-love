@@ -28,7 +28,7 @@ const albumCover = document.querySelectorAll(".albumCover")
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
-            startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.15)
+            startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.25)
             startX = clamp(startX + e.movementX, 0, window.innerHeight)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
