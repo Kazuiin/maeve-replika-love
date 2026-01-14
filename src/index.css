@@ -194,6 +194,11 @@ strong {
     gap: 10px;
 }
 
+.terminal {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 /*id tags*/
 
 #taskbar {
