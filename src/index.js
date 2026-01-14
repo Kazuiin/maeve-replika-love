@@ -28,10 +28,13 @@ const albumCover = document.querySelectorAll(".albumCover")
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
-            startY = clamp(startY + e.movementY, 0, window.innerWidth)
-            startX = clamp(startX+e.movementX, 0, window.innerHeight)
+            startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.15)
+            startX = clamp(startX + e.movementX, 0, window.innerHeight)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
+            console.log(startX, "x")
+            console.log(startY, "y")
+
             };
 
             dragWM.addEventListener("mousedown", () => {
