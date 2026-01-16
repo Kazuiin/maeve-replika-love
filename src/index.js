@@ -8,6 +8,8 @@ function clamp(num, min, max) {
     };
 
 // time setter & refresher
+
+
 let time = document.getElementById("localTime")
 timeSet()
     function timeSet() {
@@ -59,7 +61,6 @@ const albumCover = document.querySelectorAll(".albumCover")
             }
             document.getElementById(btnwndw).style.display = "flex";
         });
-        
     });
     // window close titlebar
     desktopWndw.forEach((desktopWndw) => {
@@ -68,6 +69,3 @@ const albumCover = document.querySelectorAll(".albumCover")
                 desktopWndw.style.display = "none";
             });
     });
-
-
-                

@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="theme-color" data-react-helmet="true" content="#43B581"  />
         <meta property="og:title" content="maeve.replika.love"/>
         <meta property="og:description" content="C://users/maeve/replika.love"/>
         <meta property="og:meta_image" content="https://maeve.replika.love/meta_image.png"/>
@@ -75,23 +74,25 @@
                     </div>
                     <div class="windowPG" id="aboutMePG">
                         <h1>
-                            <p>hi! my names <strong>maeve</strong>, im an amateur gamedev and 3d artist from scotland <img src="assets/images/flags/Scotland_flag.svg" alt="" height="12px"></p>
-                            <p>big fan of games, music and basically anything that could be considered retro (or even just old tbh...)</p>
-                            <p>this is just a little site for me to mess around with, share stuff, and just have fun with really!</p>
+                            <span>
+                                <p>hi! my names <strong title="nerddd">maeve</strong>, im an amateur gamedev and 3d artist from scotland <img title="meow" src="assets/images/flags/Scotland_flag.svg" alt="" height="12px"></p>
+                                <p>big fan of games, music and basically anything that could be considered retro (or even just old tbh...)</p>
+                                <p>this is just a little site for me to mess around with, share stuff, and just have fun with really!</p>
+                            </span>
+                
                             <div id="platforms">
-                                <a href="https://github.com/Kazuiin" target="_blank" id="github" class="platformBG">
+                                <a rel="noopener" title="github" href="https://github.com/Kazuiin" target="_blank" id="github" class="platformBG">
                                     <img src="assets/images/platforms/github.png" alt="" height="48">
                                 </a>
-                                <a href="https://bsky.app/profile/maeve.replika.love" target="_blank" id="bluesky" class="platformBG">
+                                <a rel="noopener"  title="bluesky" href="https://bsky.app/profile/maeve.replika.love" target="_blank" id="bluesky" class="platformBG">
                                     <img src="assets/images/platforms/bluesky.png" alt="" height="48">
                                 </a>
-                                <a href="https://discord.com/users/310119375950708736" target="_blank" id="discord" class="platformBG">
+                                <a rel="noopener" title="discord" href="https://discord.com/users/310119375950708736" target="_blank" id="discord" class="platformBG">
                                     <img src="assets/images/platforms/discord.png" alt="" height="48">
                                 </a>
                             </div>
-
                         </h1>
-                        <img src="assets/images/placeholders/pfpklbr.png" alt="" id="avatar">
+                        <img title="meee :3" src="assets/images/placeholders/pfpklbr.png" alt="" id="avatar">
                     </div>
                 </div>
             </div>
@@ -116,6 +117,8 @@
                     </div>
                     </div>
                     <div class="windowPG" id="devicesPG">
+                        <div id="devicesBG">
+                        </div>
                         <h1>
                             <p><span class="terminal">> </span>elster</p>
                             <p><span class="terminal">> </span>kolibri</p>
@@ -152,38 +155,86 @@
                         <div id="musicBG">
                             
                         </div>
-                        <div class="albumCoverContainer">
-                            <img src="assets/images/album covers/julie-pushing-daisies.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/julie-maaf.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/julie-kitstar.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/panchiko-dm.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/mbv-loveless.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/doefriends-iwanttoloveagain.jpg" alt="" class="albumCover">
+                        <div class="albumContainer">
+                            <div class="album" albm="pushingdaisies">
+                                <img title="julie - pushing daisies"src="assets/images/album covers/julie-pushing-daisies.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="julie - my anti aircraft friend" src="assets/images/album covers/julie-maaf.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="julie - starjump/kit" src="assets/images/album covers/julie-kitstar.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="panchiko - D>E>A>T>H>M>E>T>A>L" src="assets/images/album covers/panchiko-dm.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="my bloody valentine - loveless" src="assets/images/album covers/mbv-loveless.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="doefriends - I WANT TO LOVE AGAIN" src="assets/images/album covers/doefriends-iwanttoloveagain.jpg" alt="" class="albumCover">
+                            </div>
                         </div>
-                        <div class="albumCoverContainer">
-                            <img src="assets/images/album covers/the first glass beach album.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/glassBeach-plasticdeath.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/jr-frailty.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/jr-revengeseekerz.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/saorisedream-saoirsedream.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/fontaines-skintyfia.jpg" alt="" class="albumCover">
+                        <div class="albumContainer">
+                            <div class="album">
+                                <img title="glass beach - the first glass beach album" src="assets/images/album covers/the first glass beach album.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="glass beach - plastic death" src="assets/images/album covers/glassBeach-plasticdeath.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Jane Remover - Frailty" src="assets/images/album covers/jr-frailty.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Jane Remover - Revengeseekerz" src="assets/images/album covers/jr-revengeseekerz.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="saoirse dream - saoirse dream" src="assets/images/album covers/saorisedream-saoirsedream.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Fontaines D.C - Skinty Fia" src="assets/images/album covers/fontaines-skintyfia.jpg" alt="" class="albumCover">
+                            </div>
                         </div>
-                        <div class="albumCoverContainer">
-                            <img src="assets/images/album covers/hanl-deathconsciousness.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/blackmidi-schlagenheim.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/geordiegreep-thenewsound.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/masaT-seychelles.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/ober-chronovision.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/1keyes-duality.jpg" alt="" class="albumCover">
+                        <div class="albumContainer">
+                            <div class="album">
+                                <img title="Have a Nice Life - Deathconsciousness" src="assets/images/album covers/hanl-deathconsciousness.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="black midi - Schlagenheim" src="assets/images/album covers/blackmidi-schlagenheim.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Geordie Greep - the new sound" src="assets/images/album covers/geordiegreep-thenewsound.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Masayoshi Takanaka - Seychelles" src="assets/images/album covers/masaT-seychelles.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Oberhofer - Chronovision" src="assets/images/album covers/ober-chronovision.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="1000 eyes - Duality" src="assets/images/album covers/1keyes-duality.jpg" alt="" class="albumCover">
+                            </div>
                             
                         </div>
-                        <div class="albumCoverContainer">
-                            <img src="assets/images/album covers/1keyescicada-signalis.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/Fantastic_Mr._Fox_soundtrack.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/ow-ost.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/ow-eote.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/utopia-s1.jpg" alt="" class="albumCover">
-                            <img src="assets/images/album covers/utopia-s2.jpg" alt="" class="albumCover">
+                        <div class="albumContainer" id="bottomContainer">
+                            <div class="album">
+                                <img title="1000 eyes, cicada sirens - signalis OST" src="assets/images/album covers/1keyescicada-signalis.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Alexandre Desplat - Fantastic Mr Fox OST" src="assets/images/album covers/Fantastic_Mr._Fox_soundtrack.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Andrew Prahlow - Signals From The Outer Wilds" src="assets/images/album covers/ow-ost.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Andrew Prahlow - Secrets From The Outer Wilds: Echoes of the Eye" src="assets/images/album covers/ow-eote.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Cristobal Tapia de Veer - Utopia S1 OST" src="assets/images/album covers/utopia-s1.jpg" alt="" class="albumCover">
+                            </div>
+                            <div class="album">
+                                <img title="Cristobal Tapia de Vee - Utopia S2 OST" src="assets/images/album covers/utopia-s2.jpg" alt="" class="albumCover">
+                            </div>
                         </div>
                     </div>
                 </div>

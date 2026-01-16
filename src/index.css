@@ -12,7 +12,6 @@ body {
     position: fixed;
     margin: 0px;
     overflow: hidden;
-    scrollbar-width: none;
     width: 100vw;
     height: 100vh;
     
@@ -179,6 +178,7 @@ strong {
 
 .albumCover {
     width: 144px;
+    height: 144px;
     border-style: solid;
     border-width: 5px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
@@ -188,10 +188,16 @@ strong {
     max-width: 144px;
 }
 
-.albumCoverContainer {
+.albumContainer {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.albumInfo {
+    position: absolute;
+    transition: opacity 300ms ease-in;
+    opacity: 0%;
 }
 
 .terminal {
@@ -265,7 +271,6 @@ strong {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     background-color: #2a2531;
-
 }
 
 
@@ -315,3 +320,6 @@ strong {
     user-select: none;
 }
 
+#bottomContainer {
+    margin-bottom: 10px;
+}
