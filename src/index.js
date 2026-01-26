@@ -1,15 +1,11 @@
-console.log("              {零}")
-console.log("THIS SPACE INTENTIONALLY LEFT BLANK.")
+console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")
 
 function clamp(num, min, max) {
         const lowLim = Math.max(num, min)
         const result = Math.min(lowLim, max)
         return result
     };
-
 // time setter & refresher
-
-
 let time = document.getElementById("localTime")
 timeSet()
     function timeSet() {
@@ -19,6 +15,7 @@ timeSet()
     setInterval(() => {
         timeSet()
     }, 1000);
+
 //window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
