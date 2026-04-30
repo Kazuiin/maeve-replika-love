@@ -1,4 +1,4 @@
-const user = "s1sw";
+const user = "kazuiin_";
 const lb_root = "https://api.listenbrainz.org/1";
 const listens_url = `${lb_root}/user/${user}/listens?count=8`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
