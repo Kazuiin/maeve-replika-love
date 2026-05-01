@@ -200,10 +200,6 @@ strong {
     opacity: 0%;
 }
 
-.terminal {
-    -webkit-user-select: none;
-    user-select: none;
-}
 
 /*id tags*/
 
@@ -271,8 +267,18 @@ strong {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     background-color: #2a2531;
+    font-size: 2em;
+    justify-content: center;
 }
 
+#devicesPG p {
+    -webkit-user-select: none;
+    user-select: none;
+}
+#devicesBG {
+    -webkit-user-select: none;
+    user-select: none;
+}
 
 #musicPG {
     display: flex;

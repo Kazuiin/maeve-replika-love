@@ -1,8 +1,14 @@
 const user = "kazuiin_";
 const lb_root = "https://api.listenbrainz.org/1";
-const listens_url = `${lb_root}/user/${user}/listens?count=8`;
+const listens_url = `${lb_root}/user/${user}/listens?count=4`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const nowPlayingData = fetch_json_retry(now_playing_url, 2)
+const listensData = fetch_json_retry(listens_url, 2)
+
+console.log(nowPlayingData)
+console.log(listensData)
 
 async function fetch_json_retry(url, retry_count) {
     let fetched = false;
@@ -28,7 +34,8 @@ async function fetch_json_retry(url, retry_count) {
 
     // parse
     return await res.json();
-}
 
-const listensData = await fetch_json_retry(listens_url, 2);
-const nowPlayingData = await fetch_json_retry(now_playing_url, 2);
+}
+const nowPlayingHTML = document.getElementById("nowlistening")
+
+nowPlayingHTML.innerHTML = listensData.track_name

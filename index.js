@@ -6,7 +6,7 @@ function clamp(num, min, max) {
         return result
     };
 // time setter & refresher
-let time = document.getElementById("localTime")
+const time = document.getElementById("localTime")
 timeSet()
     function timeSet() {
         let date = new Date();
@@ -22,6 +22,7 @@ const closeWndw = document.querySelectorAll(".closeWndw");
 const desktopWndw = document.querySelectorAll(".desktopWndw")
 const shortcut = document.querySelectorAll(".shortcut")
 const albumCover = document.querySelectorAll(".albumCover")
+const bodyBG = document.getElementById("everything")
     // window dragging titlebar
     dragWM.forEach((dragWM) => {
         let startX = 0;
@@ -31,9 +32,6 @@ const albumCover = document.querySelectorAll(".albumCover")
             startX = clamp(startX + e.movementX, 0, window.innerHeight)
             dragWM.parentElement.style.top = startY + "px";
             dragWM.parentElement.style.left = startX + "px";
-            console.log(startX, "x")
-            console.log(startY, "y")
-
             };
 
             dragWM.addEventListener("mousedown", () => {
@@ -66,3 +64,10 @@ const albumCover = document.querySelectorAll(".albumCover")
                 desktopWndw.style.display = "none";
             });
     });
+
+    bodyBG.addEventListener("mousedown", () => {
+        const audio = new Audio();
+        audio.src = "/src/assets/audio/click.mp3"
+        audio.play()
+    })
+    
