@@ -5,14 +5,19 @@ const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     // elements
 const nowPlayingHTML = document.getElementById("nowlistening")
+const listen1HTML = document.getElementById("listen1")
 
     // on load
 fetch_listens()
     // functions 
 function fetch_listens() {
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
-    nowPlayingHTML.innerHTML = "now playing!" + '<br>' + nowPlayingData.payload.listens[0].track_metadata.artist_name + " - " +nowPlayingData.payload.listens[0].track_metadata.track_name;
-    console.log(nowPlayingData)
+        nowPlayingHTML.innerHTML = "now playing!" + '<br>' + nowPlayingData.payload.listens[0].track_metadata.artist_name + " - " +nowPlayingData.payload.listens[0].track_metadata.track_name;
+        console.log(nowPlayingData)
+    });
+    fetch_json_retry(listens_url, 2).then((listensData) => {
+        listen1HTML.innerHTML = "last listen!" + '<br>' + listensData.payload.listens[1].track_metadata.artist_name + " - " + listens.payload.listens[1].track_metadata.track_name;
+        console.log(listensData)
     });
 
 }
