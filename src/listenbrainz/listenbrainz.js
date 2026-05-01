@@ -5,7 +5,11 @@ const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     // elements
 const nowPlayingHTML = document.getElementById("nowlistening")
+const nowPlayingCover = document.getElementById("nowListeningCover")
+
 const listen1HTML = document.getElementById("listen1")
+const listen2HTML = document.getElementById("listen2")
+const listen3HTML = document.getElementById("listen3")
 
     // on load
 fetch_listens()
@@ -13,10 +17,19 @@ fetch_listens()
 function fetch_listens() {
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
         nowPlayingHTML.innerHTML = "now playing!" + '<br>' + nowPlayingData.payload.listens[0].track_metadata.artist_name + " - " +nowPlayingData.payload.listens[0].track_metadata.track_name;
+        nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingData.payload.listens[0].track_metadata.additional_info.release_mbid + '/front-250.jpg')
         console.log(nowPlayingData)
     });
     fetch_json_retry(listens_url, 2).then((listensData) => {
-        listen1HTML.innerHTML = "last listen!" + '<br>' + listensData.payload.listens[1].track_metadata.artist_name + " - " + listens.payload.listens[1].track_metadata.track_name;
+        listen1HTML.innerHTML = "recent listens!" + '<br>' + listensData.payload.listens[0].track_metadata.artist_name + " - " + listensData.payload.listens[0].track_metadata.track_name;
+        console.log(listensData)
+    });
+    fetch_json_retry(listens_url, 2).then((listensData) => {
+        listen2HTML.innerHTML = '<br>' + listensData.payload.listens[1].track_metadata.artist_name + " - " + listensData.payload.listens[1].track_metadata.track_name;
+        console.log(listensData)
+    });
+    fetch_json_retry(listens_url, 2).then((listensData) => {
+        listen3HTML.innerHTML = '<br>' + listensData.payload.listens[2].track_metadata.artist_name + " - " + listensData.payload.listens[2].track_metadata.track_name;
         console.log(listensData)
     });
 
