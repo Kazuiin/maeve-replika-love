@@ -64,10 +64,3 @@ const bodyBG = document.getElementById("everything")
                 desktopWndw.style.display = "none";
             });
     });
-
-    bodyBG.addEventListener("mousedown", () => {
-        const audio = new Audio();
-        audio.src = "/src/assets/audio/click.mp3"
-        audio.play()
-    })
-    

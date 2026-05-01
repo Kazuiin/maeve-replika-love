@@ -3,13 +3,24 @@ const lb_root = "https://api.listenbrainz.org/1";
 const listens_url = `${lb_root}/user/${user}/listens?count=4`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    // elements
+const nowPlayingHTML = document.getElementById("nowlistening")
 
-const nowPlayingData = fetch_json_retry(now_playing_url, 2)
-const listensData = fetch_json_retry(listens_url, 2)
+    // on load
+fetch_listens()
+    // functions 
+function fetch_listens() {
+    fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
+    nowPlayingHTML.innerHTML = "now playing!" + '<br>' + nowPlayingData.payload.listens[0].track_metadata.artist_name + " - " +nowPlayingData.payload.listens[0].track_metadata.track_name;
+    console.log(nowPlayingData)
+    });
 
-console.log(nowPlayingData)
-console.log(listensData)
+}
+ setInterval(() => {
+    fetch_listens()
+    }, 10000);
 
+    // json fetcher
 async function fetch_json_retry(url, retry_count) {
     let fetched = false;
     let res = null;
@@ -32,10 +43,7 @@ async function fetch_json_retry(url, retry_count) {
 
     if (!fetched) return null;
 
-    // parse
+        // parse data
     return await res.json();
 
 }
-const nowPlayingHTML = document.getElementById("nowlistening")
-
-nowPlayingHTML.innerHTML = listensData.track_name
