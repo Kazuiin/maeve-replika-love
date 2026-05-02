@@ -298,10 +298,19 @@ strong {
     backdrop-filter: blur(2px);
     background-color: rgba(42, 37, 49, 0.70);
     overflow: auto;
+     user-select: none;
+    -webkit-user-select: none;
 }
 
 #musicPG::-webkit-scrollbar {
     scrollbar-width: none;
+}
+
+#favouritealbumsDiv {
+    font-size: 32px;
+    font-family: Gallant, monospace;
+    font-size: 25px;
+    color: #8a5375;
 }
 
 #gamesPG {
