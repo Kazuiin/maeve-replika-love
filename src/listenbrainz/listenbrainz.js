@@ -10,20 +10,20 @@ const coverLink = document.getElementById("listenbrainzlink")
 const listen1HTML = document.getElementById("listen1")
 const listen2HTML = document.getElementById("listen2")
 const listen3HTML = document.getElementById("listen3")
-
     // on load
 fetch_listens()
     // functions 
 function fetch_listens() {
+        // now listening fetch
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
-        const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
-        console.log("nowPlayingArray Length: " + nowPlayingData.arrayLength)
-        if (nowPlayingData) {
+            console.log(nowPlayingData)
+        if (nowPlayingData.payload.listens.length > 0) {
+            const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
             console.log(nowPlayingData)
             nowPlayingHTML.innerHTML = "now playing!" + '<br><br>' + nowPlayingDataPath.artist_name 
             + '<br>' + nowPlayingDataPath.track_name  + '<br>' + nowPlayingDataPath.release_name;
             nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingDataPath.additional_info.release_mbid + '/front-250.jpg')
-            nowPlayingCover.setAttribute('title', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.track_metadata.release_name + " on listenbrainz!!!")
+            nowPlayingCover.setAttribute('title', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name + " on listenbrainz!!!")
             coverLink.setAttribute('href', 'https://listenbrainz.org/album/' + nowPlayingDataPath.additional_info.release_group_mbid)
         }
          else {
@@ -33,11 +33,12 @@ function fetch_listens() {
             nowPlayingCover.setAttribute('title', '')
         }
     });
+        // recent listen fetch :3
     fetch_json_retry(listens_url, 2).then((listensData) => {
         console.log(listensData)
             function feedListen(listenElement, listenValue) {
                 const dataPath = listensData.payload.listens[listenValue].track_metadata
-                listenElement.innerHTML = "recent listens!" + '<br><br>' + dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
+                listenElement.innerHTML = '<br><br>' + dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
             }
             feedListen(listen1HTML, 0)
             feedListen(listen2HTML, 1)
@@ -47,13 +48,11 @@ function fetch_listens() {
  setInterval(() => {
     fetch_listens()
     }, 10000);
-
     // json fetcher
 async function fetch_json_retry(url, retry_count) {
     let fetched = false;
     let res = null;
     let attempts = 0;
-
     while (!fetched && attempts < retry_count) {
         try {
             res = await fetch(url, {
@@ -68,7 +67,6 @@ async function fetch_json_retry(url, retry_count) {
             await sleep(10);
         }
     }
-
     if (!fetched) return null;
 
         // parse data
