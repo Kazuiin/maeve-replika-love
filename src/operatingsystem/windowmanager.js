@@ -1,21 +1,3 @@
-console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")
-
-function clamp(num, min, max) {
-        const lowLim = Math.max(num, min)
-        const result = Math.min(lowLim, max)
-        return result
-    };
-// time setter & refresher
-const time = document.getElementById("localTime")
-timeSet()
-    function timeSet() {
-        let date = new Date();
-        time.innerHTML = date.toLocaleTimeString();
-    }
-    setInterval(() => {
-        timeSet()
-    }, 1000);
-
 //window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
@@ -23,6 +5,11 @@ const desktopWndw = document.querySelectorAll(".desktopWndw")
 const shortcut = document.querySelectorAll(".shortcut")
 const albumCover = document.querySelectorAll(".albumCover")
 const bodyBG = document.getElementById("everything")
+    function clamp(num, min, max) {
+            const lowLim = Math.max(num, min)
+            const result = Math.min(lowLim, max)
+            return result
+    };
     // window dragging titlebar
     dragWM.forEach((dragWM) => {
         let startX = 0;
