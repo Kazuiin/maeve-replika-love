@@ -3,6 +3,7 @@ const lb_root = "https://api.listenbrainz.org/1";
 const listens_url = `${lb_root}/user/${user}/listens?count=4`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let fetchCount = 0
     // elements
 const nowPlayingHTML = document.getElementById("nowlistening")
 const nowPlayingCover = document.getElementById("nowListeningCover")
@@ -14,12 +15,13 @@ const listen3HTML = document.getElementById("listen3")
 fetch_listens()
     // functions 
 function fetch_listens() {
+    fetchCount = fetchCount + 1
+    console.log("listenbrainz fetch " + fetchCount + "!" + "\n \nbark bark ruff ruff :3")
         // now listening fetch
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
-            console.log(nowPlayingData)
         if (nowPlayingData.payload.listens.length > 0) {
+            console.log("listenbrainz is WOKE LEFT!!!")
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
-            console.log(nowPlayingData)
             nowPlayingHTML.innerHTML = "now playing!" + '<br><br>' + nowPlayingDataPath.artist_name 
             + '<br>' + nowPlayingDataPath.track_name  + '<br>' + nowPlayingDataPath.release_name;
             nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingDataPath.additional_info.release_mbid + '/front-250.jpg')
@@ -28,21 +30,20 @@ function fetch_listens() {
         }
          else {
             console.log("listenbrainz is sleepy...")
-            nowPlayingHTML.innerHTML = "now playing!" + '<br><br>' + "listenbrainz is sleepy,,,";
+            nowPlayingHTML.innerHTML =  '<br>' + "listenbrainz is sleepy,,,";
             nowPlayingCover.setAttribute('src', 'src/assets/images/album covers/fallback.png')
             nowPlayingCover.setAttribute('title', '')
         }
     });
         // recent listen fetch :3
     fetch_json_retry(listens_url, 2).then((listensData) => {
-        console.log(listensData)
-            function feedListen(listenElement, listenValue) {
-                const dataPath = listensData.payload.listens[listenValue].track_metadata
-                listenElement.innerHTML = '<br><br>' + dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
-            }
-            feedListen(listen1HTML, 0)
-            feedListen(listen2HTML, 1)
-            feedListen(listen3HTML, 2)
+        function feedListen(listenElement, listenValue) {
+            const dataPath = listensData.payload.listens[listenValue].track_metadata
+            listenElement.innerHTML = '<br><br>' + dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
+        }
+        feedListen(listen1HTML, 0)
+        feedListen(listen2HTML, 1)
+        feedListen(listen3HTML, 2)
     });
 }
  setInterval(() => {
