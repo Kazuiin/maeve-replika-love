@@ -23,7 +23,7 @@ body {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-image: url("/src/assets/images/wallpapers/snowbularender.gif");
+    background-image: url("src/assets/images/wallpapers/output3.gif");
     background-repeat: repeat;
     background-size: cover;
     background-position: center center;

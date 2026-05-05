@@ -20,6 +20,7 @@ function fetch_listens() {
         // now listening fetch
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
         if (nowPlayingData.payload.listens.length > 0) {
+            console.log(nowPlayingData)
             console.log("listenbrainz is WOKE LEFT!!!")
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
             nowPlayingHTML.innerHTML = "now playing!" + '<br><br>' + nowPlayingDataPath.artist_name 
@@ -37,9 +38,10 @@ function fetch_listens() {
     });
         // recent listen fetch :3
     fetch_json_retry(listens_url, 2).then((listensData) => {
+        console.log(listensData)
         function feedListen(listenElement, listenValue) {
             const dataPath = listensData.payload.listens[listenValue].track_metadata
-            listenElement.innerHTML = '<br><br>' + dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
+            listenElement.innerHTML = dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
         }
         feedListen(listen1HTML, 0)
         feedListen(listen2HTML, 1)
