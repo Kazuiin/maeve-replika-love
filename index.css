@@ -262,6 +262,10 @@ strong {
     backdrop-filter: blur(2px);
 }
 
+#aboutMePG strong {
+    color: #CCCCFF;
+}
+
 #avatar {
     -webkit-user-select: none;
     user-select: none;
