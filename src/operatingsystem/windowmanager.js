@@ -4,6 +4,7 @@ const closeWndw = document.querySelectorAll(".closeWndw");
 const desktopWndw = document.querySelectorAll(".desktopWndw")
 const shortcut = document.querySelectorAll(".shortcut")
 const albumCover = document.querySelectorAll(".albumCover")
+const dropdown = document.querySelectorAll(".dropdown")
 const bodyBG = document.getElementById("everything")
     function clamp(num, min, max) {
             const lowLim = Math.max(num, min)
@@ -50,4 +51,18 @@ const bodyBG = document.getElementById("everything")
          closeWndw.addEventListener("mouseup", () => {
                 desktopWndw.style.display = "none";
             });
+    });
+
+    dropdown.forEach((dropdown) => {
+        const dropdownWndw = shortcut.getAttribute("dropdownWndw")
+        dropdown.addEventListener("mouseout", () => {
+                document.getElementById(dropdownWndw).style.display = "none";
+            });
+        dropdown.addEventListener("mouseover", () =>  {
+            if (document.getElementById(dropdownWndw).style.display == "none") {
+                document.getElementById(dropdownWndw).style.top = "calc(50% - (36rem * 0.5))"
+                document.getElementById(dropdownWndw).style.left= "calc(50% - (64rem * 0.5))"
+            }
+            document.getElementById(dropdownWndw).style.display = "flex";
+        });
     });
