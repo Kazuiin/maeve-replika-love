@@ -54,7 +54,7 @@ const bodyBG = document.getElementById("everything")
     });
 
     dropdown.forEach((dropdown) => {
-        const dropdownWndw = shortcut.getAttribute("dropdownWndw")
+        const dropdownWndw = dropdown.getAttribute("dropdownWndw")
         dropdown.addEventListener("mouseout", () => {
                 document.getElementById(dropdownWndw).style.display = "none";
             });

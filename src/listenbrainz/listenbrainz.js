@@ -1,6 +1,6 @@
 const user = "kazuiin_";
 const lb_root = "https://api.listenbrainz.org/1";
-const listens_url = `${lb_root}/user/${user}/listens?count=4`;
+const listens_url = `${lb_root}/user/${user}/listens?count=3`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let fetchCount = 0
@@ -27,6 +27,7 @@ function fetch_listens() {
             + '<br>' + nowPlayingDataPath.track_name  + '<br>' + nowPlayingDataPath.release_name;
             nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingDataPath.additional_info.release_mbid + '/front-250.jpg')
             nowPlayingCover.setAttribute('title', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name + " on listenbrainz!!!")
+            nowPlayingCover.setAttribute('alt', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name)
             coverLink.setAttribute('href', 'https://listenbrainz.org/album/' + nowPlayingDataPath.additional_info.release_group_mbid)
         }
          else {
