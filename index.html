@@ -31,7 +31,7 @@
             <p>terminal</p>
         </div>
         <div class="shortcut" wndw="music">
-            <img src="/src/assets/images/icons/music.png"alt="" height="64px">
+            <img src="/src/assets/images/icons/minidisk.png"alt="" height="64px">
             <div class="shortcutBG"></div>
             <p>music</p>
         </div>
@@ -41,14 +41,19 @@
             <p>games</p>
         </div>
         <div class="shortcut" wndw="friends">
-            <img src="/src/assets/images/icons/friends.png"alt="" height="64px">
+            <img src="/src/assets/images/icons/contacts.png"alt="" height="64px">
             <div class="shortcutBG"></div>
-            <p>friends</p>
+            <p>contacts</p>
         </div>
         <div class="shortcut" wndw="projects">
             <img src="src/assets/images/icons/projects.png"alt="" height="64px">
             <div class="shortcutBG"></div>
             <p>projects</p>
+        </div>
+         <div class="shortcut" wndw="notes">
+            <img src="src/assets/images/icons/notepad.png"alt="" height="64px">
+            <div class="shortcutBG"></div>
+            <p>notepad</p>
         </div>
         <!-- windows -->
 
@@ -157,7 +162,7 @@
                     <div id="musicBG">
                     </div>
                     <div id="listens"> 
-                        <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" target="_blank" id="listenbrainzlink"> 
+                        <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="this.href=onError" target="_blank" id="listenbrainzlink"> 
                             <img src="src/assets/images/album covers/fallback.png" onerror="this.src='src/assets/images/album covers/fallback.png'" alt="src/assets/images/album covers/fallback.png" id="nowListeningCover">
                         </a>
                         <div rel="noopener" class="recentListen" id="nowlistening" href="https://listenbrainz.org/user/kazuiin_/"> 
@@ -298,11 +303,7 @@
                         
                     </div>
                     <h1>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        
                     </h1>
                 </div>
             </div>
@@ -334,11 +335,7 @@
                         
                     </div>
                     <h1>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                       
                     </h1>
                 </div>
             </div>
@@ -379,7 +376,39 @@
                 </div>
             </div>
         </div>
-
+           <!-- notes window -->
+        <div class="desktopWndw" window="notes" id="notes"> 
+            <div class="dragWM">
+                <span class="lineContainer">
+                    <div class="lineHorizontal"></div>
+                    <div class="lineHorizontal"></div>
+                    <div class="lineHorizontal"></div>
+                </span>
+                <div class="titlecontainer">
+                    notepad
+                </div>
+                <span class="lineContainer">
+                    <div class="lineHorizontal"></div>
+                    <div class="lineHorizontal"></div>
+                    <div class="lineHorizontal"></div>
+                </span>
+                <div class="closeWndwContainer">
+                    <div class="closeWndw">
+                        X
+                        </div>
+                </div>
+                </div>
+                <div class="windowPG" id="notesPG">
+                    <div id="notesBG">
+                        
+                    </div>
+                    <h1>
+                        <a class="notepad" href="/notes/11-5-26/">11/05/2026</a><br>
+                        <a class="notepad" href="/notes/12-5-26/">12/05/2026</a><br>
+                    </h1>
+                </div>
+            </div>
+        </div>
         <!-- taskbar -->
         <div id="taskbar">
             <div id="iconContainer">
@@ -392,7 +421,7 @@
             </div>
             <div id="clockContainer">  
                 <div id="localTime">
-                    12:00:00
+                    05:12:00
                 </div>
             </div>
         </div>

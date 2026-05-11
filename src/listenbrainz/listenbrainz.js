@@ -11,6 +11,9 @@ const coverLink = document.getElementById("listenbrainzlink")
 const listen1HTML = document.getElementById("listen1")
 const listen2HTML = document.getElementById("listen2")
 const listen3HTML = document.getElementById("listen3")
+function onError() {
+    
+}
     // on load
 fetch_listens()
     // functions 
