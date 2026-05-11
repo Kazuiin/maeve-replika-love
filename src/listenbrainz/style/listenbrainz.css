@@ -9,6 +9,7 @@
 }
 #nowlistening {
     font-size: 15px;
+    width: 12em;
 }
 #nowListeningCover {
     width: 108px;
@@ -34,9 +35,8 @@
 
 .recentListen {
     display: flex;
-    justify-content: center;
     margin: 1em;
-    font-size: 10px;
+    font-size: 0.65rem;
 }
 
 .listenWrapper {
@@ -45,4 +45,7 @@
     border-width: 5px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
     margin: 5px;
+    width: 9em;
+    height: 4em;
+    align-items: center;
 }
