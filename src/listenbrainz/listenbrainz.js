@@ -19,23 +19,23 @@ fetch_listens()
     // functions 
 function fetch_listens() {
     fetchCount = fetchCount + 1
-    console.log("listenbrainz fetch " + fetchCount + "!" + "\n \nbark bark ruff ruff :3")
+    console.log(`listenbrainz fetch ${fetchCount}\n \nbark bark ruff ruff :3`)
         // now listening fetch
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
         if (nowPlayingData.payload.listens.length > 0) {
             console.log(nowPlayingData)
             console.log("listenbrainz is WOKE LEFT!!!")
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
-            nowPlayingHTML.innerHTML = "now playing!" + '<br> <br>' + nowPlayingDataPath.artist_name 
-            + '<br><br>'  + nowPlayingDataPath.track_name  + '<br><br>' + nowPlayingDataPath.release_name;
-            nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingDataPath.additional_info.release_mbid + '/front-250.jpg')
-            nowPlayingCover.setAttribute('title', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name + " on listenbrainz!!!")
-            nowPlayingCover.setAttribute('alt', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name)
-            coverLink.setAttribute('href', 'https://listenbrainz.org/album/' + nowPlayingDataPath.additional_info.release_group_mbid)
+            nowPlayingHTML.innerHTML = `now playing!<br><br>${nowPlayingDataPath.artist_name}<br><br> ${nowPlayingDataPath.track_name}
+            <br><br>${nowPlayingDataPath.release_name}`
+            nowPlayingCover.setAttribute('src', `https://coverartarchive.org/release/${nowPlayingDataPath.additional_info.release_mbid}/front-250.jpg`)
+            nowPlayingCover.setAttribute('title', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name} on listenbrainz!!!`)
+            nowPlayingCover.setAttribute('alt', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name}`)
+            coverLink.setAttribute('href', `https://listenbrainz.org/album/${nowPlayingDataPath.additional_info.release_group_mbid}`)
         }
          else {
             console.log("listenbrainz is sleepy...")
-            nowPlayingHTML.innerHTML =  '<br>' + "listenbrainz is sleepy,,,";
+            nowPlayingHTML.innerHTML =  "listenbrainz is sleepy,,,";
             nowPlayingCover.setAttribute('src', 'src/assets/images/album covers/fallback.png')
             nowPlayingCover.setAttribute('title', '')
         }
@@ -45,7 +45,7 @@ function fetch_listens() {
         console.log(listensData)
         function feedListen(listenElement, listenValue) {
             const dataPath = listensData.payload.listens[listenValue].track_metadata
-            listenElement.innerHTML = dataPath.artist_name + '<br>' + dataPath.track_name + '<br>' + dataPath.release_name;
+            listenElement.innerHTML = `${dataPath.artist_name}<br>${dataPath.track_name}<br>${dataPath.release_name}`;
         }
         feedListen(listen1HTML, 0)
         feedListen(listen2HTML, 1)

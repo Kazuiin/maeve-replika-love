@@ -10,7 +10,7 @@ const mainPage = fs.readFileSync("notes/indexTemplate.html").toString()
 let linkHtml = "";
     // checks directory reads all files inside
 for (let fileName of pagesDirectory) {
-    let noteFileMD = fs.readFileSync("notes/togenerate/" + fileName);
+    let noteFileMD = fs.readFileSync(`notes/togenerate/${fileName}`);
     const relativeNotesPath = "notes/pages/"
         // generates new folders with an index.html inside
     if (!fs.existsSync(relativeNotesPath)) {
@@ -29,7 +29,7 @@ for (let fileName of pagesDirectory) {
     fs.writeFileSync(noteDir + "/index.html", templateFile.replace("{content}", noteFileHTML)
     .replace('{date}', parsedDate));
     console.log(fileName.replace(".md", ".html") + " generated!")
-    linkHtml += '<a href="' + noteDir + '">' + parsedDate +'</a><br>';
+    linkHtml += `<a href="${noteDir}"> ${parsedDate}</a><br>`;
     console.log(linkHtml)
     fs.writeFileSync("index.html", mainPage.replace("{NOTEPAGELINKS}", linkHtml))
 }

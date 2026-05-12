@@ -13,18 +13,40 @@ const bodyBG = document.getElementById("everything")
     };
     // window dragging titlebar
     dragWM.forEach((dragWM) => {
+        const windowElement = dragWM.parentElement;
+        dragWM.innerHTML = `<span class="lineContainer">
+                                <div class="lineHorizontal"></div>
+                                <div class="lineHorizontal"></div>
+                                <div class="lineHorizontal"></div>
+                            </span>
+                            <div class="titlecontainer">` 
+                                +
+                                windowElement.getAttribute("window")
+                                +
+                            `</div>
+                            <span class="lineContainer">
+                                <div class="lineHorizontal"></div>
+                                <div class="lineHorizontal"></div>
+                                <div class="lineHorizontal"></div>
+                            </span>
+                            <div class="closeWndwContainer">
+                                <div class="closeWndw">
+                                    X
+                                </div>
+                            </div>`
+
         let startX = 0;
         let startY = 0;
         const mousePos = (e) => {
             startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.25)
             startX = clamp(startX + e.movementX, 0, window.innerHeight)
-            dragWM.parentElement.style.top = startY + "px";
-            dragWM.parentElement.style.left = startX + "px";
+            windowElement.style.top = startY + "px";
+            windowElement.style.left = startX + "px";
             };
 
             dragWM.addEventListener("mousedown", () => {
-                startX = dragWM.parentElement.getBoundingClientRect().left;
-                startY = dragWM.parentElement.getBoundingClientRect().top;
+                startX = windowElement.getBoundingClientRect().left;
+                startY = windowElement.getBoundingClientRect().top;
                 if (isNaN(startX)) startX = 0;
                 if (isNaN(startY)) startY = 0;
                 window.addEventListener("mousemove", mousePos);

@@ -64,14 +64,14 @@ a {
     opacity: 0%;
 }
 
-.friendContainer {
+.contactContainer {
     display: flex;
     margin: 20px;
     gap: 20px;
     flex-direction: row;
 }
 
-.friend {
+.contact {
     display: flex;
     margin: 10px;
     border-style: solid;
@@ -80,9 +80,6 @@ a {
     width: 176px;
     height: fit-content;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 
 #aboutMePG {
@@ -155,7 +152,7 @@ a {
     background-color: rgba(42, 37, 49, 0.70);
 }
 
-#friendsPG {
+#contactsPG {
     display: flex;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -166,7 +163,7 @@ a {
     user-select: none;
 }
 
-#friendContainer {
+#contactContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
