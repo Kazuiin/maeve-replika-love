@@ -8,6 +8,11 @@
     src: url(/src/assets/fonts/gallant12x22.ttf) format('truetype');
 }
 
+a {
+    text-decoration: none;
+    color: #CCCCFF;
+}
+
 .windowPG {
     display: flex;
     position: absolute;
@@ -59,8 +64,21 @@
     opacity: 0%;
 }
 
-.friend {
+.friendContainer {
+    display: flex;
     margin: 20px;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.friend {
+    display: flex;
+    margin: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #8a5375 #5c374e #5c374e #8a5375;
+    width: 176px;
+    height: fit-content;
 }
 
 #aboutMePG {
@@ -159,7 +177,6 @@
     -webkit-user-select: none;
     user-select: none;
     font-size: 30px;
-    text-decoration: none;
 }
 
 #notesPG::-webkit-scrollbar {

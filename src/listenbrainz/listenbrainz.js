@@ -26,8 +26,8 @@ function fetch_listens() {
             console.log(nowPlayingData)
             console.log("listenbrainz is WOKE LEFT!!!")
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
-            nowPlayingHTML.innerHTML = "now playing!" + '<br><br>' + nowPlayingDataPath.artist_name 
-            + '<br>' + nowPlayingDataPath.track_name  + '<br>' + nowPlayingDataPath.release_name;
+            nowPlayingHTML.innerHTML = "now playing!" + '<br> <br>' + nowPlayingDataPath.artist_name 
+            + '<br><br>'  + nowPlayingDataPath.track_name  + '<br><br>' + nowPlayingDataPath.release_name;
             nowPlayingCover.setAttribute('src', 'https://coverartarchive.org/release/' + nowPlayingDataPath.additional_info.release_mbid + '/front-250.jpg')
             nowPlayingCover.setAttribute('title', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name + " on listenbrainz!!!")
             nowPlayingCover.setAttribute('alt', nowPlayingDataPath.artist_name + " - " + nowPlayingDataPath.release_name)

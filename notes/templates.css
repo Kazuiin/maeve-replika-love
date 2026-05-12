@@ -46,14 +46,17 @@ body {
     display: flex;
     justify-content: end;
     margin: 1%;
+    font-size: 190%;
+    color: black;
+    top: 10%;
 }
 
 .closeWndw {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 28px;
-    width: 28px;
+    height: 48px;
+    width: 48px;
     border: 3px outset pink;
     background-color: gainsboro;
     transition: background-color 500ms;
