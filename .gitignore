@@ -1,8 +1,7 @@
 .vs
 .vscode
+.git
 src/assets/images/wallpapers/old
 .hintrc
 notes/togenerate/
 node_modules
-package-lock.json
-package.json

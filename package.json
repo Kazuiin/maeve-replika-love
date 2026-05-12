@@ -1,0 +1,23 @@
+{
+  "name": "maeve-replika-love",
+  "version": "1.0.0",
+  "description": "little website!",
+  "homepage": "https://github.com/Kazuiin/maeve-replika-love#readme",
+  "bugs": {
+    "url": "https://github.com/Kazuiin/maeve-replika-love/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kazuiin/maeve-replika-love.git"
+  },
+  "license": "MIT",
+  "author": "maeve",
+  "type": "commonjs",
+  "main": "noteGenerator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "showdown": "^2.1.0"
+  }
+}
