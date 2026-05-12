@@ -1,6 +1,8 @@
-src/assets/images/icons/iconSources/
 .vs
 .vscode
 src/assets/images/wallpapers/old
 .hintrc
-notes/pages
+notes/togenerate/
+node_modules
+package-lock.json
+package.json
