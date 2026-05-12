@@ -6,15 +6,15 @@ let pagesDirectory = fs.readdirSync("notes/togenerate/");
 for (let fileName of pagesDirectory) {
     let noteFile = fs.readFileSync("notes/togenerate/" + fileName);
     const relativeNotesPath = "notes/pages/"
+
+        // generates new folders with an index.html inside
     if (!fs.existsSync(relativeNotesPath)) {
         fs.mkdirSync(relativeNotesPath);
     }
-
-        // generates new folders with an index.html inside
-    let noteDir = relativeNotesPath + fileName.replace(".html", " ")
+    let noteDir = relativeNotesPath + fileName.replace(".html", "")
     if (!fs.existsSync(noteDir)) {
         fs.mkdirSync(noteDir);
-        console.log(fs.readdirSync(relativeNotesPath) + "meow")
+        console.log(fs.readdirSync(relativeNotesPath))
     }
     fs.writeFileSync(noteDir + "/index.html", noteFile);
 }
