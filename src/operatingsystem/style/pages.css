@@ -79,6 +79,10 @@ a {
     border-color: #8a5375 #5c374e #5c374e #8a5375;
     width: 176px;
     height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 #aboutMePG {
@@ -152,14 +156,26 @@ a {
 }
 
 #friendsPG {
+    display: flex;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     background-color: rgba(42, 37, 49, 0.70);
     justify-content: center;
+    align-content: center;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-#projectsPG {
+#friendContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
 
+
+#projectsPG {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     background-color: rgba(42, 37, 49, 0.70);
