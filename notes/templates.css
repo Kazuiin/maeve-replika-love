@@ -39,8 +39,35 @@ body {
     border-width: 10px;
     border-color: #726485 #2a2531 #2a2531 #726485;
     background-color: darkgray;
+    height: 100%;
 }
-#disclaimer {
-    justify-content: center;
 
+.closeWndwContainer {
+    display: flex;
+    justify-content: end;
+    margin: 1%;
+}
+
+.closeWndw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    width: 28px;
+    border: 3px outset pink;
+    background-color: gainsboro;
+    transition: background-color 500ms;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+.closeWndw:hover {
+    background-color: #bfbfbf;
+    cursor: default;
+}
+
+.closeWndw:active {
+    background-color: #b4b4b4;
 }
