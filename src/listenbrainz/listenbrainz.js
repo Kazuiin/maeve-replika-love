@@ -11,9 +11,6 @@ const coverLink = document.getElementById("listenbrainzlink")
 const listen1HTML = document.getElementById("listen1")
 const listen2HTML = document.getElementById("listen2")
 const listen3HTML = document.getElementById("listen3")
-function onError() {
-    
-}
     // on load
 fetch_listens()
     // functions 
@@ -26,7 +23,7 @@ function fetch_listens() {
             console.log(nowPlayingData)
             console.log("listenbrainz is WOKE LEFT!!!")
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata
-            nowPlayingHTML.innerHTML = `now playing!<br><br>${nowPlayingDataPath.artist_name}<br><br> ${nowPlayingDataPath.track_name}
+            nowPlayingHTML.innerHTML = `now playing!<br><br>${nowPlayingDataPath.artist_name}<br><br>${nowPlayingDataPath.track_name}
             <br><br>${nowPlayingDataPath.release_name}`
             nowPlayingCover.setAttribute('src', `https://coverartarchive.org/release/${nowPlayingDataPath.additional_info.release_mbid}/front-250.jpg`)
             nowPlayingCover.setAttribute('title', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name} on listenbrainz!!!`)
@@ -38,6 +35,7 @@ function fetch_listens() {
             nowPlayingHTML.innerHTML =  "listenbrainz is sleepy,,,";
             nowPlayingCover.setAttribute('src', 'src/assets/images/album covers/fallback.png')
             nowPlayingCover.setAttribute('title', '')
+            coverLink.setAttribute('href', "https://listenbrainz.org/user/kazuiin_/")
         }
     });
         // recent listen fetch :3

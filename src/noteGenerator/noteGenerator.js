@@ -5,8 +5,8 @@ const { parse } = require("path");
     // public variables
 const converter = new showdown.Converter()
 let pagesDirectory = fs.readdirSync("notes/togenerate/");
-const templateFile = fs.readFileSync("notes/template.html").toString()
-const mainPage = fs.readFileSync("notes/indexTemplate.html").toString()
+const templateFile = fs.readFileSync("notes/templates/template.html").toString()
+const mainPage = fs.readFileSync("notes/templates/indexTemplate.html").toString()
 let linkHtml = "";
     // checks directory reads all files inside
 for (let fileName of pagesDirectory) {
@@ -27,9 +27,8 @@ for (let fileName of pagesDirectory) {
     {weekday: "long", year: "numeric", month: "long", day: "numeric"});
         // writes to template file
     fs.writeFileSync(noteDir + "/index.html", templateFile.replace("{content}", noteFileHTML)
-    .replace('{date}', parsedDate));
-    console.log(fileName.replace(".md", ".html") + " generated!")
+    .replace('{date}', parsedDate).replace("{pageName}", fileName));
+    console.log(`${fileName.replace(".md", ".html")} generated!`)
     linkHtml += `<a href="${noteDir}"> ${parsedDate}</a><br>`;
-    console.log(linkHtml)
     fs.writeFileSync("index.html", mainPage.replace("{NOTEPAGELINKS}", linkHtml))
 }

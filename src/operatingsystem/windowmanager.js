@@ -19,11 +19,9 @@ const bodyBG = document.getElementById("everything")
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
                             </span>
-                            <div class="titlecontainer">` 
-                                +
-                                windowElement.getAttribute("window")
-                                +
-                            `</div>
+                            <div class="titlecontainer">
+                                ${windowElement.getAttribute("window")}
+                            </div>
                             <span class="lineContainer">
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
