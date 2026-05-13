@@ -14,6 +14,11 @@ const listen3HTML = document.getElementById("listen3")
     // on load
 fetch_listens()
     // functions 
+function fallback() {
+    this.src = "src/assets/images/album covers/fallback.png"
+    this.href = "https://listenbrainz.org/user/kazuiin_/"
+}
+
 function fetch_listens() {
     fetchCount = fetchCount + 1
     console.log(`listenbrainz fetch ${fetchCount}\n \nbark bark ruff ruff :3`)
