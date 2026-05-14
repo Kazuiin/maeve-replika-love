@@ -7,22 +7,65 @@ let fetchCount = 0
 const coversRoot = "/src/assets/images/album covers/"
 let favAlbums = "";
     // elements
-const container = document.querySelectorAll(".albumContainer")
 const nowPlayingHTML = document.getElementById("nowlistening")
 const nowPlayingCover = document.getElementById("nowListeningCover")
 const coverLink = document.getElementById("listenbrainzlink")
 const listen1HTML = document.getElementById("listen1")
 const listen2HTML = document.getElementById("listen2")
 const listen3HTML = document.getElementById("listen3")
+const albumContainer = document.getElementById("albumContainer")
     // on load
 fetch_listens()
 
-new_album("pushing daisies", "julie", "julie-pushing-daisies.jpg")
+set_favAlbums()
 
     // functions 
 function fallback() {
-    this.src = "src/assets/images/album covers/fallback.png"
+    this.src = "src/assets/images/fallback.png"
     this.href = "https://listenbrainz.org/user/kazuiin_/"
+}
+
+function set_favAlbums () {
+    const coverRoot = "src/assets/images/album-covers/"
+        // row 1
+    newAlbum("julie", "pushing daisies")
+    newAlbum("julie", "my anti aircraft friend")
+    newAlbum("julie", "starjump/kit")
+    newAlbum("panchiko", "D>E>A>T>H>M>E>T>A>L")
+    newAlbum("my bloody valentine", "loveless")
+    newAlbum("doefriends", "I WANT TO LOVE AGAIN")
+        // row 2
+    newAlbum("glass beach", "the first glass beach album")
+    newAlbum("glass beach", "plastic death")
+    newAlbum("Jane Remover", "Frailty")
+    newAlbum("Jane Remover", "Revengeseekerz")
+    newAlbum("saoirse dream", "saoirse dream")
+    newAlbum("Fontaines D.C", "Skinty Fia")
+        // row 3
+    newAlbum("Have a Nice Life", "Deathconsciousness")
+    newAlbum("FREE.99", "TRAUMA REDUCTION PRAYER")
+    newAlbum("black midi", "Schlagenheim")
+    newAlbum("geordie greep", "the new sound")
+    newAlbum("Sea Power", "From the Sea to the Land beyond")
+    newAlbum("Oberhofer", "Chronovision")
+        // row 4
+    newAlbum("1000 eyes, circada sirens", "signalis OST")
+    newAlbum("Alexandre Desplat", "Fantastic Mr Fox OST")
+    newAlbum("Andrew Prahlow", "Signals From The Outer Wilds")
+    newAlbum("Andrew Prahlow", "Secrets From The Outer Wilds: Echoes of the Eye")
+    newAlbum("Cristobal Tapia de Veer", "Utopia S1 OST")
+    newAlbum("Cristobal Tapia de Veer", "Utopia S2 OST")
+
+    albumContainer.innerHTML = favAlbums;
+}
+
+    // new album!!!!!!!!!!!!
+function newAlbum (artist, album) {
+        // replaces BAD characters
+    const replacers = (string) => string.replaceAll(" OST", "").replaceAll("/", "").replaceAll(" ", "-").replaceAll(">", "").replaceAll(".", "").replaceAll(",", "").replaceAll(":", "");
+    favAlbums += `<div class="album" albm="${album}">
+                        <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
+                    </div>`
 }
 
 function fetch_listens() {
@@ -44,7 +87,7 @@ function fetch_listens() {
          else {
             console.log("listenbrainz is sleepy...")
             nowPlayingHTML.innerHTML =  "listenbrainz is sleepy,,,";
-            nowPlayingCover.setAttribute('src', 'src/assets/images/album covers/fallback.png')
+            nowPlayingCover.setAttribute('src', 'src/assets/images/fallback.png')
             nowPlayingCover.setAttribute('title', '')
             coverLink.setAttribute('href', "https://listenbrainz.org/user/kazuiin_/")
         }

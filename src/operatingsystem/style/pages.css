@@ -41,22 +41,21 @@ a {
 
 
 .albumCover {
+    -webkit-user-select: none;
+    user-select: none;
+    max-height: 144px;
+    max-width: 144px;
+    margin: auto;
+}
+
+.album {
     width: 144px;
     height: 144px;
     border-style: solid;
     border-width: 5px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
-    -webkit-user-select: none;
-    user-select: none;
-    max-height: 144px;
-    max-width: 144px;
 }
 
-.albumContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
 
 .albumInfo {
     position: absolute;
@@ -132,6 +131,15 @@ a {
 #musicPG::-webkit-scrollbar {
     -webkit-scrollbar-width: none;
     scrollbar-width: none;
+}
+
+#albumContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 #favouritealbumsDiv {
