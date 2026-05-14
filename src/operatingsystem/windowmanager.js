@@ -64,6 +64,7 @@ const bodyBG = document.getElementById("everything")
             }
             document.getElementById(btnwndw).style.display = "flex";
         });
+        shortcut.innerHTML = shortcut.innerHTML + `<p>${btnwndw}</p>`
     });
         // window close titlebar
     desktopWndw.forEach((desktopWndw) => {
