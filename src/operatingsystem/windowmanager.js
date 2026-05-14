@@ -1,4 +1,4 @@
-//window manager
+    //window manager
 const dragWM = document.querySelectorAll(".dragWM");
 const closeWndw = document.querySelectorAll(".closeWndw");
 const desktopWndw = document.querySelectorAll(".desktopWndw")
@@ -11,7 +11,7 @@ const bodyBG = document.getElementById("everything")
             const result = Math.min(lowLim, max)
             return result
     };
-    // window dragging titlebar
+        // window dragging titlebar
     dragWM.forEach((dragWM) => {
         const windowElement = dragWM.parentElement;
         dragWM.innerHTML = `<span class="lineContainer">
@@ -54,7 +54,7 @@ const bodyBG = document.getElementById("everything")
                 window.removeEventListener("mousemove", mousePos);
             });
     });
-    // window open shortcut
+        // window open shortcut
     shortcut.forEach((shortcut) => {
         const btnwndw = shortcut.getAttribute("wndw")
         shortcut.addEventListener("mousedown", () => {
@@ -65,24 +65,10 @@ const bodyBG = document.getElementById("everything")
             document.getElementById(btnwndw).style.display = "flex";
         });
     });
-    // window close titlebar
+        // window close titlebar
     desktopWndw.forEach((desktopWndw) => {
         const closeWndw = desktopWndw.querySelector(".closeWndw");
          closeWndw.addEventListener("mouseup", () => {
                 desktopWndw.style.display = "none";
             });
-    });
-
-    dropdown.forEach((dropdown) => {
-        const dropdownWndw = dropdown.getAttribute("dropdownWndw")
-        dropdown.addEventListener("mouseout", () => {
-                document.getElementById(dropdownWndw).style.display = "none";
-            });
-        dropdown.addEventListener("mouseover", () =>  {
-            if (document.getElementById(dropdownWndw).style.display == "none") {
-                document.getElementById(dropdownWndw).style.top = "calc(50% - (36rem * 0.5))"
-                document.getElementById(dropdownWndw).style.left= "calc(50% - (64rem * 0.5))"
-            }
-            document.getElementById(dropdownWndw).style.display = "flex";
-        });
     });

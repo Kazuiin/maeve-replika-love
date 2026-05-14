@@ -4,7 +4,10 @@ const listens_url = `${lb_root}/user/${user}/listens?count=3`;
 const now_playing_url = `${lb_root}/user/${user}/playing-now`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let fetchCount = 0
+const coversRoot = "/src/assets/images/album covers/"
+let favAlbums = "";
     // elements
+const container = document.querySelectorAll(".albumContainer")
 const nowPlayingHTML = document.getElementById("nowlistening")
 const nowPlayingCover = document.getElementById("nowListeningCover")
 const coverLink = document.getElementById("listenbrainzlink")
@@ -13,6 +16,9 @@ const listen2HTML = document.getElementById("listen2")
 const listen3HTML = document.getElementById("listen3")
     // on load
 fetch_listens()
+
+new_album("pushing daisies", "julie", "julie-pushing-daisies.jpg")
+
     // functions 
 function fallback() {
     this.src = "src/assets/images/album covers/fallback.png"

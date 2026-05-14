@@ -19,7 +19,7 @@
         <div id="bodyBG">
 
         </div>
-        <!-- shortcuts -->
+            <!-- shortcuts -->
         <div class="shortcut" wndw="about">
             <img src="/src/assets/images/icons/aboutMe.png"alt="" height="64px">
             <div class="shortcutBG"></div>
@@ -55,9 +55,9 @@
             <div class="shortcutBG"></div>
             <p>notepad</p>
         </div>
-        <!-- windows -->
+            <!-- windows -->
 
-        <!-- about me window -->
+            <!-- about me window -->
         <div class="desktopWndw" window="about" id="about"> 
             <div class="dragWM">
             </div>
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <!-- terminal window -->
+            <!-- terminal window -->
         <div class="desktopWndw" window="terminal" id="terminal"> 
             <div class="dragWM">
             </div>
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <!-- music window -->
+            <!-- music window -->
         <div class="desktopWndw" window="music" id="music"> 
             <div class="dragWM">
             </div>
@@ -111,14 +111,11 @@
                     </div>
                     <div id="listensContainer"> 
                         <div class="listenWrapper" id="nowListeningWrapper">
-                            <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="this.href=onError" target="_blank" class="listenbrainzlink"> 
-                                <img src="src/assets/images/album covers/fallback.png" onerror="this.src='src/assets/images/album covers/fallback.png'" alt="src/assets/images/album covers/fallback.png" id="nowListeningCover">
+                            <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="fallback" target="_blank" id="listenbrainzlink"> 
+                                <img src="src/assets/images/album covers/fallback.png" onerror="fallback" alt="src/assets/images/album covers/fallback.png" id="nowListeningCover">
                             </a>
                             <div rel="noopener" class="recentListen" id="nowlistening" href="https://listenbrainz.org/user/kazuiin_/"> 
-                                <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="this.href=onError" target="_blank" class="listenbrainzlink"> 
-                                    <img src="src/assets/images/album covers/fallback.png" onerror="this.src='src/assets/images/album covers/fallback.png'" alt="src/assets/images/album covers/fallback.png" id="nowListeningCover">
-                                </a>
-                            <br> listenbrainz is sleepy,,, 
+                            listenbrainz is sleepy,,, 
                             </div>
                         </div>
                         <div class="listenWrapper pastListen">
@@ -159,6 +156,7 @@
                         <div class="album">
                             <img title="doefriends - I WANT TO LOVE AGAIN" src="/src/assets/images/album covers/doefriends-iwanttoloveagain.jpg" alt="" class="albumCover">
                         </div>
+                        
                     </div>
                     <div class="albumContainer">
                         <div class="album">
@@ -199,9 +197,8 @@
                         <div class="album">
                             <img title="Oberhofer - Chronovision" src="/src/assets/images/album covers/ober-chronovision.jpg" alt="" class="albumCover">
                         </div>
-                        
                     </div>
-                    <div class="albumContainer" id="bottomContainer">
+                    <div class="albumContainer">
                         <div class="album">
                             <img title="1000 eyes, cicada sirens - signalis OST" src="/src/assets/images/album covers/1keyescicada-signalis.jpg" alt="" class="albumCover">
                         </div>
@@ -219,11 +216,6 @@
                         </div>
                         <div class="album">
                             <img title="Cristobal Tapia de Vee - Utopia S2 OST" src="/src/assets/images/album covers/utopia-s2.jpg" alt="" class="albumCover">
-                        </div>
-                    </div>
-                    <div class="recentListens">
-                        <div id="listenbrainztest">
-                            
                         </div>
                     </div>
                 </div>
@@ -249,14 +241,13 @@
             </div>
                 <div class="windowPG" id="contactsPG">
                     <div id="contactsBG">
-                        
                     </div>
-                    <div id="conactContainer">
+                    <div id="contactContainer">
                          <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" alt="" height="62">
+                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback" alt="" height="62">
                         </a>
                         <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/meow.png" alt="" height="62">
+                            <img src="src/assets/images/88x31/placeholder.png" onerror="fallback" alt="" height="62">
                         </a>
                     </div>
                 </div>
@@ -265,18 +256,12 @@
             <!-- projects window -->
         <div class="desktopWndw" window="projects" id="projects"> 
             <div class="dragWM">
-
             </div>
                 <div class="windowPG" id="projectsPG">
                     <div id="projectsBG">
                         
                     </div>
                     <h1>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
                     </h1>
                 </div>
             </div>
@@ -295,7 +280,7 @@
                 </div>
             </div>
         </div>
-        <!-- taskbar -->
+            <!-- taskbar -->
         <div id="taskbar">
             <div id="iconContainer">
                 <div id="startBtn">
