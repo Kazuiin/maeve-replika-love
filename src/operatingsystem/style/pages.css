@@ -83,6 +83,7 @@ a {
     margin: 35px;
     font-family: ProggyClean, monospace;
     font-size: 35px;
+    padding: 5px;
 }
 
 .device:hover {
@@ -93,12 +94,17 @@ a {
     font-size: 50%;
 }
 
+.pageName {
+    color: azure;
+}
+
 #hyfetch {
     display: flex;
     margin: 35px;
     white-space: pre;
     font-family: Gallant, monospace;
     font-size: 24px;
+    flex-direction: column;
 }
 
 
@@ -206,9 +212,9 @@ a {
 
 #notesPG {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: start;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     gap: 5px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -222,6 +228,14 @@ a {
 #notesPG::-webkit-scrollbar {
     -webkit-scrollbar-width: none;
     scrollbar-width: none;
+}
+
+#noteContainer div {
+    background-color: darkgrey;
+    padding: 8px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #8a5375 #5c374e #5c374e #8a5375;
 }
 
 #platforms {

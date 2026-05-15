@@ -17,19 +17,20 @@ for (let fileName of pagesDirectory) {
     if (!fs.existsSync(relativeNotesPath)) {
         fs.mkdirSync(relativeNotesPath);
     }
-    let noteDir = relativeNotesPath + fileName.replace(".md", "").replace(".html", "");
+    let noteDir = relativeNotesPath + fileName.replace(".md", "").replace(".html", "").replaceAll("!", "");
     if (!fs.existsSync(noteDir)) {
         fs.mkdirSync(noteDir);
     }
         // converts markdown to html string
     let noteFileHTML = converter.makeHtml(noteFileMD.toString());
-    const fileNameDate = fileName.replace(".md", "").split("-");
-    let parsedDate = new Date(parseInt(fileNameDate[2], 10),parseInt(fileNameDate[1], 10) - 1, parseInt(fileNameDate[0])).toLocaleDateString("en-GB",
+    const pageName = fileName.replace(".md", "").replaceAll("-", " ").split("_");
+    const pageDate = pageName[0].split(" ");
+    let parsedDate = new Date(parseInt(pageDate[2], 10),parseInt(pageDate[1], 10) - 1, parseInt(pageDate[0])).toLocaleDateString("en-GB",
     {weekday: "long", year: "numeric", month: "long", day: "numeric"});
         // writes to template file
     fs.writeFileSync(noteDir + "/index.html", templateFile.replace("{content}", noteFileHTML)
-    .replace('{date}', parsedDate).replace("{pageName}", fileName));
+    .replace('{date}', parsedDate).replace("{fileName}", fileName).replace("{pageName}", pageName[1]));
     console.log(`${fileName.replace(".md", ".html")} generated!`);
-    linkHtml += `<a href="${noteDir}"> ${parsedDate}</a>,`;
+    linkHtml += `<a href="${noteDir}"><div> ${parsedDate}<br><br><span class="pageName">${pageName[1]}</span></div></a>`;
     fs.writeFileSync("../../index.html", mainPage.replace("{NOTEPAGELINKS}", linkHtml));
 }
