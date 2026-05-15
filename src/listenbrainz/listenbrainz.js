@@ -24,7 +24,7 @@ function fallback() {
     this.src = "src/assets/images/fallback.png"
     this.href = "https://listenbrainz.org/user/kazuiin_/"
 }
-
+    // sets favAlbums in MusicPG
 function set_favAlbums () {
     const coverRoot = "src/assets/images/album-covers/"
         // row 1
@@ -55,14 +55,15 @@ function set_favAlbums () {
     newAlbum("Andrew Prahlow", "Secrets From The Outer Wilds: Echoes of the Eye")
     newAlbum("Cristobal Tapia de Veer", "Utopia S1 OST")
     newAlbum("Cristobal Tapia de Veer", "Utopia S2 OST")
-
     albumContainer.innerHTML = favAlbums;
 }
 
     // new album!!!!!!!!!!!!
 function newAlbum (artist, album) {
         // replaces BAD characters
+    const replaceArray = [" OST", "/", ">", ".", ]
     const replacers = (string) => string.replaceAll(" OST", "").replaceAll("/", "").replaceAll(" ", "-").replaceAll(">", "").replaceAll(".", "").replaceAll(",", "").replaceAll(":", "");
+        // adds to favAlbums
     favAlbums += `<div class="album" albm="${album}">
                         <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
                     </div>`

@@ -76,6 +76,28 @@ a {
     flex-direction: row;
 }
 
+.device {
+    display: flex;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 35px;
+    font-family: ProggyClean, monospace;
+    font-size: 35px;
+}
+
+.device:hover {
+    background-color: rgba(204, 204, 255, 0.95);
+}
+
+#hyfetch {
+    display: flex;
+    margin: 35px;
+    white-space: pre;
+    font-family: Gallant, monospace;
+    font-size: 24px;
+}
+
+
 #aboutMePG {
     background-color: rgba(42, 37, 49, 0.70);
     -webkit-backdrop-filter: blur(2px);
@@ -98,15 +120,9 @@ a {
     backdrop-filter: blur(2px);
     background-color: rgba(42, 37, 49, 0.70);
     font-size: 2em;
-    justify-content: center;
     align-items: center;
-    
 }
 
-#terminalPG p {
-    -webkit-user-select: none;
-    user-select: none;
-}
 #terminalBG {
     -webkit-user-select: none;
     user-select: none;
