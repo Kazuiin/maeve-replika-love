@@ -141,6 +141,19 @@ a {
     background-color: rgba(42, 37, 49, 0.70);
 }
 
+#cli {
+    position: absolute;
+    background: none;
+    background-color: none;
+    border: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+    width: 85%;
+    bottom: 10%;
+    left: 10%;
+}
+
 #musicPG {
     display: flex;
     flex-direction: column;

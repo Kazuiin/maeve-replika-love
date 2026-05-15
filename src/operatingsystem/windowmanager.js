@@ -27,15 +27,13 @@ function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacit
             <b class="yellow">CPU</b>: ${cpu}<br>
             <b class="yellow">GPU</b>: ${gpu}<br>
             <b class="yellow">Memory</b>: ${ram}<br>`
-
         for (let disk of diskNames) {
-            deviceFetch += `<b class="yellow"Disk</b>(${diskNames[forCounter]}): ${diskCapacities[forCounter]}<br>`
+            deviceFetch += `<b class="yellow">Disk(${diskNames[forCounter]})</b>: ${diskCapacities[forCounter]}<br>`
             forCounter += 1
             if (diskNames.length == forCounter) {
                 deviceFetch += "</nobr>"
             }
         }
-
     return deviceFetch
 }
     function clamp(num, min, max) {
