@@ -30,6 +30,6 @@ for (let fileName of pagesDirectory) {
     fs.writeFileSync(noteDir + "/index.html", templateFile.replace("{content}", noteFileHTML)
     .replace('{date}', parsedDate).replace("{pageName}", fileName));
     console.log(`${fileName.replace(".md", ".html")} generated!`);
-    linkHtml += `<a href="${noteDir}"> ${parsedDate}</a><br>`;
+    linkHtml += `<a href="${noteDir}"> ${parsedDate}</a>,`;
     fs.writeFileSync("../../index.html", mainPage.replace("{NOTEPAGELINKS}", linkHtml));
 }

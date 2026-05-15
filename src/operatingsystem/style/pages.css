@@ -89,6 +89,10 @@ a {
     background-color: rgba(204, 204, 255, 0.95);
 }
 
+.ascii {
+    font-size: 50%;
+}
+
 #hyfetch {
     display: flex;
     margin: 35px;
@@ -202,8 +206,9 @@ a {
 
 #notesPG {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap-reverse;
     gap: 5px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
