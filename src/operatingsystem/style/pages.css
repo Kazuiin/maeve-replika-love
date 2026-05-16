@@ -23,7 +23,7 @@ a {
     right: 50%;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
 }
 
 .windowPG h1 {
@@ -67,13 +67,10 @@ a {
 .contact {
     display: flex;
     margin: 10px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #8a5375 #5c374e #5c374e #8a5375;
-    width: 176px;
-    height: fit-content;
-    display: flex;
+    width: 88px;
+    height: 31px;
     flex-direction: row;
+    gap: 5px;
 }
 
 .device {
@@ -109,7 +106,7 @@ a {
 
 
 #aboutMePG {
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     -webkit-user-select: none;
@@ -128,9 +125,14 @@ a {
 #terminalPG {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
     font-size: 2em;
     align-items: center;
+}
+
+#terminalPG::-webkit-scrollbar {
+    -webkit-scrollbar-width: none;
+    scrollbar-width: none;
 }
 
 #terminalBG {
@@ -138,23 +140,24 @@ a {
     user-select: none;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
 }
 
 #cliContainer {
     display: flex;
-    position: absolute;
+    position: relative;
     -webkit-user-select: none;
     user-select: none;
     outline: none;
     width: 100%;
-    top: 3%;
+    bottom: 45%;
     left: 1.5%;
     font-family: Gallant, monospace;
     color: #ffff;
     caret-color: #ffff;
     font-size: 20px;
     flex: 1 1 0;
+    
 }
 
 #cliContainer input {
@@ -169,6 +172,15 @@ a {
     width: 97%;
 }
 
+#cliOutput {
+    display: flex;
+    position: absolute;
+    font-family: ProggyClean, monospace;
+    font-size: 20px;
+    left: 1.5%;
+    top: 8%;
+}
+
 #musicPG {
     display: flex;
     flex-direction: column;
@@ -176,7 +188,7 @@ a {
     gap: 5px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
     overflow: auto;
     -webkit-user-select: none;
     user-select: none;
@@ -206,36 +218,42 @@ a {
 #gamesPG {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
 }
 
 #contactsPG {
     display: flex;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
     justify-content: center;
     align-content: center;
     -webkit-user-select: none;
     user-select: none;
     width: 100%;
     height: 92%;
+    overflow: auto;
+}
+
+#contactsPG::-webkit-scrollbar {
+    -webkit-scrollbar-width: none;
+    scrollbar-width: none;
 }
 
 #contactContainer {
     display: flex;
-    margin: 20px;
-    gap: 20px;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: center;
+    margin: 5px;
 }
 
 #projectsPG {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
 }
 
 #notesPG {
@@ -246,7 +264,7 @@ a {
     gap: 5px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    background-color: rgba(42, 37, 49, 0.70);
+    background-color: rgba(42, 37, 49, 0.75);
     overflow: auto;
     -webkit-user-select: none;
     user-select: none;

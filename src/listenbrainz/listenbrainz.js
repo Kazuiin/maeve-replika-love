@@ -20,9 +20,9 @@ fetch_listens()
 set_favAlbums()
 
     // functions 
-function fallback() {
-    this.src = "src/assets/images/fallback.png"
-    this.href = "https://listenbrainz.org/user/kazuiin_/"
+function fallback(element) {
+    element.src = "src/assets/images/fallback.png"
+    element.href = "https://listenbrainz.org/user/kazuiin_/"
     console.log("PENISSSSSSS")
 }
     // sets favAlbums in MusicPG

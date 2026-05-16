@@ -58,6 +58,7 @@
 .pastListen {
     width: 9em;
     height: 4em;
+    background-color: rgba(42, 37, 49, 0.35);
     border-style: solid;
     border-width: 5px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
