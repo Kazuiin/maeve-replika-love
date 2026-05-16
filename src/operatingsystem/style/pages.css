@@ -141,17 +141,32 @@ a {
     background-color: rgba(42, 37, 49, 0.70);
 }
 
-#cli {
+#cliContainer {
+    display: flex;
     position: absolute;
-    background: none;
-    background-color: none;
-    border: none;
     -webkit-user-select: none;
     user-select: none;
     outline: none;
-    width: 85%;
-    bottom: 10%;
-    left: 10%;
+    width: 100%;
+    top: 3%;
+    left: 1.5%;
+    font-family: Gallant, monospace;
+    color: #ffff;
+    caret-color: #ffff;
+    font-size: 20px;
+    flex: 1 1 0;
+}
+
+#cliContainer input {
+    display: flex;
+    background: none;
+    background-color: none;
+    border: none;
+    outline: none;
+    font-family: Gallant, monospace;
+    color: #ffff;
+    font-size: 20px;
+    width: 97%;
 }
 
 #musicPG {

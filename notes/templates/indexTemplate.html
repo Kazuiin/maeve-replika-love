@@ -15,6 +15,7 @@
         <script>console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")</script>
         <script defer src="src/operatingsystem/windowManager.js"></script>
         <script defer src="src/operatingsystem/taskbar.js"></script>
+        <script defer src="src/operatingsystem/terminal.js"></script>
         <script defer src="src/listenbrainz/listenbrainz.js"></script>
     <body class="body">
         <div id="bodyBG">
@@ -86,14 +87,12 @@
                 <div class="windowPG" id="terminalPG">
                     <div id="terminalBG">
                     </div>
-                        <div id="deviceContainer">
-                            <span class="device" deviceId="elster">> elster</span>
-                            <span class="device" deviceId="eule">> eule</span>
-                            <span class="device" deviceId="kolibri">> kolibri</span>
-                            <span class="device" deviceId="ara">> ara</span>
+                        <div id="cliContainer">
+                            >
+                            <div deviceID=""></div>
+                            <input id="cliInput" oninput="onInput()" title="command" name="command" type="text" autofocus autocomplete="off" autocorrect="off"  spellcheck="false">
                         </div>
-                        <input id="cli" title="meow" name="command" type="text" autofocus autocomplete="off" autocorrect="off"  spellcheck="false">
-                        <div id="hyfetch">
+                        <div id="cliOutput">
                         </div>
                 </div>
             </div>
@@ -107,8 +106,8 @@
                     </div>
                     <div id="listensContainer"> 
                         <div class="listenWrapper" id="nowListeningWrapper">
-                            <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="fallback" target="_blank" id="listenbrainzlink"> 
-                                <img src="src/assets/images/fallback.png" onerror="fallback" alt="src/assets/images/fallback.png" id="nowListeningCover">
+                            <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="fallback()" target="_blank" id="listenbrainzlink"> 
+                                <img src="src/assets/images/fallback.png" onerror="fallback()" alt="src/assets/images/fallback.png" id="nowListeningCover">
                             </a>
                             <div rel="noopener" class="recentListen" id="nowlistening" href="https://listenbrainz.org/user/kazuiin_/"> 
                             listenbrainz is sleepy,,, 
@@ -160,10 +159,10 @@
                     </div>
                     <div id="contactContainer">
                          <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback" alt="" height="62">
+                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" height="62">
                         </a>
                         <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/maeve.png" onerror="fallback" alt="" height="62">
+                            <img src="src/assets/images/88x31/maeve.png" onerror="fallback()" alt="" height="62">
                         </a>
                     </div>
                 </div>

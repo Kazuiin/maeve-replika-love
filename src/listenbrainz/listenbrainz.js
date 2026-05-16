@@ -23,6 +23,7 @@ set_favAlbums()
 function fallback() {
     this.src = "src/assets/images/fallback.png"
     this.href = "https://listenbrainz.org/user/kazuiin_/"
+    console.log("PENISSSSSSS")
 }
     // sets favAlbums in MusicPG
 function set_favAlbums () {

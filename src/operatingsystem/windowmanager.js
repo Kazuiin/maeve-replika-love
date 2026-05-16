@@ -103,13 +103,3 @@ function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacit
                 desktopWndw.style.display = "none";
             });
     });
-
-    device.forEach((device) => {
-        const deviceID = device.getAttribute("deviceID")
-        device.addEventListener("mouseover", () => {
-            hyfetch.innerHTML = deviceFetches[deviceID];
-        })
-        // device.addEventListener("mouseout", () => {
-         // hyfetch.innerHTML = "";
-       // })
-    })
