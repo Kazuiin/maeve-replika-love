@@ -6,7 +6,6 @@ const desktopWndw = document.querySelectorAll(".desktopWndw");
 const shortcut = document.querySelectorAll(".shortcut");
 const albumCover = document.querySelectorAll(".albumCover");
 const bodyBG = document.getElementById("everything");
-const device = document.querySelectorAll(".device")
 const hyfetch = document.getElementById("hyfetch")
 
     function clamp(num, min, max) {
@@ -59,7 +58,7 @@ const hyfetch = document.getElementById("hyfetch")
     });
         // window open shortcut
     shortcut.forEach((shortcut) => {
-        const btnwndw = shortcut.getAttribute("wndw")
+        const btnwndw = shortcut.getAttribute("wndw");
         shortcut.addEventListener("mousedown", () => {
             if (document.getElementById(btnwndw).style.display == "none") {
                 document.getElementById(btnwndw).style.top = "calc(50% - (36rem * 0.5))";

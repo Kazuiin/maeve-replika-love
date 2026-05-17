@@ -1,0 +1,9 @@
+.neofetch {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.cli {
+    margin: 3px;
+}
