@@ -1,10 +1,13 @@
-// time setter & refresher
+
+    // elements
 const time = document.getElementById("localTime")
+    // on load
 timeSet()
-    function timeSet() {
-        let date = new Date();
-        time.innerHTML = date.toLocaleTimeString();
-    }
-    setInterval(() => {
-        timeSet()
-    }, 1000);
+    // time setter & refresher
+function timeSet() {
+    let date = new Date();
+    time.innerHTML = date.toLocaleTimeString();
+}
+setInterval(() => {
+    timeSet()
+}, 1000);

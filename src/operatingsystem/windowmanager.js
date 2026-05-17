@@ -8,15 +8,15 @@ const albumCover = document.querySelectorAll(".albumCover");
 const bodyBG = document.getElementById("everything");
 const hyfetch = document.getElementById("hyfetch")
 
-    function clamp(num, min, max) {
-            const lowLim = Math.max(num, min);
-            const result = Math.min(lowLim, max);
-            return result;
-    };
-        // window dragging titlebar
-    dragWM.forEach((dragWM) => {
-        const windowElement = dragWM.parentElement;
-        dragWM.innerHTML = `<span class="lineContainer">
+function clamp(num, min, max) {
+    const lowLim = Math.max(num, min);
+    const result = Math.min(lowLim, max);
+    return result;
+};
+    // window dragging titlebar
+dragWM.forEach((dragWM) => {
+    const windowElement = dragWM.parentElement;
+    dragWM.innerHTML = `<span class="lineContainer">
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
@@ -35,43 +35,43 @@ const hyfetch = document.getElementById("hyfetch")
                                 </div>
                             </div>`
 
-        let startX = 0;
-        let startY = 0;
-        const mousePos = (e) => {
-            startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.25);
-            startX = clamp(startX + e.movementX, 0, window.innerHeight);
-            windowElement.style.top = startY + "px";
-            windowElement.style.left = startX + "px";
-            };
+    let startX = 0;
+    let startY = 0;
+    const mousePos = (e) => {
+        startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.25);
+        startX = clamp(startX + e.movementX, 0, window.innerHeight);
+        windowElement.style.top = startY + "px";
+        windowElement.style.left = startX + "px";
+    };
 
-            dragWM.addEventListener("mousedown", () => {
-                startX = windowElement.getBoundingClientRect().left;
-                startY = windowElement.getBoundingClientRect().top;
-                if (isNaN(startX)) startX = 0;
-                if (isNaN(startY)) startY = 0;
-                window.addEventListener("mousemove", mousePos);
-            });
+    dragWM.addEventListener("mousedown", () => {
+        startX = windowElement.getBoundingClientRect().left;
+        startY = windowElement.getBoundingClientRect().top;
+        if (isNaN(startX)) startX = 0;
+        if (isNaN(startY)) startY = 0;
+        window.addEventListener("mousemove", mousePos);
+    });
 
-            window.addEventListener("mouseup", () => {
-                window.removeEventListener("mousemove", mousePos);
-            });
+    window.addEventListener("mouseup", () => {
+        window.removeEventListener("mousemove", mousePos);
     });
-        // window open shortcut
-    shortcut.forEach((shortcut) => {
-        const btnwndw = shortcut.getAttribute("wndw");
-        shortcut.addEventListener("mousedown", () => {
-            if (document.getElementById(btnwndw).style.display == "none") {
-                document.getElementById(btnwndw).style.top = "calc(50% - (36rem * 0.5))";
-                document.getElementById(btnwndw).style.left= "calc(50% - (64rem * 0.5))";
-            }
-            document.getElementById(btnwndw).style.display = "flex";
-        });
-        shortcut.innerHTML = shortcut.innerHTML + `<p>${btnwndw}</p>`;
+});
+    // window open shortcut
+shortcut.forEach((shortcut) => {
+    const btnwndw = shortcut.getAttribute("wndw");
+    shortcut.addEventListener("mousedown", () => {
+        if (document.getElementById(btnwndw).style.display == "none") {
+            document.getElementById(btnwndw).style.top = "calc(50% - (36rem * 0.5))";
+            document.getElementById(btnwndw).style.left = "calc(50% - (64rem * 0.5))";
+        }
+        document.getElementById(btnwndw).style.display = "flex";
     });
-        // window close titlebar
-    desktopWndw.forEach((desktopWndw) => {
-        const closeWndw = desktopWndw.querySelector(".closeWndw");
-         closeWndw.addEventListener("mouseup", () => {
-                desktopWndw.style.display = "none";
-            });
+    shortcut.innerHTML = shortcut.innerHTML + `<p>${btnwndw}</p>`;
+});
+    // window close titlebar
+desktopWndw.forEach((desktopWndw) => {
+    const closeWndw = desktopWndw.querySelector(".closeWndw");
+    closeWndw.addEventListener("mouseup", () => {
+        desktopWndw.style.display = "none";
     });
+});

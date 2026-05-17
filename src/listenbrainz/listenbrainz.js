@@ -1,3 +1,12 @@
+    // elements
+const nowPlayingHTML = document.getElementById("nowlistening");
+const nowPlayingCover = document.getElementById("nowListeningCover");
+const coverLink = document.getElementById("listenbrainzlink");
+const listen1HTML = document.getElementById("listen1");
+const listen2HTML = document.getElementById("listen2");
+const listen3HTML = document.getElementById("listen3");
+const albumContainer = document.getElementById("albumContainer"); 
+    // variables
 const user = "kazuiin_";
 const lb_root = "https://api.listenbrainz.org/1";
 const listens_url = `${lb_root}/user/${user}/listens?count=3`;
@@ -6,50 +15,41 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let fetchCount = 0;
 const coversRoot = "/src/assets/images/album covers/";
 let favAlbums = "";
-    // elements
-const nowPlayingHTML = document.getElementById("nowlistening");
-const nowPlayingCover = document.getElementById("nowListeningCover");
-const coverLink = document.getElementById("listenbrainzlink");
-const listen1HTML = document.getElementById("listen1");
-const listen2HTML = document.getElementById("listen2");
-const listen3HTML = document.getElementById("listen3");
-const albumContainer = document.getElementById("albumContainer");
+
     // on load
 fetch_listens();
-
 set_favAlbums();
 
-    // functions 
+// functions 
 function fallback(element) {
     element.src = "src/assets/images/fallback.png";
     element.href = "https://listenbrainz.org/user/kazuiin_/";
-    console.log("PENISSSSSSS");
 }
-    // sets favAlbums in MusicPG
-function set_favAlbums () {
+// sets favAlbums in MusicPG
+function set_favAlbums() {
     const coverRoot = "src/assets/images/album-covers/";
-        // row 1
+    // row 1
     newAlbum("julie", "pushing daisies");
     newAlbum("julie", "my anti aircraft friend");
     newAlbum("julie", "starjump/kit");
     newAlbum("panchiko", "D>E>A>T>H>M>E>T>A>L");
     newAlbum("my bloody valentine", "loveless");
     newAlbum("doefriends", "I WANT TO LOVE AGAIN");
-        // row 2
+    // row 2
     newAlbum("glass beach", "the first glass beach album");
     newAlbum("glass beach", "plastic death");
     newAlbum("Jane Remover", "Frailty");
     newAlbum("Jane Remover", "Revengeseekerz");
     newAlbum("saoirse dream", "saoirse dream");
     newAlbum("Fontaines D.C", "Skinty Fia");
-        // row 3
+    // row 3
     newAlbum("Have a Nice Life", "Deathconsciousness");
     newAlbum("FREE.99", "TRAUMA REDUCTION PRAYER");
     newAlbum("black midi", "Schlagenheim");
     newAlbum("geordie greep", "the new sound");
     newAlbum("Sea Power", "From the Sea to the Land beyond");
     newAlbum("Oberhofer", "Chronovision");
-        // row 4
+    // row 4
     newAlbum("1000 eyes, circada sirens", "signalis OST");
     newAlbum("Alexandre Desplat", "Fantastic Mr Fox OST");
     newAlbum("Andrew Prahlow", "Signals From The Outer Wilds");
@@ -58,25 +58,22 @@ function set_favAlbums () {
     newAlbum("Cristobal Tapia de Veer", "Utopia S2 OST");
     albumContainer.innerHTML = favAlbums;
 }
-
-    // new album!!!!!!!!!!!!
-function newAlbum (artist, album) {
-        // replaces BAD characters
-    const replaceArray = [" OST", "/", ">", ".", ]
+// new album!!!!!!!!!!!!
+function newAlbum(artist, album) {
+    // replaces BAD characters
+    const replaceArray = [" OST", "/", ">", ".",]
     const replacers = (string) => string.replaceAll(" OST", "").replaceAll("/", "").replaceAll(" ", "-").replaceAll(">", "").replaceAll(".", "").replaceAll(",", "").replaceAll(":", "");
-        // adds to favAlbums
+    // adds to favAlbums
     favAlbums += `<div class="album" albm="${album}">
                         <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
                     </div>`;
 }
-
 function fetch_listens() {
     fetchCount = fetchCount + 1;
     console.log(`listenbrainz fetch ${fetchCount}\n \nbark bark ruff ruff :3`);
-        // now listening fetch
+    // now listening fetch
     fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
         if (nowPlayingData.payload.listens.length > 0) {
-            console.log(nowPlayingData);
             console.log("listenbrainz is WOKE LEFT!!!");
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata;
             nowPlayingHTML.innerHTML = `now playing!<br><br>${nowPlayingDataPath.artist_name}<br><br>${nowPlayingDataPath.track_name}
@@ -86,17 +83,16 @@ function fetch_listens() {
             nowPlayingCover.setAttribute('alt', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name}`);
             coverLink.setAttribute('href', `https://listenbrainz.org/album/${nowPlayingDataPath.additional_info.release_group_mbid}`);
         }
-         else {
+        else {
             console.log("listenbrainz is sleepy...");
-            nowPlayingHTML.innerHTML =  "listenbrainz is sleepy,,,";
+            nowPlayingHTML.innerHTML = "listenbrainz is sleepy,,,";
             nowPlayingCover.setAttribute('src', 'src/assets/images/fallback.png');
             nowPlayingCover.setAttribute('title', '');
             coverLink.setAttribute('href', "https://listenbrainz.org/user/kazuiin_/");
         }
     });
-        // recent listen fetch :3
+    // recent listen fetch :3
     fetch_json_retry(listens_url, 2).then((listensData) => {
-        console.log(listensData);
         function feedListen(listenElement, listenValue) {
             const dataPath = listensData.payload.listens[listenValue].track_metadata;
             listenElement.innerHTML = `${dataPath.artist_name}<br>${dataPath.track_name}<br>${dataPath.release_name}`;
@@ -106,10 +102,10 @@ function fetch_listens() {
         feedListen(listen3HTML, 2);
     });
 }
- setInterval(() => {
+setInterval(() => {
     fetch_listens();
-    }, 10000);
-    // json fetcher
+}, 10000);
+// json fetcher
 async function fetch_json_retry(url, retry_count) {
     let fetched = false;
     let res = null;
@@ -129,8 +125,6 @@ async function fetch_json_retry(url, retry_count) {
         }
     }
     if (!fetched) return null;
-
-        // parse data
+    // parse data
     return await res.json();
-
 }

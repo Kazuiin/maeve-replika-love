@@ -1,282 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta property="og:title" content="maeve.replika.love"/>
-        <meta property="og:description" content="C://users/maeve/replika.love"/>
-        <meta property="og:meta_image" content="https://maeve.replika.love/meta_image.png"/>
-        <title>C://usr/maeve/replika.love</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="src/operatingsystem/style/pages.css">
-        <link rel="stylesheet" href="src/listenbrainz/style/listenbrainz.css">
-        <link rel="stylesheet" href="src/operatingsystem/style/colours.css">
-        <link rel="stylesheet" href="src/operatingsystem/style/terminal.css">
-        <link rel="icon" type="image/png" href="src/assets/images/placeholders/pfpklbr.png">
-        <script>console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")</script>
-        <script defer src="src/operatingsystem/windowManager.js"></script>
-        <script defer src="src/operatingsystem/taskbar.js"></script>
-        <script defer src="src/operatingsystem/terminal.js"></script>
-        <script defer src="src/listenbrainz/listenbrainz.js"></script>
-    <body class="body">
-        <div id="bodyBG">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="maeve.replika.love" />
+    <meta property="og:description" content="C://users/maeve/replika.love" />
+    <meta property="og:meta_image" content="https://maeve.replika.love/meta_image.png" />
+    <title>C://usr/maeve/replika.love</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="src/operatingsystem/style/pages.css">
+    <link rel="stylesheet" href="src/listenbrainz/style/listenbrainz.css">
+    <link rel="stylesheet" href="src/operatingsystem/style/colours.css">
+    <link rel="stylesheet" href="src/operatingsystem/style/terminal.css">
+    <link rel="icon" type="image/png" href="src/assets/images/placeholders/pfpklbr.png">
+    <script>console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")</script>
+    <script defer src="src/operatingsystem/windowManager.js"></script>
+    <script defer src="src/operatingsystem/taskbar.js"></script>
+    <script defer src="src/operatingsystem/terminal.js"></script>
+    <script defer src="src/listenbrainz/listenbrainz.js"></script>
+<body class="body">
+    <div id="bodyBG">
 
-        </div>
-            <!-- shortcuts -->
-        <div class="shortcut" wndw="about">
-            <img src="/src/assets/images/icons/aboutMe.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
-        </div>
-        <div class="shortcut" wndw="terminal">
-            <img src="/src/assets/images/icons/terminal.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
-        </div>
-        <div class="shortcut" wndw="music">
-            <img src="/src/assets/images/icons/minidisk.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
-        </div>
-        <div class="shortcut" wndw="games">
-            <img src="/src/assets/images/icons/steam.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
-        </div>
-        <div class="shortcut" wndw="contacts">
-            <img src="/src/assets/images/icons/contacts.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
+    </div>
+    <!-- shortcuts -->
+    <div class="shortcut" wndw="about">
+        <img src="/src/assets/images/icons/aboutMe.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <div class="shortcut" wndw="terminal">
+        <img src="/src/assets/images/icons/terminal.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <div class="shortcut" wndw="music">
+        <img src="/src/assets/images/icons/minidisk.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <div class="shortcut" wndw="games">
+        <img src="/src/assets/images/icons/steam.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <div class="shortcut" wndw="contacts">
+        <img src="/src/assets/images/icons/contacts.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
 
+    </div>
+    <div class="shortcut" wndw="projects">
+        <img src="src/assets/images/icons/projects.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <div class="shortcut" wndw="notes">
+        <img src="src/assets/images/icons/notepad.png" alt="" height="64px">
+        <div class="shortcutBG"></div>
+    </div>
+    <!-- windows -->
+    <!-- about me window -->
+    <div class="desktopWndw" window="about" id="about">
+        <div class="dragWM">
         </div>
-        <div class="shortcut" wndw="projects">
-            <img src="src/assets/images/icons/projects.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
+        <div class="windowPG" id="aboutMePG">
+            <h1>
+                <span>
+                    <p>hi! my names <strong title="nerddd">maeve</strong>, pronouns are <strong>she/they :3 </strong>im
+                        an amateur gamedev and 3d artist from scotland <img title="meow"
+                            src="/src/assets/images/flags/Scotland_flag.svg" alt="" height="12px"></p>
+                    <p>big fan of games, music and basically anything that could be considered retro (or even just old
+                        tbh...)</p>
+                    <p>this is just a little site for me to mess around with, share stuff, and just have fun with,,,</p>
+                </span>
+                <div id="platforms">
+                    <a rel="noopener" title="github" href="https://github.com/Kazuiin" target="_blank" id="github"
+                        class="platformBG">
+                        <img src="/src/assets/images/platforms/github.png" alt="" height="48">
+                    </a>
+                    <a rel="noopener" title="bluesky" href="https://bsky.app/profile/maeve.replika.love" target="_blank"
+                        id="bluesky" class="platformBG">
+                        <img src="/src/assets/images/platforms/bluesky.png" alt="" height="48">
+                    </a>
+                    <a rel="noopener" title="discord" href="https://discord.com/users/310119375950708736"
+                        target="_blank" id="discord" class="platformBG">
+                        <img src="/src/assets/images/platforms/discord.png" alt="" height="48">
+                    </a>
+                </div>
+            </h1>
+            <img title="meee :3" src="/src/assets/images/placeholders/pfpklbr.png" alt="" id="avatar">
         </div>
-         <div class="shortcut" wndw="notes">
-            <img src="src/assets/images/icons/notepad.png"alt="" height="64px">
-            <div class="shortcutBG"></div>
+    </div>
+    </div>
+    <!-- terminal window -->
+    <div class="desktopWndw" window="terminal" id="terminal">
+        <div class="dragWM">
         </div>
-            <!-- windows -->
+        <div class="windowPG" id="terminalPG">
+            <div id="terminalBG">
+            </div>
+            <div id="cliOutput">
+                <div id="helpMSG" class="cli">
+                    run help to see commands!
+                </div>
+                <div class="deviceID cli">connected to elster.replika.love!</div>
+                <div class="neofetch cli">
+                    <img src="src/assets/images/ascii/windows11.png" alt="" height="160">
+                    <div class="neofetchText">
+                        <nobr><b class="periwinkle">maeve</b>@<b class="periwinkle">elster</b><br>
+                            ---------<br>
+                            <b class="yellow">OS</b>: Windows 11<br>
+                            <b class="yellow">Host</b>: X870 AORUS ELITE WIFI7 ICE<br>
+                            <b class="yellow">Font</b>: Segoe UI (12pt)<br>
+                            <b class="yellow">CPU</b>: AMD Ryzen 7 9800X3D @ 5.25GHz<br>
+                            <b class="yellow">GPU</b>: NVIDIA GeForce RTX 5080 @ 3.09GHz<br>
+                            <b class="yellow">Memory</b>: 2x48GB<br><b class="yellow">Disk(C:/)</b>: 1000GB<br>
+                            <b class="yellow">Disk(D:/)</b>: 2000GB<br>
+                            <b class="yellow">Disk(E:/)</b>: 2000GB<br>
+                            <b class="yellow">Disk(F:/)</b>: 1000GB<br>
+                            <b class="yellow">Disk(G:/)</b>: 4000GB<br>
+                        </nobr>
+                    </div>
+                </div>
+            </div>
+            <div id="cliContainer">
+                >
+                <div deviceID=""></div>
+                <input id="cliInput" title="command" name="command" type="text" autofocus autocomplete="off" autocorrect="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- music window -->
+    <div class="desktopWndw" window="music" id="music">
+        <div class="dragWM">
+        </div>
+        <div class="windowPG" id="musicPG">
+            <div id="musicBG">
+            </div>
+            <div id="listensContainer">
+                <div class="listenWrapper" id="nowListeningWrapper">
+                    <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="fallback(this)"
+                        target="_blank" id="listenbrainzlink">
+                        <img src="src/assets/images/fallback.png" onerror="fallback(this)"
+                            alt="src/assets/images/fallback.png" id="nowListeningCover">
+                    </a>
+                    <div rel="noopener" class="recentListen" id="nowlistening"
+                        href="https://listenbrainz.org/user/kazuiin_/">
+                        listenbrainz is sleepy,,,
+                    </div>
+                </div>
+                <div class="listenWrapper pastListen">
+                    <div class="recentListen" id="listen1">
 
-            <!-- about me window -->
-        <div class="desktopWndw" window="about" id="about"> 
-            <div class="dragWM">
-            </div>
-                <div class="windowPG" id="aboutMePG">
-                    <h1>
-                        <span>
-                            <p>hi! my names <strong title="nerddd">maeve</strong>, pronouns are <strong>she/they :3 </strong>im an amateur gamedev and 3d artist from scotland <img title="meow" src="/src/assets/images/flags/Scotland_flag.svg" alt="" height="12px"></p>
-                            <p>big fan of games, music and basically anything that could be considered retro (or even just old tbh...)</p>
-                            <p>this is just a little site for me to mess around with, share stuff, and just have fun with,,,</p>
-                        </span>
-                        <div id="platforms">
-                            <a rel="noopener" title="github" href="https://github.com/Kazuiin" target="_blank" id="github" class="platformBG">
-                                <img src="/src/assets/images/platforms/github.png" alt="" height="48">
-                            </a>
-                            <a rel="noopener"  title="bluesky" href="https://bsky.app/profile/maeve.replika.love" target="_blank" id="bluesky" class="platformBG">
-                                <img src="/src/assets/images/platforms/bluesky.png" alt="" height="48">
-                            </a>
-                            <a rel="noopener" title="discord" href="https://discord.com/users/310119375950708736" target="_blank" id="discord" class="platformBG">
-                                <img src="/src/assets/images/platforms/discord.png" alt="" height="48">
-                            </a>
-                        </div>
-                    </h1>
-                    <img title="meee :3" src="/src/assets/images/placeholders/pfpklbr.png" alt="" id="avatar">
+                    </div>
                 </div>
+                <div class="listenWrapper pastListen">
+                    <div class="recentListen" id="listen2">
+
+                    </div>
+                </div>
+                <div class="listenWrapper pastListen">
+                    <div class="recentListen" id="listen3">
+
+                    </div>
+                </div>
+            </div>
+            <div id="favouritealbumsDiv">
+                favourite albums
+            </div>
+            <div id="albumContainer">
+
             </div>
         </div>
-            <!-- terminal window -->
-        <div class="desktopWndw" window="terminal" id="terminal"> 
-            <div class="dragWM">
-            </div>
-                <div class="windowPG" id="terminalPG">
-                    <div id="terminalBG">
-                    </div>
-                        <div id="cliOutput">
-                            <div id="helpMSG" class="cli">
-                                run help to see commands!
-                            </div>
-                            <div class="deviceID cli">connected to elster.replika.love!</div>
-                            <div class="neofetch cli">
-                                <img src="src/assets/images/ascii/windows11.png" alt="" height="160">
-                                <div class="neofetchText">
-                                    <nobr><b class="periwinkle">maeve</b>@<b class="periwinkle">elster</b><br>
-                                        ---------<br>
-                                        <b class="yellow">OS</b>: Windows 11<br>
-                                        <b class="yellow">Host</b>: X870 AORUS ELITE WIFI7 ICE<br>
-                                        <b class="yellow">Font</b>: Segoe UI (12pt)<br>
-                                        <b class="yellow">CPU</b>: AMD Ryzen 7 9800X3D @ 5.25GHz<br>
-                                        <b class="yellow">GPU</b>: NVIDIA GeForce RTX 5080 @ 3.09GHz<br>
-                                        <b class="yellow">Memory</b>: 2x48GB<br><b class="yellow">Disk(C:/)</b>: 1000GB<br>
-                                        <b class="yellow">Disk(D:/)</b>: 2000GB<br>
-                                        <b class="yellow">Disk(E:/)</b>: 2000GB<br>
-                                        <b class="yellow">Disk(F:/)</b>: 1000GB<br>
-                                        <b class="yellow">Disk(G:/)</b>: 4000GB<br>
-                                    </nobr>
-                                </div>
-                            </div>
-                        </div>
-                            <div id="cliContainer">
-                                > 
-                                <div deviceID=""></div>
-                                <input id="cliInput" title="command" name="command" type="text" autofocus autocomplete="off" autocorrect="off"  spellcheck="false">
-                            </div>
-                    </div>
-                </div>
+    </div>
+    </div>
+    <!-- games window -->
+    <div class="desktopWndw" window="games" id="games">
+        <div class="dragWM">
         </div>
-            <!-- music window -->
-        <div class="desktopWndw" window="music" id="music"> 
-            <div class="dragWM">
+        <div class="windowPG" id="gamesPG">
+            <div id="gamesBG">
             </div>
-                <div class="windowPG" id="musicPG">
-                    <div id="musicBG">
-                    </div>
-                    <div id="listensContainer"> 
-                        <div class="listenWrapper" id="nowListeningWrapper">
-                            <a rel="noopener" href="https://listenbrainz.org/user/kazuiin_/" onerror="fallback(this)" target="_blank" id="listenbrainzlink"> 
-                                <img src="src/assets/images/fallback.png" onerror="fallback(this)" alt="src/assets/images/fallback.png" id="nowListeningCover">
-                            </a>
-                            <div rel="noopener" class="recentListen" id="nowlistening" href="https://listenbrainz.org/user/kazuiin_/"> 
-                            listenbrainz is sleepy,,, 
-                            </div>
-                        </div>
-                        <div class="listenWrapper pastListen">
-                            <div class="recentListen" id="listen1">
-                                
-                            </div>
-                        </div>
-                        <div class="listenWrapper pastListen">
-                            <div class="recentListen" id="listen2">
-                                
-                            </div>
-                        </div>
-                        <div class="listenWrapper pastListen">
-                            <div class="recentListen" id="listen3">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div id="favouritealbumsDiv">
-                        favourite albums
-                    </div>  
-                    <div id="albumContainer">
-                        
-                    </div>
-                </div>
-            </div>
+            <h1>
+            </h1>
         </div>
-            <!-- games window -->
-        <div class="desktopWndw" window="games" id="games"> 
-            <div class="dragWM">
-            </div>
-                <div class="windowPG" id="gamesPG">
-                    <div id="gamesBG">
-                    </div>
-                    <h1>
-                    </h1>
-                </div>
-            </div>
+    </div>
+    </div>
+    <!-- contacts window -->
+    <div class="desktopWndw" window="contacts" id="contacts">
+        <div class="dragWM">
         </div>
-            <!-- contacts window -->
-        <div class="desktopWndw" window="contacts" id="contacts"> 
-            <div class="dragWM">
+        <div class="windowPG" id="contactsPG">
+            <div id="contactsBG">
             </div>
-                <div class="windowPG" id="contactsPG">
-                    <div id="contactsBG">
-                    </div>
-                    
-                    <div id="contactContainer">
-                         <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                        <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError" target="_blank">
-                            <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="" >
-                        </a>
-                    </div>
-                </div>
+
+            <div id="contactContainer">
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a><a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
+                <a class="contact" rel="noopener" href="https://vi.replika.love/" onerror="this.href=onError"
+                    target="_blank">
+                    <img src="src/assets/images/88x31/s1sw.png" onerror="fallback()" alt="">
+                </a>
             </div>
         </div>
-            <!-- projects window -->
-        <div class="desktopWndw" window="projects" id="projects"> 
-            <div class="dragWM">
+    </div>
+    </div>
+    <!-- projects window -->
+    <div class="desktopWndw" window="projects" id="projects">
+        <div class="dragWM">
+        </div>
+        <div class="windowPG" id="projectsPG">
+            <div id="projectsBG">
             </div>
-                <div class="windowPG" id="projectsPG">
-                    <div id="projectsBG">
-                    </div>
-                    <h1>
-                    </h1>
+            <h1>
+            </h1>
+        </div>
+    </div>
+    </div>
+    <!-- notes window -->
+    <div class="desktopWndw" window="notes" id="notes">
+        <div class="dragWM">
+        </div>
+        <div class="windowPG" id="notesPG">
+            <div id="notesBG">
+            </div>
+            <h1>
+                <div id="noteContainer">
+                    {NOTEPAGELINKS}
                 </div>
+            </h1>
+        </div>
+    </div>
+    </div>
+    <!-- taskbar -->
+    <div id="taskbar">
+        <div id="iconContainer">
+            <div id="startBtn">
+            </div>
+            <div id="taskbarShortcuts">
             </div>
         </div>
-           <!-- notes window -->
-        <div class="desktopWndw" window="notes" id="notes"> 
-            <div class="dragWM">
-            </div>
-                <div class="windowPG" id="notesPG">
-                    <div id="notesBG">
-                    </div>
-                    <h1>
-                        <div id="noteContainer">
-                            {NOTEPAGELINKS}
-                        </div>
-                    </h1>
-                </div>
+        <div id="clockContainer">
+            <div id="localTime">
+                05:12:00
             </div>
         </div>
-            <!-- taskbar -->
-        <div id="taskbar">
-            <div id="iconContainer">
-                <div id="startBtn">
-                </div>
-                <div id="taskbarShortcuts">
-                </div>
-            </div>
-            <div id="clockContainer">  
-                <div id="localTime">
-                    05:12:00
-                </div>
-            </div>
-        </div>
-        </div>
-    </body>
-    </head>
+    </div>
+    </div>
+</body>
+</head>
 </html>
