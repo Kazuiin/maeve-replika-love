@@ -72,6 +72,10 @@ a {
     flex-direction: row;
     gap: 5px;
 }
+.contact img {
+    height: 31px;
+    width: 88px;
+}
 
 .device {
     display: flex;
@@ -183,6 +187,15 @@ a {
     top: 8%;
     flex-direction: column-reverse;
 }
+.neofetch {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.cli {
+    margin: 2px;
+}
 
 #musicPG {
     display: flex;
@@ -245,12 +258,13 @@ a {
 
 #contactContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: center;
-    margin: 5px;
+    align-content: flex-start;
+    margin: 15px;
 }
 
 #projectsPG {
@@ -261,7 +275,7 @@ a {
 
 #notesPG {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: start;
     flex-wrap: wrap;
     gap: 5px;

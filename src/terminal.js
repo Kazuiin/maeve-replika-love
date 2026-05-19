@@ -7,7 +7,7 @@ let commandInput = "";
 let parsedCommand = [];
 let inputHistory = [];
 let historyIndex = 0;
-let targetedDirectory = "";
+let targeteddir = "";
 let targetedPath = "";
 let firstScroll = false;
 
@@ -16,14 +16,14 @@ const fs = {
     "home": {
         "maeve": {
             "signals": {
-                "signal_512.md": `<div class="reference">achtung,,, achtung,,, 39486,,, 39486,,,</div>`,
-                "max-strength.wav": `<div class="reference">.-.- - . -... .-.- .-.. ..-- -... .-.. ..--</div>`,
-                "revachol.txt": `<div class="reference">youre not **made** of nothing anymore, youre something now.</div>`,
-                "echo.txt": `<div class="reference">the universe is, and we are.</div>`,
-                "arby.md": `<div class="reference">where is jessica hyde?</div>`,
-                "doe.lrc": `<div class="reference">cantido, my god of fire.</div>`,
-                "fool.txt": `<div class="reference">swing the bat!</div>`,
-                "worldline.md": `<div class="reference">1.048596%</div>`,
+                "signal_512.md": `<div class="reference cli">achtung,,, achtung,,, 39486,,, 39486,,,</div>`,
+                "max-strength.wav": `<div class="reference cli">.-.- - . -... .-.- .-.. ..-- -... .-.. ..--</div>`,
+                "revachol.txt": `<div class="reference cli">youre not **made** of nothing anymore, youre something now.</div>`,
+                "echo.txt": `<div class="reference cli">the universe is, and we are.</div>`,
+                "arby.md": `<div class="reference cli">where is jessica hyde?</div>`,
+                "doe.lrc": `<div class="reference cli">cantido, my god of fire.</div>`,
+                "fool.txt": `<div class="reference cli">swing the bat!</div>`,
+                "worldline.md": `<div class="reference cli">1.048596%</div>`,
             },
             "notes": {
                 
@@ -122,16 +122,13 @@ function runCommand() {
 }
     // scrolls through history
 function scrollHistory(direction) {
-    console.log(firstScroll)
     if (inputHistory[historyIndex + direction] !== undefined) {
         if (firstScroll == true) {
-            console.log("called");
             input.value = inputHistory[historyIndex];
             firstScroll = false;
         }
         else {
             input.value = inputHistory[historyIndex = historyIndex + direction];
-            console.log("called & added");
         }
     }
     else if (historyIndex == 0 && inputHistory.length > 0) {
@@ -173,45 +170,43 @@ function cd() {
     }
     let path = pathToTarget.split("/");
     path.splice(0, 1)
-    let pathResult = getDirectoryPath(path)
+    let pathResult = getDirPath(path)
     if (pathResult != null) {
         targetedPath = pathToTarget
-        return `<div class="filepath">${targetedPath}</div>`;
+        return `<div class="filepath cli">~${targetedPath}</div>`;
     }
     else {
-        return `<div class="filepath">directory not found</div>`;
+        return `<div class="filepath cli">directory not found</div>`;
     }
 }
-
 function ls() {
     let result = "";
-    let dirObj = getCurrentDirObj()
+    const dirObj = getCurrentDirObj()
     for (let key in dirObj) {
         result += `${key}<br>`;
     }
-    return `<div class="ls">${result}</div>`;
+    return `<div class="ls cli">${result}</div>`;
 }
-
 function cat() {
-    let argument = parsedCommand[1];
-    let result = "";
-    let dirObj = getCurrentDirObj()
+    const argument = parsedCommand[1];
+    const result = "";
+    const dirObj = getCurrentDirObj()
     return dirObj[argument]
 }
-
+    // gets current dir
 function getCurrentDirObj() {
     let splitPath = targetedPath.split("/");
     splitPath.splice(0, 1);
-    let directoryPath = getDirectoryPath(splitPath);
-    return directoryPath;
+    const dirPath = getDirPath(splitPath);
+    return dirPath;
 }
 
-function getDirectoryPath(path) {
+function getDirPath(path) {
     let currentObject = fs;
-    for (let directory of path) {
-        if (directory in currentObject && typeof currentObject[directory] == "object") {
-            currentObject = currentObject[directory]
-            targetedDirectory = currentObject
+    for (let dir of path) {
+        if (dir in currentObject && typeof currentObject[dir] == "object") {
+            currentObject = currentObject[dir]
+            targeteddir = currentObject
         }
         else {
             return null;
