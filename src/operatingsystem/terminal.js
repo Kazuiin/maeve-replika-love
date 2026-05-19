@@ -42,16 +42,6 @@ const fs = {
         }
     }
 }
-const lsFS = {
-    "home": `<div class="ls">maeve/<br>kazuiin/<br></div>`,
-    "maeve": `<div class="ls">signals/<br>notes/</div>`,
-    "signals": `<div class="ls">signal_512.md<br>max-strength.wav<br>revachol.txt<br>echo.txt<br>arby.md<br>doe.lrc<br>fool.txt<br>worldline.md</div>`,
-    "notes": `<div class="ls"></div>`,
-    "kazuiin": `<div class="ls">games/<br>music/<br>projects/</div>`,
-    "games": `<div class="ls"></div>`,
-    "music": `<div class="ls"></div>`,
-    "projects": `<div class="ls">bonelab-mods</div>`
-}
 const deviceFetches = {
     "elster": `${newDevice("elster", "Windows 11", "X870 AORUS ELITE WIFI7 ICE", "Segoe UI (12pt)", "AMD Ryzen 7 9800X3D @ 5.25GHz", "NVIDIA GeForce RTX 5080 @ 3.09GHz", "2x48GB", ["C:/", "D:/", "E:/", "F:/", "G:/",], ["1000GB", "2000GB", "2000GB", "1000GB", "4000GB"], "windows11.png")}`,
     "eule": `${newDevice("eule", "Android 14", "S24 Ultra", "SamsungOne (12pt)", "Qualcomm Snapdragon 8 Gen 3 @ 3.40GHz", "Qualcomm Adreno 750 @ 3.09GHz", "12GB", ["/"], ["1000GB"], "android.png")}`,
@@ -66,7 +56,8 @@ const commands = {
     "ssh": ssh,
     "clear": clear,
     "cd": cd,
-    "ls": ls
+    "ls": ls,
+    "cat": cat
 }
     // makes devices
 function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
@@ -83,7 +74,6 @@ function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacit
                     <b class="yellow">CPU</b>: ${cpu}<br>
                     <b class="yellow">GPU</b>: ${gpu}<br>
                     <b class="yellow">Memory</b>: ${ram}<br>`;
-
     for (let i = 0; i < diskNames.length; i++) {
         Fetch += `<b class="yellow">Disk(${diskNames[i]})</b>: ${diskCapacities[i]}<br>`
 
@@ -95,7 +85,6 @@ function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacit
 }
     // handles textbox inputs
 input.addEventListener("keydown", function (event) {
-    
         // handles arrows
     if (event.code == "ArrowUp") {
         event.preventDefault();
@@ -136,24 +125,22 @@ function scrollHistory(direction) {
     console.log(firstScroll)
     if (inputHistory[historyIndex + direction] !== undefined) {
         if (firstScroll == true) {
-            console.log("called")
-            input.value = inputHistory[historyIndex]
-            firstScroll = false
+            console.log("called");
+            input.value = inputHistory[historyIndex];
+            firstScroll = false;
         }
         else {
-            input.value = inputHistory[historyIndex = historyIndex + direction]
-            console.log("called & added")
+            input.value = inputHistory[historyIndex = historyIndex + direction];
+            console.log("called & added");
         }
     }
-    else if (historyIndex == 0) {
+    else if (historyIndex == 0 && inputHistory.length > 0) {
         input.value = inputHistory[historyIndex]
         if (direction == -1) {
             input.value = ""
             firstScroll = true;
         }
     }
-
-
 }
 
     // commands
@@ -180,37 +167,56 @@ function help() {
     return helpList;
 }
 function cd() {
-
-    let pathToTarget = parsedCommand[1]
+    let pathToTarget = targetedPath + "/" + parsedCommand[1]
+    if (parsedCommand[1].charAt(0) == "/") {
+        pathToTarget = parsedCommand[1]
+    }
     let path = pathToTarget.split("/");
-    console.log(path) 
-    let result = getDirectoryPath(path)
-    return result;
+    path.splice(0, 1)
+    let pathResult = getDirectoryPath(path)
+    if (pathResult != null) {
+        targetedPath = pathToTarget
+        return `<div class="filepath">${targetedPath}</div>`;
+    }
+    else {
+        return `<div class="filepath">directory not found</div>`;
+    }
+}
+
+function ls() {
+    let result = "";
+    let dirObj = getCurrentDirObj()
+    for (let key in dirObj) {
+        result += `${key}<br>`;
+    }
+    return `<div class="ls">${result}</div>`;
+}
+
+function cat() {
+    let argument = parsedCommand[1];
+    let result = "";
+    let dirObj = getCurrentDirObj()
+    return dirObj[argument]
+}
+
+function getCurrentDirObj() {
+    let splitPath = targetedPath.split("/");
+    splitPath.splice(0, 1);
+    let directoryPath = getDirectoryPath(splitPath);
+    return directoryPath;
 }
 
 function getDirectoryPath(path) {
     let currentObject = fs;
     for (let directory of path) {
-        if (directory in currentObject) {
+        if (directory in currentObject && typeof currentObject[directory] == "object") {
             currentObject = currentObject[directory]
             targetedDirectory = currentObject
-            targetedPath += `/${directory}`
-            console.log(targetedPath)
         }
         else {
-            console.log(targetedPath)
             return null;
         }
     }
-    console.log(targetedPath)
         // return currentObject;
-    return `<div class="filepath">~${targetedPath}</div>`;
-}
-
-function ls() {
-    const param = targetedPath.split("/")
-    console.log(param)
-    const lastIndex = param.length-1
-    result = lsFS[param[length]]
-    return result;
+    return currentObject;
 }
