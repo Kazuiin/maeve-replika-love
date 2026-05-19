@@ -42,6 +42,16 @@ const fs = {
         }
     }
 }
+const lsFS = {
+    "home": `<div class="ls">maeve/<br>kazuiin/<br></div>`,
+    "maeve": `<div class="ls">signals/<br>notes/</div>`,
+    "signals": `<div class="ls">signal_512.md<br>max-strength.wav<br>revachol.txt<br>echo.txt<br>arby.md<br>doe.lrc<br>fool.txt<br>worldline.md</div>`,
+    "notes": `<div class="ls"></div>`,
+    "kazuiin": `<div class="ls">games/<br>music/<br>projects/</div>`,
+    "games": `<div class="ls"></div>`,
+    "music": `<div class="ls"></div>`,
+    "projects": `<div class="ls">bonelab-mods</div>`
+}
 const deviceFetches = {
     "elster": `${newDevice("elster", "Windows 11", "X870 AORUS ELITE WIFI7 ICE", "Segoe UI (12pt)", "AMD Ryzen 7 9800X3D @ 5.25GHz", "NVIDIA GeForce RTX 5080 @ 3.09GHz", "2x48GB", ["C:/", "D:/", "E:/", "F:/", "G:/",], ["1000GB", "2000GB", "2000GB", "1000GB", "4000GB"], "windows11.png")}`,
     "eule": `${newDevice("eule", "Android 14", "S24 Ultra", "SamsungOne (12pt)", "Qualcomm Snapdragon 8 Gen 3 @ 3.40GHz", "Qualcomm Adreno 750 @ 3.09GHz", "12GB", ["/"], ["1000GB"], "android.png")}`,
@@ -193,10 +203,14 @@ function getDirectoryPath(path) {
         }
     }
     console.log(targetedPath)
-    return targetedPath;
-    // return `<div class="filepath">~${targetedPath}</div>`;
+        // return currentObject;
+    return `<div class="filepath">~${targetedPath}</div>`;
 }
 
 function ls() {
-    console.log("attempted ls");
+    const param = targetedPath.split("/")
+    console.log(param)
+    const lastIndex = param.length-1
+    result = lsFS[param[length]]
+    return result;
 }
