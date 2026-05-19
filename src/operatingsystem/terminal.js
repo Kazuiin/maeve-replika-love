@@ -4,18 +4,42 @@ const output = document.getElementById("cliOutput");
     // variables
 let device = "elster";
 let commandInput = "";
-let parsedCommand = "";
-let inputHistory = [""];
-let historyIndex = 1;
-const startingDirectory = "~/home/maeve";
-const inputDebug = false;
-const resultDebug =  false;
-const historyDebug = false;
+let parsedCommand = [];
+let inputHistory = [];
+let historyIndex = 0;
+let targetedDirectory = "";
+let targetedPath = "";
+let firstScroll = false;
+
     // dictionaries
-const directories = {
+const fs = {
     "home": {
-        "maeve": "meow",
-        "kazuiin": "glup"
+        "maeve": {
+            "signals": {
+                "signal_512.md": `<div class="reference">achtung,,, achtung,,, 39486,,, 39486,,,</div>`,
+                "max-strength.wav": `<div class="reference">.-.- - . -... .-.- .-.. ..-- -... .-.. ..--</div>`,
+                "revachol.txt": `<div class="reference">youre not **made** of nothing anymore, youre something now.</div>`,
+                "echo.txt": `<div class="reference">the universe is, and we are.</div>`,
+                "arby.md": `<div class="reference">where is jessica hyde?</div>`,
+                "doe.lrc": `<div class="reference">cantido, my god of fire.</div>`,
+                "fool.txt": `<div class="reference">swing the bat!</div>`,
+                "worldline.md": `<div class="reference">1.048596%</div>`,
+            },
+            "notes": {
+                
+            }
+        },
+        "kazuiin": { 
+            "games": {
+
+            }, 
+            "music": {
+                
+            }, 
+            "projects": {
+                
+            }
+        }
     }
 }
 const deviceFetches = {
@@ -59,70 +83,67 @@ function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacit
     }
     return Fetch;
 }
-
-function debug() {
-    if (inputDebug == true) {
-        console.log("up pressed")
-        console.log("down pressed")
-        console.log("enter pressed")
-    }
-    if (resultDebug == true) {
-        console.log(currentWorkingDirectory)
-    }
-    if (historyDebug == true) {
-        console.log(inputHistory);
-        console.log(historyIndex);
-        console.log(`history length: ${inputHistory.length}`);
-    }
-}
     // handles textbox inputs
 input.addEventListener("keydown", function (event) {
+    
         // handles arrows
     if (event.code == "ArrowUp") {
         event.preventDefault();
-        backwardHistory();
-        debug()
+        scrollHistory(1);
     }
     if (event.code == "ArrowDown") {
-        console.log("down pressed")
         event.preventDefault();
-        forwardHistory();
-        debug()
+        scrollHistory(-1);
     }
     // handles enter
     if (event.code == "Enter") {
         event.preventDefault();
         runCommand();
-        debug()
     }
 })
     // checks and runs commands :3
 function runCommand() {
     commandInput = input.value;
     parsedCommand = commandInput.split(" ")
-    if (!(parsedCommand[0] in commands)) {
-        output.innerHTML += `<div class="errorMsg cli">${commandInput}: command not found</div>`;
-    }
-    else if (parsedCommand[0] == "clear") {
-        output.innerHTML = "";
-    }
-    else {
-        output.innerHTML += commands[parsedCommand[0]]();
+    if (commandInput != "") {
+        if (!(parsedCommand[0] in commands)) {
+            output.innerHTML += `<div class="errorMsg cli">${commandInput}: command not found</div>`;
+        }
+        else if (parsedCommand[0] == "clear") {
+            output.innerHTML = "";
+        }
+        else {
+            output.innerHTML += commands[parsedCommand[0]]();
+        }
     }
     inputHistory.unshift(input.value);
+    firstScroll  = true;
     historyIndex = 0;
     input.value = "";
 }
-function forwardHistory() {
-    if (historyIndex > 0) {
-        historyIndex--;
-        input.value = inputHistory[historyIndex];
+    // scrolls through history
+function scrollHistory(direction) {
+    console.log(firstScroll)
+    if (inputHistory[historyIndex + direction] !== undefined) {
+        if (firstScroll == true) {
+            console.log("called")
+            input.value = inputHistory[historyIndex]
+            firstScroll = false
+        }
+        else {
+            input.value = inputHistory[historyIndex = historyIndex + direction]
+            console.log("called & added")
+        }
     }
-}
-function backwardHistory() {
-    if (historyIndex < inputHistory.length - 1 && inputHistory[historyIndex] != undefined) {
-        input.value = inputHistory[historyIndex++];
+    else if (historyIndex == 0) {
+        input.value = inputHistory[historyIndex]
+        if (direction == -1) {
+            input.value = ""
+            firstScroll = true;
+        }
     }
+
+
 }
 
     // commands
@@ -145,19 +166,35 @@ function clear() {
     console.log("cleared!")
 }
 function help() {
-    let helpList = `<div class="helpList cli"><nobr> clear neofetch ssh<br><br><b class="yellow">use --help to get more help on a specific command</b></nobr></div>`
+    let helpList = `<div class="helpList cli"><nobr>cd ls clear neofetch ssh<br><br><b class="yellow">use --help to get more help on a specific command</b></nobr></div>`
     return helpList;
 }
 function cd() {
-    let targetDirectory = parsedCommand[1].split("/")
-    let currentWorkingDirectory;
-    if (parsedCommand[1].charAt(0) == "/") {
-        currentWorkingDirectory = "~";
+
+    let pathToTarget = parsedCommand[1]
+    let path = pathToTarget.split("/");
+    console.log(path) 
+    let result = getDirectoryPath(path)
+    return result;
+}
+
+function getDirectoryPath(path) {
+    let currentObject = fs;
+    for (let directory of path) {
+        if (directory in currentObject) {
+            currentObject = currentObject[directory]
+            targetedDirectory = currentObject
+            targetedPath += `/${directory}`
+            console.log(targetedPath)
+        }
+        else {
+            console.log(targetedPath)
+            return null;
+        }
     }
-    for (let directory of targetDirectory) {
-        currentWorkingDirectory = currentWorkingDirectory[directory];
-    }
-    return currentWorkingDirectory;
+    console.log(targetedPath)
+    return targetedPath;
+    // return `<div class="filepath">~${targetedPath}</div>`;
 }
 
 function ls() {
