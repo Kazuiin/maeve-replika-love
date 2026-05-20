@@ -7,7 +7,6 @@ let commandInput = "";
 let parsedCommand = [];
 let inputHistory = [];
 let historyIndex = 0;
-let targeteddir = "";
 let targetedPath = "";
 let firstScroll = false;
 
@@ -58,30 +57,6 @@ const commands = {
     "cd": cd,
     "ls": ls,
     "cat": cat
-}
-    // makes devices
-function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
-    let forCounter = 0;
-    let Fetch =
-        `<div class="neofetch cli">
-                <img src="src/assets/images/ascii/${ascii}" alt="" height="160">
-                <div class="neofetchText">
-                    <nobr><b class="periwinkle">maeve</b>@<b class="periwinkle">${device}</b><br>
-                    ---------<br>
-                    <b class="yellow">OS</b>: ${os}<br>
-                    <b class="yellow">Host</b>: ${host}<br>
-                    <b class="yellow">Font</b>: ${font}<br>
-                    <b class="yellow">CPU</b>: ${cpu}<br>
-                    <b class="yellow">GPU</b>: ${gpu}<br>
-                    <b class="yellow">Memory</b>: ${ram}<br>`;
-    for (let i = 0; i < diskNames.length; i++) {
-        Fetch += `<b class="yellow">Disk(${diskNames[i]})</b>: ${diskCapacities[i]}<br>`
-
-        if (diskNames.length == i) {
-            Fetch += "</nobr></div></div>";
-        }
-    }
-    return Fetch;
 }
     // handles textbox inputs
 input.addEventListener("keydown", function (event) {
@@ -139,6 +114,26 @@ function scrollHistory(direction) {
         }
     }
 }
+    // gets current directory
+function getCurrentDirObj() {
+    let splitPath = targetedPath.split("/");
+    splitPath.splice(0, 1);
+    const dirPath = getDirPath(splitPath);
+    return dirPath;
+}
+    // gets directory path
+function getDirPath(path) {
+    let currentObject = fs;
+    for (let dir of path) {
+        if (dir in currentObject && typeof currentObject[dir] == "object") {
+            currentObject = currentObject[dir]
+        }
+        else {
+            return null;
+        }
+    }
+    return currentObject;
+}
 
     // commands
 function neofetch() {
@@ -176,7 +171,7 @@ function cd() {
         return `<div class="filepath cli">~${targetedPath}</div>`;
     }
     else {
-        return `<div class="filepath cli">directory not found</div>`;
+        return `<div class="filepath cli">cd: ${parsedCommand[1]} no such file or directory</div>`;
     }
 }
 function ls() {
@@ -189,29 +184,35 @@ function ls() {
 }
 function cat() {
     const argument = parsedCommand[1];
-    const result = "";
     const dirObj = getCurrentDirObj()
-    return dirObj[argument]
+    if (dirObj[argument] != null) {
+        return dirObj[argument]
+    }
+    else {
+        return `<div class="catError cli">cat: ${parsedCommand[1]} no such file or directory</div>`
+    }
 }
-    // gets current dir
-function getCurrentDirObj() {
-    let splitPath = targetedPath.split("/");
-    splitPath.splice(0, 1);
-    const dirPath = getDirPath(splitPath);
-    return dirPath;
-}
+    // makes devices
+function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
+    let forCounter = 0;
+    let Fetch =
+        `<div class="neofetch cli">
+                <img src="src/assets/images/ascii/${ascii}" alt="" height="160">
+                <div class="neofetchText">
+                    <nobr><b class="periwinkle">maeve</b>@<b class="periwinkle">${device}</b><br>
+                    ---------<br>
+                    <b class="yellow">OS</b>: ${os}<br>
+                    <b class="yellow">Host</b>: ${host}<br>
+                    <b class="yellow">Font</b>: ${font}<br>
+                    <b class="yellow">CPU</b>: ${cpu}<br>
+                    <b class="yellow">GPU</b>: ${gpu}<br>
+                    <b class="yellow">Memory</b>: ${ram}<br>`;
+    for (let i = 0; i < diskNames.length; i++) {
+        Fetch += `<b class="yellow">Disk(${diskNames[i]})</b>: ${diskCapacities[i]}<br>`
 
-function getDirPath(path) {
-    let currentObject = fs;
-    for (let dir of path) {
-        if (dir in currentObject && typeof currentObject[dir] == "object") {
-            currentObject = currentObject[dir]
-            targeteddir = currentObject
-        }
-        else {
-            return null;
+        if (diskNames.length == i) {
+            Fetch += "</nobr></div></div>";
         }
     }
-        // return currentObject;
-    return currentObject;
+    return Fetch;
 }
