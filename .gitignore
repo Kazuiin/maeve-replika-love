@@ -4,4 +4,5 @@ src/assets/images/wallpapers/old
 .hintrc
 notes/togenerate/
 node_modules
-src/assets/album-covers/old
+src/assets/images/album-covers/old
+src/assets/images/88x31/maeve.png
