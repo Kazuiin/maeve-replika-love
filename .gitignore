@@ -1,8 +1,6 @@
 .vs
 .vscode
-src/assets/images/wallpapers/old
 .hintrc
+src/noteGen/node_modules
 notes/togenerate/
-node_modules
 src/assets/images/album-covers/old
-src/assets/images/88x31/maeve.png

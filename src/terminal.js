@@ -8,7 +8,7 @@ let commandArgs = "";
 let parsedCommand = [];
 let inputHistory = [];
 let historyIndex = 0;
-let targetedPath = "";
+let targetedPath = "/home/maeve";
 let firstScroll = false;
 
     // dictionaries
@@ -87,6 +87,9 @@ function runCommand() {
         }
         else if (parsedCommand[0] == "clear") {
             output.innerHTML = "";
+        }
+        else if (parsedCommand[0] == "shutdown") {
+            window.close('', '_parent', '')
         }
         else {
             output.innerHTML += commands[parsedCommand[0]]();
@@ -200,10 +203,10 @@ function cat() {
 }
 
 function reboot() {
-
+    location.reload()
 }
 function shutdown() {
-    
+    window.close();
 }
     // makes devices
 function newFetch(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
