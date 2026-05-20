@@ -4,6 +4,7 @@ const output = document.getElementById("cliOutput");
     // variables
 let device = "elster";
 let commandInput = "";
+let commandArgs = "";
 let parsedCommand = [];
 let inputHistory = [];
 let historyIndex = 0;
@@ -41,22 +42,22 @@ const fs = {
         }
     }
 }
-const deviceFetches = {
-    "elster": `${newDevice("elster", "Windows 11", "X870 AORUS ELITE WIFI7 ICE", "Segoe UI (12pt)", "AMD Ryzen 7 9800X3D @ 5.25GHz", "NVIDIA GeForce RTX 5080 @ 3.09GHz", "2x48GB", ["C:/", "D:/", "E:/", "F:/", "G:/",], ["1000GB", "2000GB", "2000GB", "1000GB", "4000GB"], "windows11.png")}`,
-    "eule": `${newDevice("eule", "Android 14", "S24 Ultra", "SamsungOne (12pt)", "Qualcomm Snapdragon 8 Gen 3 @ 3.40GHz", "Qualcomm Adreno 750 @ 3.09GHz", "12GB", ["/"], ["1000GB"], "android.png")}`,
-    "kolibri": `${newDevice("kolibri", "RaspbianOS", "Raspberry Pi 5", "gallant 12x22 (12pt)", "Broadcom BCM2712 @ 2.40GHz", "VideoCore V3D VII @ 1.20GHz", "8GB", ["/"], ["512GB"], "raspbianos.png")}`,
-    "ara": `${newDevice("ara", "NixOS", "HP Fortis Yavilla", "gallant 12x22 (12pt)", "Intel Core N100 @ 3.40GHz", "Intel UHD Graphics @ 0.75GHz", "8GB", ["/"], ["64GB"], "nixos.png")}`
+const fetches = {
+    "elster": `${newFetch("elster", "Windows 11", "X870 AORUS ELITE WIFI7 ICE", "Segoe UI (12pt)", "AMD Ryzen 7 9800X3D @ 5.25GHz", "NVIDIA GeForce RTX 5080 @ 3.09GHz", "2x48GB", ["C:/", "D:/", "E:/", "F:/", "G:/",], ["1000GB", "2000GB", "2000GB", "1000GB", "4000GB"], "windows11.png")}`,
+    "eule": `${newFetch("eule", "Android 14", "S24 Ultra", "SamsungOne (12pt)", "Qualcomm Snapdragon 8 Gen 3 @ 3.40GHz", "Qualcomm Adreno 750 @ 3.09GHz", "12GB", ["/"], ["1000GB"], "android.png")}`,
+    "kolibri": `${newFetch("kolibri", "RaspbianOS", "Raspberry Pi 5", "gallant 12x22 (12pt)", "Broadcom BCM2712 @ 2.40GHz", "VideoCore V3D VII @ 1.20GHz", "8GB", ["/"], ["512GB"], "raspbianos.png")}`,
+    "ara": `${newFetch("ara", "NixOS", "HP Fortis Yavilla", "gallant 12x22 (12pt)", "Intel Core N100 @ 3.40GHz", "Intel UHD Graphics @ 0.75GHz", "8GB", ["/"], ["64GB"], "nixos.png")}`
 }
 const commands = {
-    "help": help,
-    "neofetch": neofetch,
-    "fastfetch": neofetch,
-    "hyfetch": neofetch,
-    "ssh": ssh,
-    "clear": clear,
-    "cd": cd,
     "ls": ls,
-    "cat": cat
+    "cd": cd,
+    "cat": cat,
+    "clear": clear,
+    "ssh": ssh,
+    "shutdown": shutdown,
+    "reboot": reboot,
+    "neofetch": neofetch,
+    "help": help,
 }
     // handles textbox inputs
 input.addEventListener("keydown", function (event) {
@@ -79,6 +80,7 @@ input.addEventListener("keydown", function (event) {
 function runCommand() {
     commandInput = input.value;
     parsedCommand = commandInput.split(" ")
+    commandArgs = parsedCommand[1]
     if (commandInput != "") {
         if (!(parsedCommand[0] in commands)) {
             output.innerHTML += `<div class="errorMsg cli">${commandInput}: command not found</div>`;
@@ -123,27 +125,27 @@ function getCurrentDirObj() {
 }
     // gets directory path
 function getDirPath(path) {
-    let currentObject = fs;
+    let currentObj = fs;
     for (let dir of path) {
-        if (dir in currentObject && typeof currentObject[dir] == "object") {
-            currentObject = currentObject[dir]
+        if (dir in currentObj && typeof currentObj[dir] == "object") {
+            currentObj = currentObj[dir]
         }
         else {
             return null;
         }
     }
-    return currentObject;
+    return currentObj;
 }
 
     // commands
 function neofetch() {
-    let result = deviceFetches[device];
+    let result = fetches[device];
     return result
 }
 function ssh() {
     let result = "";
-    if (parsedCommand[1] in deviceFetches) {
-        device = parsedCommand[1];
+    if (commandArgs in fetches) {
+        device = commandArgs;
         result = `<div class="deviceID cli">connected to ${device}.replika.love!</div>`;
     }
     else {
@@ -155,23 +157,28 @@ function clear() {
     console.log("cleared!")
 }
 function help() {
-    let helpList = `<div class="helpList cli"><nobr>cd ls clear neofetch ssh<br><br><b class="yellow">use --help to get more help on a specific command</b></nobr></div>`
-    return helpList;
+    let helpList = ""
+    const dirObj = getCurrentDirObj()
+    for (let key in commands) {
+        helpList += `${key} `;
+    }
+    return `<div class="help cli">${helpList}</div>`
 }
 function cd() {
-    let pathToTarget = targetedPath + "/" + parsedCommand[1]
-    if (parsedCommand[1].charAt(0) == "/") {
-        pathToTarget = parsedCommand[1]
+    let pathToTarget = targetedPath + "/" + commandArgs
+    if (commandArgs.charAt(0) == "/") {
+        pathToTarget = commandArgs
     }
     let path = pathToTarget.split("/");
     path.splice(0, 1)
     let pathResult = getDirPath(path)
+    console.log(pathResult)
     if (pathResult != null) {
         targetedPath = pathToTarget
         return `<div class="filepath cli">~${targetedPath}</div>`;
     }
     else {
-        return `<div class="filepath cli">cd: ${parsedCommand[1]} no such file or directory</div>`;
+        return `<div class="filepath cli">cd: ${commandArgs} no such file or directory</div>`;
     }
 }
 function ls() {
@@ -183,17 +190,23 @@ function ls() {
     return `<div class="ls cli">${result}</div>`;
 }
 function cat() {
-    const argument = parsedCommand[1];
     const dirObj = getCurrentDirObj()
-    if (dirObj[argument] != null) {
-        return dirObj[argument]
+    if (dirObj[commandArgs] != null) {
+        return dirObj[commandArgs]
     }
     else {
-        return `<div class="catError cli">cat: ${parsedCommand[1]} no such file or directory</div>`
+        return `<div class="catError cli">cat: ${commandArgs} no such file or directory</div>`
     }
 }
+
+function reboot() {
+
+}
+function shutdown() {
+    
+}
     // makes devices
-function newDevice(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
+function newFetch(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
     let forCounter = 0;
     let Fetch =
         `<div class="neofetch cli">

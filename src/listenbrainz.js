@@ -8,16 +8,16 @@ const listen3HTML = document.getElementById("listen3");
 const albumContainer = document.getElementById("albumContainer"); 
     // variables
 const user = "kazuiin_";
-const lb_root = "https://api.listenbrainz.org/1";
-const listens_url = `${lb_root}/user/${user}/listens?count=3`;
-const now_playing_url = `${lb_root}/user/${user}/playing-now`;
+const root = "https://api.listenbrainz.org/1";
+const listens_url = `${root}/user/${user}/listens?count=3`;
+const playing_url = `${root}/user/${user}/playing-now`;
+const coversRoot = "/src/assets/images/album-covers/";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let fetchCount = 0;
-const coversRoot = "/src/assets/images/album covers/";
 let favAlbums = "";
 
     // on load
-fetch_listens();
+fetchListens();
 set_favAlbums();
 
 // functions 
@@ -27,7 +27,6 @@ function fallback(element) {
 }
 // sets favAlbums in MusicPG
 function set_favAlbums() {
-    const coverRoot = "src/assets/images/album-covers/";
     // row 1
     newAlbum("julie", "pushing daisies");
     newAlbum("julie", "my anti aircraft friend");
@@ -68,11 +67,11 @@ function newAlbum(artist, album) {
                         <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
                     </div>`;
 }
-function fetch_listens() {
+function fetchListens() {
     fetchCount = fetchCount + 1;
     console.log(`listenbrainz fetch ${fetchCount}\n \nbark bark ruff ruff :3`);
     // now listening fetch
-    fetch_json_retry(now_playing_url, 2).then((nowPlayingData) => {
+    fetchJsonRetry(playing_url, 2).then((nowPlayingData) => {
         if (nowPlayingData.payload.listens.length > 0) {
             console.log("listenbrainz is WOKE LEFT!!!");
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata;
@@ -92,7 +91,7 @@ function fetch_listens() {
         }
     });
     // recent listen fetch :3
-    fetch_json_retry(listens_url, 2).then((listensData) => {
+    fetchJsonRetry(listens_url, 2).then((listensData) => {
         function feedListen(listenElement, listenValue) {
             const dataPath = listensData.payload.listens[listenValue].track_metadata;
             listenElement.innerHTML = `${dataPath.artist_name}<br>${dataPath.track_name}<br>${dataPath.release_name}`;
@@ -103,10 +102,10 @@ function fetch_listens() {
     });
 }
 setInterval(() => {
-    fetch_listens();
+    fetchListens();
 }, 10000);
 // json fetcher
-async function fetch_json_retry(url, retry_count) {
+async function fetchJsonRetry(url, retry_count) {
     let fetched = false;
     let res = null;
     let attempts = 0;
