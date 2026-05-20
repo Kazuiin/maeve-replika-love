@@ -262,7 +262,7 @@ a {
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: flex-start;
     margin: 15px;
 }

@@ -149,7 +149,7 @@ function ssh() {
     let result = "";
     if (commandArgs in fetches) {
         device = commandArgs;
-        result = `<div class="deviceID cli">connected to ${device}.replika.love!</div>`;
+        result = `<div class="deviceID cli"><nobr>connected to <b class="periwinkle">${device}</b>.replika.love!</nobr></div>`;
     }
     else {
         result = `<div class="errorMsg cli">could not resolve hostname.</div<`;
