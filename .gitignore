@@ -2,5 +2,5 @@
 .vscode
 .hintrc
 src/pgGen/node_modules
-pgGen/togenerate
+src/pgGen/togenerate
 src/assets/images/album-covers/old

@@ -3,22 +3,26 @@ const showdown = require("showdown");
 const fs = require("fs");
 const { parse } = require("path");
     // public variables
-const genRoot = "../../pgGen/"
-const notesRoot = "../../notes/";
-const projectRoot = "../../projects/"
 const converter = new showdown.Converter();
-const readNotes = `${genRoot}togenerate/notes/`
-const readProjects = `${genRoot}togenerate/projects/`
+    // folders to write to
+const notesRoot = "../../notes/";
+const projectRoot = "../../projects/";
+    // folders to read
+const readNotes = `togenerate/notes/`;
+const readProjects = `togenerate/projects/`;
+    // markdown arrays
 let notesMarkdown = fs.readdirSync(`${readNotes}`);
 let projectMarkdown = fs.readdirSync(`${readProjects}`)
-const notesTemplate = fs.readFileSync(`${genRoot}templates/notes-template.html`).toString();
-const indexTemplate = fs.readFileSync(`${genRoot}templates/indexTemplate.html`).toString();
+    // templates
+const notesTemplate = fs.readFileSync(`templates/notes-template.html`).toString();
+const indexTemplate = fs.readFileSync(`templates/indexTemplate.html`).toString();
     // link buttons
-let noteLinks = genPages(readNotes, notesRoot, notesMarkdown, notesTemplate)
-let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTemplate)
+let noteLinks = genPages(readNotes, notesRoot, notesMarkdown, notesTemplate, "notes")
+let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTemplate, "projects")
 
     // checks directory reads all files inside
-function genPages(directory, toWrite, dirSync, templateFile)  {
+function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
+    console.log(workingOn)
     let linkVar = "";
      for (let file of dirSync) {
         const fileMD = fs.readFileSync(`${directory}${file}`);
@@ -39,7 +43,7 @@ function genPages(directory, toWrite, dirSync, templateFile)  {
         {weekday: "long", year: "numeric", month: "long", day: "numeric"});
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
-        .replace('{date}', parsedDate).replace("{file}", file).replace("{pageName}", pageName[1]));
+        .replace('{date}', parsedDate).replace("{file}", pageName[1]).replace("{pageName}", pageName[1]));
         console.log(`${pageName[1].replace(".md", ".html")} generated!`);
         linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${pageName[1]}</span></div></a>`;
     }
