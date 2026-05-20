@@ -1,6 +1,6 @@
 .vs
 .vscode
 .hintrc
-src/noteGen/node_modules
-notes/togenerate/
+src/pgGen/node_modules
+pgGen/togenerate
 src/assets/images/album-covers/old
