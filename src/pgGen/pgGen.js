@@ -54,8 +54,6 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
         .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName))
-
-        console.log(displayedPageName)
         linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${displayedPageName}</span></div></a>`;
             // sorts buttons by date
 
