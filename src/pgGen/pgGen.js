@@ -20,11 +20,20 @@ const indexTemplate = fs.readFileSync(`templates/indexTemplate.html`).toString()
 let noteLinks = genPages(readNotes, notesRoot, notesMarkdown, notesTemplate, "notes")
 let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTemplate, "projects")
 
+function parseDate(file) {
+    const name = file.replace(".md", "").replaceAll("-", " ").split("_")
+    const date = name[0].split(" ");
+    const parsedDate = new Date(parseInt(date[2], 10),parseInt(date[1], 10) - 1, parseInt(date[0]))
+    return parsedDate;
+}
+
     // checks directory reads all files inside
 function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
     console.log(workingOn)
     let linkVar = "";
-     for (let file of dirSync) {
+    dirSync.sort((a, b) => parseDate(b) - parseDate(a))
+    console.log(dirSync)
+    for (let file of dirSync) {
         const fileMD = fs.readFileSync(`${directory}${file}`);
         const relativePath = `${toWrite}`;
             // generates new folders with an index.html inside
@@ -48,6 +57,8 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
 
         console.log(displayedPageName)
         linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${displayedPageName}</span></div></a>`;
+            // sorts buttons by date
+
     }
     return linkVar
 }
