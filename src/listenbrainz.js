@@ -75,8 +75,10 @@ function fetchListens() {
         if (nowPlayingData.payload.listens.length > 0) {
             console.log("listenbrainz is WOKE LEFT!!!");
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata;
-            nowPlayingHTML.innerHTML = `<nobr>now playing! <b class="periwinkle" title="${nowPlayingDataPath.track_name}"><br>${nowPlayingDataPath.track_name}</b><br>by <b class="periwinkle" title="${nowPlayingDataPath.artist_name}"><br>${nowPlayingDataPath.artist_name}</b>
-            <br>from <b class="periwinkle" title="${nowPlayingDataPath.release_name}"><br>${nowPlayingDataPath.release_name}</b></nobr>`;
+            nowPlayingHTML.innerHTML = 
+            `<nobr>now playing! <b class="musicHover periwinkle" title="${nowPlayingDataPath.track_name}"><br>${nowPlayingDataPath.track_name}</b><br>
+            by <b class="musicHover periwinkle" title="${nowPlayingDataPath.artist_name}"><br>${nowPlayingDataPath.artist_name}</b><br>
+            from <b class="musicHover periwinkle" title="${nowPlayingDataPath.release_name}"><br>${nowPlayingDataPath.release_name}</b></nobr>`;
             nowPlayingCover.setAttribute('src', `https://coverartarchive.org/release/${nowPlayingDataPath.additional_info.release_mbid}/front-250.jpg`);
             nowPlayingCover.setAttribute('title', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name} on listenbrainz!!!`);
             nowPlayingCover.setAttribute('alt', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name}`);
@@ -100,9 +102,9 @@ function fetchListens() {
             var minutes = `0${listenTime.getMinutes()}`;
             var time = `${hours}:${minutes.substr(-2)}`
 
-            listenElement.innerHTML = `<nobr>listened to at <b class="grey"">${time}</b><b class="periwinkle" title="${dataPath.track_name}"><br>${dataPath.track_name}</b><br>
-            by <b class="periwinkle" title="${dataPath.artist_name}"><br>${dataPath.artist_name}</b><br>
-            from <b class="periwinkle" title="${dataPath.release_name}"><br>${dataPath.release_name}</b></nobr>`;
+            listenElement.innerHTML = `<nobr>listened to at <b class="grey"">${time}</b><b class="musicHover periwinkle" title="${dataPath.track_name}"><br>${dataPath.track_name}</b><br>
+            by <b class="musicHover periwinkle" title="${dataPath.artist_name}"><br>${dataPath.artist_name}</b><br>
+            from <b class="musicHover periwinkle" title="${dataPath.release_name}"><br>${dataPath.release_name}</b></nobr>`;
         }
         console.log(listensData)
         feedListen(listen1HTML, 0);
