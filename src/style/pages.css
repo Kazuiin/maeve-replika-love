@@ -293,14 +293,25 @@ a {
     scrollbar-width: none;
 }
 
-#noteContainer div {
+.pageContainer div {
+    display: flex;
+    flex-direction: column;
     background-color: darkgrey;
-    padding: 8px;
+    padding: 15px;
+    margin: 0.5%;
+    width: 420px;
+    height: 100px;
     border-style: solid;
     border-width: 5px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
+    font-size: 35px;
 }
 
+.pageContainer a {
+    height: 100%;
+    width: 100%;
+    margin: 15px;
+}
 #platforms {
     display: flex;
     position: absolute;

@@ -32,8 +32,9 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
             fs.mkdirSync(relativePath);
         }
         const pageName = file.replace(".md", "").replaceAll("-", " ").split("_");
+        const displayedPageName = pageName[1].replaceAll("+", ".").replaceAll("$", ":")
         const pageDate = pageName[0].split(" ");
-        const path = relativePath + pageName[1].replace(".md", "").replace(".html", "").replaceAll("!", "").replaceAll(" ", "-");
+        const path = relativePath + pageName[1].replace(".md", "").replace(".html", "").replaceAll("!", "").replaceAll(" ", "-").replaceAll(",", "").replaceAll("+", "").replaceAll("$", "");
         if (!fs.existsSync(path)) {
             fs.mkdirSync(path);
         }
@@ -43,9 +44,10 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
         {weekday: "long", year: "numeric", month: "long", day: "numeric"});
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
-        .replace('{date}', parsedDate).replace("{file}", pageName[1]).replace("{pageName}", pageName[1]));
-        console.log(`${pageName[1].replace(".md", ".html")} generated!`);
-        linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${pageName[1]}</span></div></a>`;
+        .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName))
+
+        console.log(displayedPageName)
+        linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${displayedPageName}</span></div></a>`;
     }
     return linkVar
 }

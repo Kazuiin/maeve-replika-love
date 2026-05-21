@@ -188,8 +188,16 @@ function ls() {
     let result = "";
     const dirObj = getCurrentDirObj()
     for (let key in dirObj) {
-        result += `${key}<br>`;
+        if (typeof dirObj[key] == "object") {
+            result += `/${key}<br>`;
+            console.log(result)
+        }
+        else {
+            result += `${key}<br>`;
+        }
+        console.log(key)
     }
+    console.log(result)
     return `<div class="ls cli">${result}</div>`;
 }
 function cat() {
