@@ -75,8 +75,8 @@ function fetchListens() {
         if (nowPlayingData.payload.listens.length > 0) {
             console.log("listenbrainz is WOKE LEFT!!!");
             const nowPlayingDataPath = nowPlayingData.payload.listens[0].track_metadata;
-            nowPlayingHTML.innerHTML = `now playing!<br><br>${nowPlayingDataPath.artist_name}<br><br>${nowPlayingDataPath.track_name}
-            <br><br>${nowPlayingDataPath.release_name}`;
+            nowPlayingHTML.innerHTML = `<nobr>now playing! <b class="periwinkle" title="${nowPlayingDataPath.track_name}"><br>${nowPlayingDataPath.track_name}</b><br>by <b class="periwinkle" title="${nowPlayingDataPath.artist_name}"><br>${nowPlayingDataPath.artist_name}</b>
+            <br>from <b class="periwinkle" title="${nowPlayingDataPath.release_name}"><br>${nowPlayingDataPath.release_name}</b></nobr>`;
             nowPlayingCover.setAttribute('src', `https://coverartarchive.org/release/${nowPlayingDataPath.additional_info.release_mbid}/front-250.jpg`);
             nowPlayingCover.setAttribute('title', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name} on listenbrainz!!!`);
             nowPlayingCover.setAttribute('alt', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name}`);
@@ -94,8 +94,17 @@ function fetchListens() {
     fetchJsonRetry(listens_url, 2).then((listensData) => {
         function feedListen(listenElement, listenValue) {
             const dataPath = listensData.payload.listens[listenValue].track_metadata;
-            listenElement.innerHTML = `${dataPath.artist_name}<br>${dataPath.track_name}<br>${dataPath.release_name}`;
+            let listened_at = listensData.payload.listens[listenValue].listened_at;
+            var listenTime = new Date(listened_at * 1000);
+            var hours = listenTime.getHours();
+            var minutes = `0${listenTime.getMinutes()}`;
+            var time = `${hours}:${minutes.substr(-2)}`
+
+            listenElement.innerHTML = `<nobr>listened to at <b class="grey"">${time}</b><b class="periwinkle" title="${dataPath.track_name}"><br>${dataPath.track_name}</b><br>
+            by <b class="periwinkle" title="${dataPath.artist_name}"><br>${dataPath.artist_name}</b><br>
+            from <b class="periwinkle" title="${dataPath.release_name}"><br>${dataPath.release_name}</b></nobr>`;
         }
+        console.log(listensData)
         feedListen(listen1HTML, 0);
         feedListen(listen2HTML, 1);
         feedListen(listen3HTML, 2);
