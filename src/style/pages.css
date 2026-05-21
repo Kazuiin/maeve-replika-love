@@ -277,7 +277,6 @@ a {
     display: flex;
     flex-direction: row;
     align-items: start;
-    flex-wrap: wrap;
     gap: 5px;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -311,6 +310,18 @@ a {
     height: 100%;
     width: 100%;
     margin: 15px;
+}
+
+.pagesAndDesc {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+}
+.description {
+    display: flex;
+    font-size: 40px;
+    margin: 30px;
 }
 #platforms {
     display: flex;

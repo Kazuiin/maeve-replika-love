@@ -48,7 +48,7 @@ body {
     display: flex;
     position: relative;
     font-family: Gallant, monospace;
-    font-size: 100%;
+    font-size: 18px;
     margin: 2.5%;
     padding: 0.5em;
     border-style: solid;
