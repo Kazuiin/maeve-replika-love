@@ -51,10 +51,11 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
         const fileHTML = converter.makeHtml(fileMD.toString());
         const parsedDate = new Date(parseInt(pageDate[2], 10),parseInt(pageDate[1], 10) - 1, parseInt(pageDate[0])).toLocaleDateString("en-GB",
         {weekday: "long", year: "numeric", month: "long", day: "numeric"});
+        const time = pageDate[3].replace("$", ":")
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
-        .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName))
-        linkVar += `<a href="${path}"><div> ${parsedDate}<br><br><span class="pageName">${displayedPageName}</span></div></a>`;
+        .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName).replace("{time}", time))
+        linkVar += `<a href="${path}"><div><span class="pageName">${displayedPageName}</span><br><span class="pageDate">${parsedDate} | ${time}</span></div></a>`;
             // sorts buttons by date
 
     }
