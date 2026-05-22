@@ -60,8 +60,15 @@ function set_favAlbums() {
 // new album!!!!!!!!!!!!
 function newAlbum(artist, album) {
     // replaces BAD characters
-    const replaceArray = [" OST", "/", ">", ".",]
-    const replacers = (string) => string.replaceAll(" OST", "").replaceAll("/", "").replaceAll(" ", "-").replaceAll(">", "").replaceAll(".", "").replaceAll(",", "").replaceAll(":", "");
+    const toReplace = [" OST", "/", " ", ">", ".", ",", ":"]
+    const replaceWith = ["", "", "-", "", "", "", "",]
+    const replacers = (string) => { 
+        let stringResult = string;
+        for (let i = 0; i < toReplace.length; i++) {
+            stringResult = stringResult.replaceAll(toReplace[i], replaceWith[i])
+        }
+        return stringResult
+    }
     // adds to favAlbums
     favAlbums += `<div class="album" albm="${album}">
                         <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
@@ -98,9 +105,11 @@ function fetchListens() {
             const dataPath = listensData.payload.listens[listenValue].track_metadata;
             let listened_at = listensData.payload.listens[listenValue].listened_at;
             var listenTime = new Date(listened_at * 1000);
+            var day = listenTime.getDate()
+            var month = listenTime.getMonth()
             var hours = listenTime.getHours();
             var minutes = `0${listenTime.getMinutes()}`;
-            var time = `${hours}:${minutes.substr(-2)}`
+            var time = `${hours}:${minutes.substr(-2)} on ${day}/${month}`
 
             listenElement.innerHTML = `<nobr>listened to at <b class="grey"">${time}</b><b class="musicHover periwinkle" title="${dataPath.track_name}"><br>${dataPath.track_name}</b><br>
             by <b class="musicHover periwinkle" title="${dataPath.artist_name}"><br>${dataPath.artist_name}</b><br>
