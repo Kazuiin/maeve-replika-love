@@ -92,7 +92,10 @@ a {
 }
 
 .ascii {
-    font-size: 50%;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
 }
 
 .pageName {
@@ -169,7 +172,6 @@ a {
     caret-color: #ffff;
     font-size: 20px;
     flex: 1 1 0;
-    
 }
 
 #cliContainer input {
