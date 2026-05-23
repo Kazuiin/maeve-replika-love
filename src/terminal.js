@@ -89,7 +89,7 @@ function runCommand() {
             output.innerHTML = "";
         }
         else if (parsedCommand[0] == "shutdown") {
-            window.close('', '_parent', '')
+            window.location.replace("https://www.google.com/")
         }
         else {
             output.innerHTML += commands[parsedCommand[0]]();
@@ -214,7 +214,7 @@ function reboot() {
     location.reload()
 }
 function shutdown() {
-    window.close();
+    window.location.replace("https://www.google.com/")
 }
     // makes devices
 function newFetch(device, os, host, font, cpu, gpu, ram, diskNames, diskCapacities, ascii) {
