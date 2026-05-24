@@ -16,6 +16,17 @@ let projectMarkdown = fs.readdirSync(`${readProjects}`)
     // templates
 const notesTemplate = fs.readFileSync(`templates/notes-template.html`).toString();
 const indexTemplate = fs.readFileSync(`templates/indexTemplate.html`).toString();
+
+const toReplace = [".md", ".html", "!", " ", ",", "+", "$"]
+const replaceWith = ["", "", "", "-", "", "", "" ]
+
+function replacers(string) { 
+        let stringResult = string;
+        for (let i = 0; i < toReplace.length; i++) {
+            stringResult = stringResult.replaceAll(toReplace[i], replaceWith[i])
+        }
+        return stringResult
+    }
     // link buttons
 let noteLinks = genPages(readNotes, notesRoot, notesMarkdown, notesTemplate, "notes")
 let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTemplate, "projects")
@@ -43,7 +54,7 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
         const pageName = file.replace(".md", "").replaceAll("-", " ").split("_");
         const displayedPageName = pageName[1].replaceAll("+", ".").replaceAll("$", ":")
         const pageDate = pageName[0].split(" ");
-        const path = relativePath + pageName[1].replace(".md", "").replace(".html", "").replaceAll("!", "").replaceAll(" ", "-").replaceAll(",", "").replaceAll("+", "").replaceAll("$", "");
+        const path = relativePath + replacers(pageName[1])
         if (!fs.existsSync(path)) {
             fs.mkdirSync(path);
         }
@@ -61,8 +72,6 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
     }
     return linkVar
 }
-
-writeIndex()
 
 function writeIndex() {
     fs.writeFileSync("../../index.html", indexTemplate.replace(`{NOTEPAGELINKS}`, noteLinks).replace(`{PROJECTPAGELINKS}`, projectLinks))

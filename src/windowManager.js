@@ -21,7 +21,7 @@ dragWM.forEach((dragWM) => {
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
                             </span>
-                            <div class="titlecontainer">
+                            <div class="titleContainer">
                                 ${windowElement.getAttribute("window")}
                             </div>
                             <span class="lineContainer">
