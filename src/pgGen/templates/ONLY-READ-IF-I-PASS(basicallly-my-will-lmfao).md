@@ -25,10 +25,10 @@ juni: mercury.replika.love
 niko: zundaseki  
   
 to violet, please make something in my honor and become rich!!! and when you do donate what you can to charity,,, dont become evil and greedy!  
-ill haunt you if you do!!!  
+ill haunt you if you do!!! i wish i couldve moved in,,,
   
 to reina, i knew about and forgive the cheating, but a little requst, dont lower your standards so much, youre pretty and (no offense if he reads this)  
-deserve better than him, also im stabbing you rn  
+deserve better than him, i still wish we couldve worked out,,, but alas also im stabbing you rn  
   
 to mel and ellie, i wish i got to know you 2 better, i was really jealous of your relationship (felt like i had a crush on you both, at one point)  
 and general dynamic for the time i knew you, youre really cute together and i wish you both the best, id like to ask ellie to go back to  
