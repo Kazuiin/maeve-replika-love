@@ -6,6 +6,8 @@ preferably somewhere with flowers
 if i managed to come out, and if you care, please let them know how you feel about me, most of you will have my address and or a way to  
 contact my immediate family directly, i wont be leaving it here because this will be pretty public... i cant think of anywhere else to put it though!  
 
+i liked a lot of music, but if possible id like you to associate sea power's "from the sea to the land beyond" oberhofer's "sea of dreams" and michael salvatori's "deep space lullaby" with me when im gone :)
+
 some little messages for those i care about most, violet youll probably like mel, ellie and reina will probably get along with niko  
   
 if any one of you reads this and know im for sure gone, please pass it on to the others, not all of you know eachother so im leaving account users below  
