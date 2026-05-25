@@ -26,7 +26,8 @@ const fs = {
                 "worldline.md": `<div class="reference cli">1.048596%</div>`,
             },
             "notes": {
-                
+                "the end of destiny": `<div class="reference cli">its joever.</div>`,
+                "zato": `<div class="reference cli">i love the world and everything in it</div>`,
             }
         },
         "kazuiin": { 
@@ -37,7 +38,9 @@ const fs = {
                 
             }, 
             "projects": {
-                
+                "a spiritual successor": `<div class="reference cli">destiny 3!</div>`,
+                "gay clicker": `<div class="reference cli">faggot</div>`,
+                "bonelab": `<div class="reference cli">more like... sloplab... heh</div>`
             }
         }
     }

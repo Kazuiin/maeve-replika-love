@@ -27,7 +27,7 @@ juni: mercury.replika.love
 niko: zundaseki  
   
 to violet, please make something in my honor and become rich!!! and when you do donate what you can to charity,,, dont become evil and greedy!  
-ill haunt you if you do!!! i wish i couldve moved in,,,
+ill haunt you if you do!!! i wish i couldve moved in,,, thank you for being there for me when i needed it
   
 to reina, i knew about and forgive the cheating, but a little requst, dont lower your standards so much, youre pretty and (no offense if he reads this)  
 deserve better than him, i still wish we couldve worked out,,, but alas also im stabbing you rn  
