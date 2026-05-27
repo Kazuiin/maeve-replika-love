@@ -249,11 +249,14 @@ a {
     padding-bottom: 20px;
 }
 
-#favouritealbumsDiv {
+.favouritesDiv {
+    display: flex;
     font-size: 32px;
     font-family: Gallant, monospace;
     font-size: 25px;
     color: #8a5375;
+    justify-content: center;
+    margin: 5px;
 }
 
 #gamesPG {

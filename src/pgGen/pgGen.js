@@ -73,6 +73,9 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
     return linkVar
 }
 
+console.log(noteLinks)
+console.log(projectLinks)
+
 function writeIndex() {
     fs.writeFileSync("../../index.html", indexTemplate.replace(`{NOTEPAGELINKS}`, noteLinks).replace(`{PROJECTPAGELINKS}`, projectLinks))
 }

@@ -28,12 +28,12 @@ function fallback(element) {
 // sets favAlbums in MusicPG
 function set_favAlbums() {
     // row 1
-    newAlbum("julie", "pushing daisies");
-    newAlbum("julie", "my anti aircraft friend");
-    newAlbum("julie", "starjump/kit");
-    newAlbum("panchiko", "D>E>A>T>H>M>E>T>A>L");
-    newAlbum("my bloody valentine", "loveless");
-    newAlbum("doefriends", "I WANT TO LOVE AGAIN");
+    newAlbum("julie", "pushing daisies", "0ba72f09-730c-4d20-8bf3-1fdb9a7a0c50");
+    newAlbum("julie", "my anti aircraft friend", "277b1d85-1b36-4f29-86c0-d668f8a41176");
+    newAlbum("julie", "starjump/kit", "19d1e200-6c38-47fe-b327-343719348fe7");
+    newAlbum("panchiko", "D>E>A>T>H>M>E>T>A>L", "e53da1e9-2197-4755-baf1-182de0c74e26");
+    newAlbum("my bloody valentine", "loveless", "cb76227e-3ac0-3002-9a10-615a5b73cc59");
+    newAlbum("doefriends", "I WANT TO LOVE AGAIN", "747ad1cb-bc36-49a5-974f-0b1e032f6417");
     // row 2
     newAlbum("glass beach", "the first glass beach album");
     newAlbum("glass beach", "plastic death");
@@ -47,7 +47,7 @@ function set_favAlbums() {
     newAlbum("black midi", "Schlagenheim");
     newAlbum("geordie greep", "the new sound");
     newAlbum("Sea Power", "From the Sea to the Land beyond");
-    newAlbum("Oberhofer", "Chronovision");
+    newAlbum("Oberhofer", "Chronovision", "ed9c8415-bddc-404f-b85a-09c12b5bfe56");
     // row 4
     newAlbum("1000 eyes, circada sirens", "signalis OST");
     newAlbum("Alexandre Desplat", "Fantastic Mr Fox OST");
@@ -58,7 +58,7 @@ function set_favAlbums() {
     albumContainer.innerHTML = favAlbums;
 }
 // new album!!!!!!!!!!!!
-function newAlbum(artist, album) {
+function newAlbum(artist, album, brainzID) {
     // replaces BAD characters
     const toReplace = [" OST", "/", " ", ">", ".", ",", ":"]
     const replaceWith = ["", "", "-", "", "", "", "",]
@@ -71,7 +71,9 @@ function newAlbum(artist, album) {
     }
     // adds to favAlbums
     favAlbums += `<div class="album" albm="${album}">
-                        <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
+                        <a rel="noopener" title="${album}" href="https://listenbrainz.org/album/${brainzID}" target="_blank"> 
+                            <img title="${artist} - ${album}"src="${coversRoot}${replacers(artist)}-${replacers(album)}.webp" alt="" class="albumCover">
+                        </a>
                     </div>`;
 }
 function fetchListens() {
