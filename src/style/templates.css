@@ -9,9 +9,7 @@
 }
 
 body {
-    position: fixed;
     margin: 0px;
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -27,6 +25,8 @@ body {
     background-size: cover;
     background-position: center center;
     image-rendering: pixelated;
+    top: 0px;
+    left: 0px;
 }
 
 
@@ -55,13 +55,8 @@ body {
     border-width: 10px;
     border-color: #726485 #2a2531 #2a2531 #726485;
     background-color: darkgray;
-    overflow: hidden;
+    overflow: auto;
     flex-direction: column; 
-}
-
-#content::-webkit-scrollbar {
-    -webkit-scrollbar-width: none;
-    scrollbar-width: none;
 }
 
 #topSection {
@@ -92,8 +87,6 @@ body {
     color: palevioletred;;
     transition: background-color 500ms;
     text-decoration: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 

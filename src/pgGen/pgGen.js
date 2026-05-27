@@ -66,7 +66,7 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
         .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName).replace("{time}", time))
-        linkVar += `<a href="${path}"><div><span class="pageName">${displayedPageName}</span><br><span class="pageDate">${parsedDate} | ${time}</span></div></a>`;
+        linkVar += `<a href="${path}" class="page"><div><span class="pageName">${displayedPageName}</span><br><span class="pageDate">${parsedDate} | ${time}</span></div></a>`;
             // sorts buttons by date
 
     }
@@ -75,6 +75,8 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
 
 console.log(noteLinks)
 console.log(projectLinks)
+
+writeIndex()
 
 function writeIndex() {
     fs.writeFileSync("../../index.html", indexTemplate.replace(`{NOTEPAGELINKS}`, noteLinks).replace(`{PROJECTPAGELINKS}`, projectLinks))

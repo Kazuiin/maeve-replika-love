@@ -34,32 +34,31 @@ dragWM.forEach((dragWM) => {
                                     X
                                 </div>
                             </div>`
-
     let startX = 0;
     let startY = 0;
-    const mousePos = (e) => {
+    const pointerPos = (e) => {
         startY = clamp(startY + e.movementY, 0, window.innerWidth * 0.25);
         startX = clamp(startX + e.movementX, 0, window.innerHeight);
         windowElement.style.top = startY + "px";
         windowElement.style.left = startX + "px";
     };
 
-    dragWM.addEventListener("mousedown", () => {
+    dragWM.addEventListener("pointerdown", () => {
         startX = windowElement.getBoundingClientRect().left;
         startY = windowElement.getBoundingClientRect().top;
         if (isNaN(startX)) startX = 0;
         if (isNaN(startY)) startY = 0;
-        window.addEventListener("mousemove", mousePos);
+        window.addEventListener("pointermove", pointerPos);
     });
 
-    window.addEventListener("mouseup", () => {
-        window.removeEventListener("mousemove", mousePos);
+    window.addEventListener("pointerup", () => {
+        window.removeEventListener("pointermove", pointerPos);
     });
 });
     // window open shortcut
 shortcut.forEach((shortcut) => {
     const btnwndw = shortcut.getAttribute("wndw");
-    shortcut.addEventListener("mousedown", () => {
+    shortcut.addEventListener("pointerdown", () => {
         if (document.getElementById(btnwndw).style.display == "none") {
             document.getElementById(btnwndw).style.top = "calc(50% - (36rem * 0.5))";
             document.getElementById(btnwndw).style.left = "calc(50% - (64rem * 0.5))";
@@ -71,7 +70,7 @@ shortcut.forEach((shortcut) => {
     // window close titlebar
 desktopWndw.forEach((desktopWndw) => {
     const closeWndw = desktopWndw.querySelector(".closeWndw");
-    closeWndw.addEventListener("mouseup", () => {
+    closeWndw.addEventListener("pointerup", () => {
         desktopWndw.style.display = "none";
     });
 });

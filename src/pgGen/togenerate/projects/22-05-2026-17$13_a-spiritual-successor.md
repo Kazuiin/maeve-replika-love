@@ -1,0 +1,2 @@
+i want to make a spiritual successor to d2, may not have multiplayer (so no big fancy raids or dungeons) but i want SOMETHING to take its place,,, at least for myself
+before i do this though, i obviously need to actually work on and finish my planned shooter, which is third in my project queue :3
