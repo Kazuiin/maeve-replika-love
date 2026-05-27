@@ -140,6 +140,8 @@ strong {
     flex-direction: column;
     justify-content: center;
     gap: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     vertical-align: top;
     align-items: center;
 }
