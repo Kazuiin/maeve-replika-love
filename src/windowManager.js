@@ -16,7 +16,7 @@ function clamp(num, min, max) {
     // window dragging titlebar
 dragWM.forEach((dragWM) => {
     const windowElement = dragWM.parentElement;
-    dragWM.innerHTML = `<span class="lineContainer">
+    dragWM.innerHTML = `<span class="lineContainer padded">
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
@@ -24,7 +24,7 @@ dragWM.forEach((dragWM) => {
                             <div class="titleContainer">
                                 ${windowElement.getAttribute("window")}
                             </div>
-                            <span class="lineContainer">
+                            <span class="lineContainer padded">
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>
                                 <div class="lineHorizontal"></div>

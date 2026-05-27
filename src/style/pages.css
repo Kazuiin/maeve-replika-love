@@ -30,6 +30,8 @@ a {
     margin: 25px;
     font-family: ProggyClean, monospace;
     font-size: larger;
+    width: 100%;
+    height: 100%;
 }
 
 .windowPG #avatar {
@@ -264,6 +266,7 @@ a {
     backdrop-filter: blur(2px);
     background-color: rgba(42, 37, 49, 0.75);
     overflow: auto;
+    display: flex;
 }
 
 #gamesPG::-webkit-scrollbar {

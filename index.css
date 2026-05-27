@@ -131,19 +131,15 @@ strong {
 .closeWndw:active {
     background-color: #b4b4b4;
 }
+
 .lineContainer {
-    display: flex;
     flex-grow: 1;
     height: fit-content;
     width: 100%;
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
     gap: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
     vertical-align: top;
-    align-items: center;
 }
 
 .lineHorizontal {
@@ -152,6 +148,11 @@ strong {
     width: 100%;
     height: 1px;
     gap: 2px;
+}
+
+.padded {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
