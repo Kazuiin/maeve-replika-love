@@ -87,7 +87,7 @@ function fetchListens() {
             nowPlayingHTML.innerHTML = 
             `<nobr>now playing! <b class="musicHover periwinkle" title="${nowPlayingDataPath.track_name}"><br>${nowPlayingDataPath.track_name}</b><br>
             by <b class="musicHover periwinkle" title="${nowPlayingDataPath.artist_name}"><br>${nowPlayingDataPath.artist_name}</b><br>
-            from <b class="musicHover periwinkle" title="${nowPlayingDataPath.release_name}"><br>${nowPlayingDataPath.release_name}</b></nobr>`;
+            from <b class="musicHover periwinkle" title="${nowPlayingDataPath.release_name}"><br>${nowPlayingDataPath.release_name}</b></b></nobr>`;
             nowPlayingCover.setAttribute('src', `https://coverartarchive.org/release/${nowPlayingDataPath.additional_info.release_mbid}/front-250.jpg`);
             nowPlayingCover.setAttribute('title', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name} on listenbrainz!!!`);
             nowPlayingCover.setAttribute('alt', `${nowPlayingDataPath.artist_name} - ${nowPlayingDataPath.release_name}`);
