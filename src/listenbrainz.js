@@ -35,26 +35,26 @@ function set_favAlbums() {
     newAlbum("my bloody valentine", "loveless", "cb76227e-3ac0-3002-9a10-615a5b73cc59");
     newAlbum("doefriends", "I WANT TO LOVE AGAIN", "747ad1cb-bc36-49a5-974f-0b1e032f6417");
     // row 2
-    newAlbum("glass beach", "the first glass beach album");
-    newAlbum("glass beach", "plastic death");
-    newAlbum("Jane Remover", "Frailty");
-    newAlbum("Jane Remover", "Revengeseekerz");
-    newAlbum("saoirse dream", "saoirse dream");
-    newAlbum("Fontaines D.C", "Skinty Fia");
+    newAlbum("glass beach", "the first glass beach album", "a491e185-9c1e-47a0-964b-137b802aa928");
+    newAlbum("glass beach", "plastic death", "9bcaf505-2c6c-4931-9623-1f22a8229aa6");
+    newAlbum("Jane Remover", "Frailty", "a0d3725b-18cb-4189-b968-14bdf8948c04");
+    newAlbum("Jane Remover", "Revengeseekerz", "a77018ca-5db9-45ed-918a-a04a30e8136b");
+    newAlbum("saoirse dream", "saoirse dream", "ebdde637-da39-4c85-96b9-a0b051a2af4b");
+    newAlbum("Fontaines D.C", "Skinty Fia", "aa2f908a-5aba-40c1-a198-3d0ad4f43486");
     // row 3
-    newAlbum("Have a Nice Life", "Deathconsciousness");
-    newAlbum("FREE.99", "TRAUMA REDUCTION PRAYER");
-    newAlbum("black midi", "Schlagenheim");
-    newAlbum("geordie greep", "the new sound");
-    newAlbum("Sea Power", "From the Sea to the Land beyond");
+    newAlbum("Have a Nice Life", "Deathconsciousness", "bb449522-eefd-3d7e-b712-b2cf7e9de0b1");
+    newAlbum("FREE.99", "TRAUMA REDUCTION PRAYER", "8b139185-e38c-4de7-9d3e-2899f50f655e");
+    newAlbum("black midi", "Schlagenheim", "c65fb96b-08dc-44b4-b0ca-3576317b5513");
+    newAlbum("geordie greep", "the new sound", "171db008-7f7b-48d3-a3b5-640d6ea41aa7");
+    newAlbum("Sea Power", "From the Sea to the Land beyond", "aa3a6169-135b-4f19-99ae-a14235f98879");
     newAlbum("Oberhofer", "Chronovision", "ed9c8415-bddc-404f-b85a-09c12b5bfe56");
     // row 4
-    newAlbum("1000 eyes, circada sirens", "signalis OST");
-    newAlbum("Alexandre Desplat", "Fantastic Mr Fox OST");
-    newAlbum("Andrew Prahlow", "Signals From The Outer Wilds");
-    newAlbum("Andrew Prahlow", "Secrets From The Outer Wilds: Echoes of the Eye");
-    newAlbum("Cristobal Tapia de Veer", "Utopia S1 OST");
-    newAlbum("Cristobal Tapia de Veer", "Utopia S2 OST");
+    newAlbum("1000 eyes, circada sirens", "signalis OST", "e00e924f-f099-4cab-ae87-5403e0affd1f");
+    newAlbum("Alexandre Desplat", "Fantastic Mr Fox OST", "faaa3439-4b59-4426-b870-463b0daf772c");
+    newAlbum("Andrew Prahlow", "Signals From The Outer Wilds", "b295ecc3-f78b-4f3e-9514-7ca83e2d7339");
+    newAlbum("Andrew Prahlow", "Secrets From The Outer Wilds: Echoes of the Eye", "3b2b4c4b-dd97-47df-ab19-7e4067f941f2");
+    newAlbum("Cristobal Tapia de Veer", "Utopia S1 OST", "11901ca9-9d89-4ab9-a025-584448dba7da");
+    newAlbum("Cristobal Tapia de Veer", "Utopia S2 OST", "e41c4473-bf22-4c8e-b9ef-69eb323dc65e");
     albumContainer.innerHTML = favAlbums;
 }
 // new album!!!!!!!!!!!!
