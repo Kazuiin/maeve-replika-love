@@ -14,7 +14,7 @@ let firstScroll = false;
     // dictionaries
 const fs = {
     "home": {
-        "version": "v0.1",
+        "version": `<div class="reference cli">v0.1</div>`,
         "maeve": {
             "signals": {
                 "signal_512.md": `<div class="reference cli">achtung,,, achtung,,, 39486,,, 39486,,,</div>`,
