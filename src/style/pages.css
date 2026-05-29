@@ -194,6 +194,10 @@ a {
     left: 1.5%;
     top: 8%;
     flex-direction: column-reverse;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 .neofetch {
     display: flex;

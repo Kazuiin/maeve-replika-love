@@ -14,7 +14,7 @@ let firstScroll = false;
     // dictionaries
 const fs = {
     "home": {
-        "version": `<div class="reference cli">v0.11</div>`,
+        "version": `<div class="reference cli">v0.13</div>`,
         "maeve": {
             "signals": {
                 "signal_512.md": `<div class="reference cli">achtung,,, achtung,,, 39486,,, 39486,,,</div>`,
@@ -39,9 +39,9 @@ const fs = {
                 
             }, 
             "projects": {
-                "a spiritual successor": `<div class="reference cli">destiny 3!</div>`,
-                "gay clicker": `<div class="reference cli">faggot</div>`,
-                "bonelab": `<div class="reference cli">more like... sloplab... heh</div>`
+                "a-spiritual-successor.html": `<div class="reference cli">my own destiny 3! kinda...</div>`,
+                "gay-clicker.html": `<div class="reference cli">faggot</div>`,
+                "bonelab.html": `<div class="reference cli">more like... sloplab... heh</div>`
             }
         }
     }
