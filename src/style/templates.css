@@ -59,6 +59,14 @@ body {
     flex-direction: column; 
 }
 
+#content ::-webkit-scrollbar {
+    -webkit-scrollbar-width: thin;
+    -ms-scrollbar-width: thin;
+    -moz-scrollbar-width: thin;
+    scrollbar-width: thin;
+}
+
+
 #topSection {
     display: flex;
     flex-direction: row;

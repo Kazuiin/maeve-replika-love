@@ -34,7 +34,7 @@ let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTem
 function parseDate(file) {
     const name = file.replace(".md", "").replaceAll("-", " ").split("_")
     const date = name[0].split(" ");
-    const parsedDate = new Date(parseInt(date[2], 10),parseInt(date[1], 10) - 1, parseInt(date[0]), parseInt(date[3]));
+    const parsedDate = new Date(parseInt(date[2], 10), parseInt(date[1], 10) - 1, parseInt(date[0]), parseInt(date[3]));
     return parsedDate;
 }
 
