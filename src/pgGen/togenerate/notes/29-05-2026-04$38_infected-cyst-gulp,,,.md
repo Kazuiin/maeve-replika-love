@@ -1,0 +1,3 @@
+so um,,, i developed a cyst last friday that got infected, ive been given an antiobiotic called flucloxacillin for it by my gp, in the liquid form (i.e, suspension flucloxacillin) i take it every 4-5 hours as prescribed... but it isnt as effective if i eat 2 hours before or 1 hour after taking it, so i have a 1 hour window to eat every 4 hours, which is worsening some side effects of the antibiotic itself
+
+ontop of the side effects, it tastes horible, its like drinking pure concentrated stomach bile and among the most common drugs to be labeled the worst tasting suspension, and i agree for sure... avoid it as best you can, even if you struggle with pills its probably not worth it...

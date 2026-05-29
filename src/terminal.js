@@ -27,8 +27,9 @@ const fs = {
                 "worldline.md": `<div class="reference cli">1.048596%</div>`,
             },
             "notes": {
-                "the end of destiny": `<div class="reference cli">its joever.</div>`,
-                "zato": `<div class="reference cli">i love the world and everything in it</div>`,
+                "the-end-of-destiny.html": `<div class="reference cli">its joever.</div>`,
+                "ZATO.html": `<div class="reference cli">i love the world and everything in it</div>`,
+                "cyst.html": `<div class="reference cli">AVOID FLUCLOXACILLIN.</div>`,
             }
         },
         "kazuiin": { 
@@ -41,7 +42,8 @@ const fs = {
             "projects": {
                 "a-spiritual-successor.html": `<div class="reference cli">my own destiny 3! kinda...</div>`,
                 "gay-clicker.html": `<div class="reference cli">faggot</div>`,
-                "bonelab.html": `<div class="reference cli">more like... sloplab... heh</div>`
+                "bonelab-modding.html": `<div class="reference cli">more like... sloplab... heh</div>`,
+                "this-website.html": `<div class="reference cli">meow</div>`,
             }
         }
     }
