@@ -34,7 +34,7 @@ let projectLinks = genPages(readProjects, projectRoot, projectMarkdown, notesTem
 function parseDate(file) {
     const name = file.replace(".md", "").replaceAll("-", " ").split("_")
     const date = name[0].split(" ");
-    const parsedDate = new Date(parseInt(date[2], 10),parseInt(date[1], 10) - 1, parseInt(date[0], parseInt(date[3])))
+    const parsedDate = new Date(parseInt(date[2], 10),parseInt(date[1], 10) - 1, parseInt(date[0]), parseInt(date[3]));
     return parsedDate;
 }
 
@@ -43,7 +43,7 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
     console.log(workingOn)
     let linkVar = "";
     dirSync.sort((a, b) => parseDate(b) - parseDate(a))
-    console.log(dirSync)
+    console.log(`dirSync ${dirSync} end`)
     for (let file of dirSync) {
         const fileMD = fs.readFileSync(`${directory}${file}`);
         const relativePath = `${toWrite}`;
@@ -72,10 +72,6 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
     }
     return linkVar
 }
-
-console.log(noteLinks)
-console.log(projectLinks)
-
 writeIndex()
 
 function writeIndex() {
