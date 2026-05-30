@@ -2,7 +2,6 @@
 .vscode
 .hintrc
 .git
-.stfolder
 src/pgGen/
 src/pgGen/node_modules
 src/assets/images/games/convert

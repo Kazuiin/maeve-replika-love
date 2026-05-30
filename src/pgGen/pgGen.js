@@ -65,7 +65,7 @@ function genPages(directory, toWrite, dirSync, templateFile, workingOn)  {
         const time = pageDate[3].replace("$", ":")
             // writes to template file
         fs.writeFileSync(path + "/index.html", templateFile.replace("{content}", fileHTML)
-        .replace('{date}', parsedDate).replace("{file}", displayedPageName).replace("{pageName}", displayedPageName).replace("{time}", time))
+        .replace('{date}', parsedDate).replaceAll("{file}", `${replacers(displayedPageName)}.md`).replace("{pageName}", displayedPageName).replace("{time}", time))
         linkVar += `<a href="${path}" class="page"><div><span class="pageName">${displayedPageName}</span><br><span class="pageDate">${parsedDate} | ${time}</span></div></a>`;
             // sorts buttons by date
 

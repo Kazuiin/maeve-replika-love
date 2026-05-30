@@ -107,3 +107,10 @@ body {
 .closeWndw:active {
     background-color: #b4b4b4;
 }
+
+.imgEmbed {
+    height: 250px;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #726485 #2a2531 #2a2531 #726485;
+}
