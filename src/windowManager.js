@@ -78,7 +78,7 @@ desktopWndw.forEach((desktopWndw) => {
 
 myBadge.addEventListener("pointerdown", () => {
     const copy = `<div id="myBadge" title="me! click to copy element,,,">
-                        <img src="src/assets/images/88x31/maeve-replika-love.png" onerror="fallback()" alt="">
+                        <img src="https://maeve.replika.love/src/assets/images/88x31/maeve-replika-love.gif" onerror="fallback()" alt="">
                     </div>`
     navigator.clipboard.writeText(copy)
 });
