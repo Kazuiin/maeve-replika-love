@@ -78,16 +78,34 @@ a {
 
 .contact {
     display: flex;
+    width: 176px;
+    height: 62px;
+    flex-direction: row;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #8a5375 #5c374e #5c374e #8a5375;
+}
+
+.contact img {
+    height: 100%;
+    width: 100%;
+}
+
+#myBadge {
+    position: absolute;
+    display: flex;
     width: 88px;
     height: 31px;
     flex-direction: row;
     border-style: solid;
     border-width: 3px;
     border-color: #8a5375 #5c374e #5c374e #8a5375;
+    left: 12.5%;
+    top: 65%;
 }
-.contact img {
-    height: 31px;
-    width: 88px;
+
+#myBadge:hover {
+    cursor: pointer;
 }
 
 .device {
@@ -242,7 +260,6 @@ a {
 #aboutMePG, #terminalPG, #musicPG, #gamesPG, #contactsPG, #projectsPG, #notesPG, #penisPG ::-webkit-scrollbar {
     -webkit-scrollbar-width: none;
     -ms-scrollbar-width: none;
-    -moz-scrollbar-width: none;
     scrollbar-width: none;
 }
 
@@ -286,7 +303,7 @@ a {
     justify-content: flex-start;
     align-content: flex-start;
     margin: 35px;
-    gap: 3px;
+    gap: 6px;
 }
 
 #projectsPG {

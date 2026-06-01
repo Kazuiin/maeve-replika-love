@@ -6,7 +6,8 @@ const desktopWndw = document.querySelectorAll(".desktopWndw");
 const shortcut = document.querySelectorAll(".shortcut");
 const albumCover = document.querySelectorAll(".albumCover");
 const bodyBG = document.getElementById("everything");
-const hyfetch = document.getElementById("hyfetch")
+const hyfetch = document.getElementById("hyfetch");
+const myBadge = document.getElementById("myBadge");
 
 function clamp(num, min, max) {
     const lowLim = Math.max(num, min);
@@ -73,4 +74,11 @@ desktopWndw.forEach((desktopWndw) => {
     closeWndw.addEventListener("pointerup", () => {
         desktopWndw.style.display = "none";
     });
+});
+
+myBadge.addEventListener("pointerdown", () => {
+    const copy = `<div id="myBadge" title="me! click to copy element,,,">
+                        <img src="src/assets/images/88x31/maeve-replika-love.png" onerror="fallback()" alt="">
+                    </div>`
+    navigator.clipboard.writeText(copy)
 });
