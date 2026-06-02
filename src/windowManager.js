@@ -9,6 +9,8 @@ const bodyBG = document.getElementById("everything");
 const hyfetch = document.getElementById("hyfetch");
 const myBadge = document.getElementById("myBadge");
 
+let renderValue = 0;
+
 function clamp(num, min, max) {
     const lowLim = Math.max(num, min);
     const result = Math.min(lowLim, max);
@@ -50,8 +52,8 @@ dragWM.forEach((dragWM) => {
         if (isNaN(startX)) startX = 0;
         if (isNaN(startY)) startY = 0;
         window.addEventListener("pointermove", pointerPos);
+        windowElement.style.zIndex = ++renderValue
     });
-
     window.addEventListener("pointerup", () => {
         window.removeEventListener("pointermove", pointerPos);
     });
@@ -65,6 +67,7 @@ shortcut.forEach((shortcut) => {
             document.getElementById(btnwndw).style.left = "calc(50% - (64rem * 0.5))";
         }
         document.getElementById(btnwndw).style.display = "flex";
+        document.getElementById(btnwndw).style.zIndex = ++renderValue;
     });
     shortcut.innerHTML = shortcut.innerHTML + `<p>${btnwndw}</p>`;
 });

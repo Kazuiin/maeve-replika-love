@@ -118,9 +118,16 @@ function fetchListens() {
             from <b class="musicHover periwinkle" title="${dataPath.release_name}"><br>${dataPath.release_name}</b></nobr>`;
         }
         console.log(listensData)
-        feedListen(listen1HTML, 0);
-        feedListen(listen2HTML, 1);
-        feedListen(listen3HTML, 2);
+        try {
+            feedListen(listen1HTML, 0);
+            feedListen(listen2HTML, 1);
+            feedListen(listen3HTML, 2);
+        }
+        catch {
+            listen1HTML.innerHTML = `<nobr>listenbrainz is down!</nobr>`
+            listen2HTML.innerHTML = `<nobr>listenbrainz is down!</nobr>`
+            listen3HTML.innerHTML = `<nobr>listenbrainz is down!</nobr>`
+        }
     });
 }
 setInterval(() => {
