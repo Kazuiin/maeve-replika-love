@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="src/style/colours.css">
     <link rel="icon" type="image/png" href="src/assets/images/pfpklbr.png">
     <script>console.log("                        {零}\n                     THIS SPACE\n                    INTENTIONALLY \n                     LEFT BLANK.")</script>
-    <script defer src="src/windowManager.js"></script>
-    <script defer src="src/taskbar.js"></script>
-    <script defer src="src/terminal.js"></script>
-    <script defer src="src/listenbrainz.js"></script>
-    <script defer src="src/games.js"></script>
+    <script type="module" src="src/windowManager.js"></script>
+    <script type="module" src="src/taskbar.js"></script>
+    <script type="module" src="src/terminal.js"></script>
+    <script type="module" src="src/listenbrainz.js"></script>
+    <script type="module" src="src/games.js"></script>
 <body class="body">
     <div id="bodyBG">
 
@@ -156,17 +156,17 @@
                     </div>
                 </div>
                 <div class="listenWrapper pastListen">
-                    <div class="recentListen" id="listen1">
+                    <div class="recentListen" i="0">
                         <nobr>listenbrainz is down!</nobr>
                     </div>
                 </div>
                 <div class="listenWrapper pastListen">
-                    <div class="recentListen" id="listen2">
+                    <div class="recentListen" i="1">
                         <nobr>listenbrainz is down!</nobr>
                     </div>
                 </div>
                 <div class="listenWrapper pastListen">
-                    <div class="recentListen" id="listen3">
+                    <div class="recentListen" i="2">
                         <nobr>listenbrainz is down!</nobr>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                 <div class="favouritesDiv">
                     favourite games
                 </div>
-                <div id="favGamesContainer">
+                <div id="gameContainer">
                 </div>
             </h1>
         </div>

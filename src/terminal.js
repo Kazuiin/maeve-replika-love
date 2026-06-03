@@ -1,4 +1,6 @@
-    // elements
+import { rep } from "./generic.js";
+
+// elements
 const input = document.getElementById("cliInput");
 const output = document.getElementById("cliOutput");
     // variables

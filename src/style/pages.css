@@ -274,7 +274,7 @@ a {
     overflow: scroll;
     display: flex;
 }
-#favGamesContainer {
+#gameContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
