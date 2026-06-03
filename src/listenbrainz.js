@@ -5,7 +5,7 @@ const nowPlayingHTML = document.getElementById("nowlistening");
 const nowPlayingCover = document.getElementById("nowListeningCover");
 const coverLink = document.getElementById("listenbrainzlink");
 const albumContainer = document.getElementById("albumContainer"); 
-const recentListen = document.querySelectorAll(".recentListen")
+const oldListen = document.querySelectorAll(".oldListen")
     // variables
 const user = "kazuiin_";
 const listenBrainz = "https://api.listenbrainz.org/1";
@@ -108,13 +108,13 @@ function fetchListens() {
             from <b class="musicHover periwinkle" title="${dataPath.release_name}"><br>${dataPath.release_name}</b></nobr>`;
         }
         console.log(listensData)
-        recentListen.forEach((recentListen) => {
-            const i = recentListen.getAttribute("i")
+        oldListen.forEach((oldListen) => {
+            const i = oldListen.getAttribute("i")
             try {
-                feedListen(recentListen, i)
+                feedListen(oldListen, i)
             }
             catch {
-                recentListen.innerHTML = `<nobr>listenbrainz is down!</nobr>`
+                oldListen.innerHTML = `<nobr>listenbrainz is down!</nobr>`
             }
         });
     });
