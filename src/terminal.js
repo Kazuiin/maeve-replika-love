@@ -59,6 +59,7 @@ const fetches = {
 const commands = {
     "ls": ls,
     "cd": cd,
+    "echo": echo,
     "cat": cat,
     "clear": clear,
     "ssh": ssh,
@@ -215,6 +216,19 @@ function cat() {
     }
     else {
         return `<div class="catError cli">cat: ${commandArgs} no such file or directory</div>`
+    }
+}
+
+function echo() {
+    if (commandArgs != null) {
+        let string = "";
+        for (let i = 1; i < parsedCommand.length; i++) {
+            string += `${parsedCommand[i]} `
+        }
+        return `<div class="echo cli">${string}</div>`
+    }
+    else {
+        return `<div class="echo cli"></div>`
     }
 }
 
