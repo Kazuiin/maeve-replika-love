@@ -20,11 +20,6 @@ let favAlbums = "";
 fetchListens();
 set_favAlbums();
 
-// functions 
-function fallback(element) {
-    element.src = "src/assets/images/fallback.png";
-    element.href = "https://listenbrainz.org/user/kazuiin_/";
-}
 // sets favAlbums in MusicPG
 function set_favAlbums() {
     // row 1
