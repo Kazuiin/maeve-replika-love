@@ -37,7 +37,7 @@ function set_favAlbums() {
     newAlbum("saoirse dream", "saoirse dream", "ebdde637-da39-4c85-96b9-a0b051a2af4b");
     newAlbum("Fontaines D.C", "Skinty Fia", "aa2f908a-5aba-40c1-a198-3d0ad4f43486");
     // row 3
-    newAlbum("Have a Nice Life", "Deathconsciousness", "bb449522-eefd-3d7e-b712-b2cf7e9de0b1");
+    newAlbum("Boards of Canada", "Inferno", "aca9719d-c640-41fc-a3a2-f3c52101e0ff");
     newAlbum("FREE.99", "TRAUMA REDUCTION PRAYER", "8b139185-e38c-4de7-9d3e-2899f50f655e");
     newAlbum("black midi", "Schlagenheim", "c65fb96b-08dc-44b4-b0ca-3576317b5513");
     newAlbum("geordie greep", "the new sound", "171db008-7f7b-48d3-a3b5-640d6ea41aa7");
